@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebCraft — $500 Local Business Websites</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8C96A;
+    --gold-dim: rgba(201,168,76,0.15);
+    --cream: #F5EFE0;
+    --cream-dim: rgba(245,239,224,0.65);
+    --dark: #0D0D0D;
+    --dark2: #141414;
+    --dark3: #1C1C1C;
+    --dark4: #252525;
+    --text: #C8C0B0;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--dark);
+    color: var(--text);
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    overflow-x: hidden;
+    cursor: none;
+  }
+
+  /* CURSOR */
+  .cursor {
+    width: 10px; height: 10px;
+    background: var(--gold);
+    border-radius: 50%;
+    position: fixed; top: 0; left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.15s ease;
+    mix-blend-mode: difference;
+  }
+  .cursor-ring {
+    width: 36px; height: 36px;
+    border: 1px solid rgba(201,168,76,0.5);
+    border-radius: 50%;
+    position: fixed; top: 0; left: 0;
+    pointer-events: none;
+    z-index: 9998;
+    transition: transform 0.4s cubic-bezier(0.23,1,0.32,1), width 0.3s, height 0.3s, border-color 0.3s;
+  }
+  body:hover .cursor-ring { border-color: var(--gold); }
+
+  /* NOISE OVERLAY */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none; z-index: 0; opacity: 0.35;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 28px 60px;
+    background: linear-gradient(to bottom, rgba(13,13,13,0.95) 0%, transparent 100%);
+    animation: fadeDown 1s ease 0.2s both;
+  }
+  @keyframes fadeDown { from { opacity:0; transform:translateY(-20px);} to { opacity:1; transform:none;} }
+
+  .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem; font-weight: 600;
+    color: var(--cream);
+    letter-spacing: 0.08em;
+    text-decoration: none;
+  }
+  .logo span { color: var(--gold); }
+
+  .nav-links { display: flex; gap: 40px; list-style: none; }
+  .nav-links a {
+    color: var(--text); text-decoration: none;
+    font-size: 0.78rem; letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: color 0.3s;
+    position: relative;
+  }
+  .nav-links a::after {
+    content: ''; position: absolute; bottom: -4px; left: 0; right: 0;
+    height: 1px; background: var(--gold);
+    transform: scaleX(0); transition: transform 0.3s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-links a:hover::after { transform: scaleX(1); }
+
+  .nav-cta {
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    padding: 10px 26px;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: none;
+    transition: background 0.3s, color 0.3s;
+  }
+  .nav-cta:hover { background: var(--gold); color: var(--dark); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center;
+    padding: 120px 40px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Animated gradient orbs */
+  .orb {
+    position: absolute; border-radius: 50%;
+    filter: blur(80px); pointer-events: none;
+  }
+  .orb-1 {
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(201,168,76,0.12) 0%, transparent 70%);
+    top: -100px; left: -150px;
+    animation: drift1 12s ease-in-out infinite;
+  }
+  .orb-2 {
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
+    bottom: 0; right: -100px;
+    animation: drift2 15s ease-in-out infinite;
+  }
+  @keyframes drift1 { 0%,100%{transform:translate(0,0) scale(1);} 50%{transform:translate(60px,40px) scale(1.1);} }
+  @keyframes drift2 { 0%,100%{transform:translate(0,0) scale(1);} 50%{transform:translate(-40px,-60px) scale(1.15);} }
+
+  /* Grid lines decoration */
+  .hero-grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+    background-size: 80px 80px;
+    mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 0%, transparent 100%);
+  }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 10px;
+    border: 1px solid rgba(201,168,76,0.3);
+    padding: 8px 20px; border-radius: 100px;
+    font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 36px;
+    animation: fadeUp 1s ease 0.4s both;
+  }
+  .hero-badge::before {
+    content: ''; width: 6px; height: 6px;
+    background: var(--gold); border-radius: 50%;
+    animation: pulse 2s ease infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.5rem, 9vw, 8rem);
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    margin-bottom: 32px;
+    animation: fadeUp 1s ease 0.6s both;
+  }
+  .hero-title em {
+    font-style: italic;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% auto;
+    animation: shimmer 4s linear infinite;
+  }
+  @keyframes shimmer { to { background-position: 200% center; } }
+
+  .hero-price-block {
+    display: inline-flex; align-items: center; gap: 16px;
+    margin-bottom: 40px;
+    animation: fadeUp 1s ease 0.8s both;
+  }
+  .hero-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 600;
+    color: var(--gold);
+    letter-spacing: -0.02em;
+  }
+  .hero-price-divider { width: 1px; height: 48px; background: rgba(201,168,76,0.3); }
+  .hero-price-sub {
+    text-align: left;
+    font-size: 0.78rem; letter-spacing: 0.1em;
+    text-transform: uppercase;
+    line-height: 1.6;
+    color: var(--cream-dim);
+  }
+
+  .hero-desc {
+    max-width: 520px;
+    font-size: 1rem; line-height: 1.8;
+    color: var(--text);
+    margin-bottom: 52px;
+    animation: fadeUp 1s ease 1s both;
+  }
+
+  .hero-actions {
+    display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;
+    animation: fadeUp 1s ease 1.1s both;
+  }
+
+  .btn-primary {
+    background: var(--gold);
+    color: var(--dark);
+    border: none;
+    padding: 16px 44px;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.8rem; letter-spacing: 0.15em;
+    text-transform: uppercase; font-weight: 500;
+    cursor: none;
+    position: relative; overflow: hidden;
+    transition: transform 0.2s;
+  }
+  .btn-primary::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, transparent 100%);
+    transform: translateX(-100%) skew(-15deg);
+    transition: transform 0.5s ease;
+  }
+  .btn-primary:hover::after { transform: translateX(120%) skew(-15deg); }
+  .btn-primary:hover { transform: translateY(-2px); }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--cream);
+    border: 1px solid rgba(245,239,224,0.2);
+    padding: 16px 44px;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.8rem; letter-spacing: 0.15em;
+    text-transform: uppercase; font-weight: 400;
+    cursor: none;
+    transition: border-color 0.3s, color 0.3s;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+  .btn-secondary .arrow { transition: transform 0.3s; }
+  .btn-secondary:hover .arrow { transform: translateX(6px); }
+
+  @keyframes fadeUp { from { opacity:0; transform:translateY(30px);} to { opacity:1; transform:none;} }
+
+  /* MARQUEE STRIP */
+  .marquee-strip {
+    padding: 18px 0;
+    background: var(--gold);
+    overflow: hidden;
+    position: relative;
+  }
+  .marquee-track {
+    display: flex; gap: 60px;
+    animation: marquee 20s linear infinite;
+    width: max-content;
+  }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .marquee-item {
+    display: flex; align-items: center; gap: 16px;
+    font-size: 0.72rem; letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--dark); font-weight: 500;
+    white-space: nowrap;
+  }
+  .marquee-dot { width: 4px; height: 4px; background: var(--dark); border-radius: 50%; opacity: 0.4; }
+
+  /* SECTION COMMONS */
+  section { position: relative; z-index: 1; }
+  .section-label {
+    font-size: 0.7rem; letter-spacing: 0.25em;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 16px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .section-label::before {
+    content: ''; display: block;
+    width: 30px; height: 1px;
+    background: var(--gold);
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 4vw, 3.8rem);
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1.1;
+  }
+  .section-title strong { font-weight: 600; font-style: italic; }
+
+  /* WHAT YOU GET */
+  .what-section {
+    padding: 120px 60px;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 100px; align-items: center;
+    max-width: 1300px; margin: 0 auto;
+  }
+
+  .what-left { }
+  .what-desc { margin-top: 24px; line-height: 1.9; font-size: 0.95rem; }
+
+  .what-right {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 2px;
+  }
+
+  .feature-card {
+    background: var(--dark3);
+    padding: 36px 28px;
+    position: relative; overflow: hidden;
+    transition: background 0.3s;
+  }
+  .feature-card::before {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--gold);
+    transform: scaleX(0); transition: transform 0.4s ease;
+    transform-origin: left;
+  }
+  .feature-card:hover { background: var(--dark4); }
+  .feature-card:hover::before { transform: scaleX(1); }
+
+  .feature-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem; font-weight: 300;
+    color: rgba(201,168,76,0.2);
+    line-height: 1; margin-bottom: 16px;
+  }
+  .feature-title {
+    font-size: 0.88rem; font-weight: 500;
+    color: var(--cream);
+    letter-spacing: 0.05em;
+    margin-bottom: 10px;
+  }
+  .feature-desc { font-size: 0.8rem; line-height: 1.7; }
+
+  /* BUSINESS TYPES */
+  .biz-section { padding: 80px 60px; background: var(--dark2); }
+  .biz-inner { max-width: 1300px; margin: 0 auto; }
+  .biz-header { text-align: center; margin-bottom: 64px; }
+  .biz-header .section-label { justify-content: center; }
+  .biz-header .section-label::before { display: none; }
+
+  .biz-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+  }
+
+  .biz-card {
+    background: var(--dark3);
+    padding: 48px 32px;
+    text-align: center;
+    position: relative; overflow: hidden;
+    transition: transform 0.3s, background 0.3s;
+    cursor: none;
+  }
+  .biz-card:hover { background: var(--dark4); transform: translateY(-4px); }
+  .biz-icon {
+    font-size: 2.4rem; margin-bottom: 20px;
+    display: block;
+    transition: transform 0.3s;
+  }
+  .biz-card:hover .biz-icon { transform: scale(1.15); }
+  .biz-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem; font-weight: 600;
+    color: var(--cream);
+    margin-bottom: 10px;
+  }
+  .biz-desc { font-size: 0.78rem; line-height: 1.7; }
+
+  .biz-card::after {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    transform: scaleX(0);
+    transition: transform 0.5s ease;
+  }
+  .biz-card:hover::after { transform: scaleX(1); }
+
+  /* PROCESS */
+  .process-section { padding: 120px 60px; max-width: 1300px; margin: 0 auto; }
+  .process-header { margin-bottom: 80px; }
+
+  .process-steps {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    position: relative;
+  }
+  .process-steps::before {
+    content: '';
+    position: absolute; top: 28px; left: 10%; right: 10%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), var(--gold-dim), transparent);
+  }
+
+  .process-step { padding: 0 20px; text-align: center; }
+  .step-num {
+    width: 56px; height: 56px;
+    border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 28px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem; color: var(--gold);
+    background: var(--dark);
+    position: relative; z-index: 1;
+    transition: background 0.3s, border-color 0.3s;
+  }
+  .process-step:hover .step-num {
+    background: var(--gold-dim);
+    border-color: var(--gold);
+  }
+  .step-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem; font-weight: 600;
+    color: var(--cream); margin-bottom: 12px;
+  }
+  .step-desc { font-size: 0.82rem; line-height: 1.8; }
+
+  /* PRICING */
+  .pricing-section {
+    padding: 120px 60px;
+    background: var(--dark2);
+    text-align: center;
+  }
+  .pricing-inner { max-width: 960px; margin: 0 auto; }
+  .pricing-header .section-label { justify-content: center; }
+  .pricing-header .section-label::before { display: none; }
+
+  .pricing-card {
+    margin-top: 64px;
+    border: 1px solid rgba(201,168,76,0.2);
+    background: linear-gradient(135deg, var(--dark3) 0%, var(--dark4) 100%);
+    padding: 72px;
+    position: relative; overflow: hidden;
+  }
+  .pricing-card::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(201,168,76,0.06) 0%, transparent 70%);
+  }
+
+  .pricing-eyebrow {
+    font-size: 0.72rem; letter-spacing: 0.25em;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 24px;
+  }
+
+  .pricing-amount {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(4rem, 10vw, 9rem);
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    margin-bottom: 8px;
+  }
+  .pricing-amount sup {
+    font-size: 0.35em; vertical-align: super;
+    color: var(--gold);
+  }
+
+  .pricing-subtitle {
+    font-size: 0.88rem; color: var(--text);
+    margin-bottom: 48px;
+    letter-spacing: 0.05em;
+  }
+
+  .pricing-divider {
+    width: 80px; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 0 auto 48px;
+  }
+
+  .pricing-perks {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 32px; text-align: left;
+    margin-bottom: 60px;
+  }
+  .perk {
+    display: flex; gap: 14px;
+    align-items: flex-start;
+  }
+  .perk-check {
+    width: 20px; height: 20px; flex-shrink: 0;
+    border: 1px solid var(--gold); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold); font-size: 0.65rem;
+    margin-top: 2px;
+  }
+  .perk-text { font-size: 0.85rem; line-height: 1.6; }
+
+  .pricing-cta {
+    display: inline-flex; align-items: center; gap: 16px;
+    background: var(--gold);
+    color: var(--dark);
+    padding: 20px 60px;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.85rem; letter-spacing: 0.2em;
+    text-transform: uppercase; font-weight: 500;
+    cursor: none; border: none;
+    position: relative; overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.3s;
+  }
+  .pricing-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 60px rgba(201,168,76,0.3);
+  }
+  .pricing-cta::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.25) 0%, transparent 50%);
+    transform: translateX(-100%) skew(-15deg);
+    transition: transform 0.6s ease;
+  }
+  .pricing-cta:hover::after { transform: translateX(150%) skew(-15deg); }
+
+  /* TESTIMONIALS */
+  .testimonials-section {
+    padding: 120px 60px;
+    max-width: 1300px; margin: 0 auto;
+  }
+  .testimonials-header { margin-bottom: 64px; }
+  .testimonials-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+  .testimonial {
+    background: var(--dark3);
+    padding: 48px 36px;
+    position: relative;
+    transition: background 0.3s;
+  }
+  .testimonial:hover { background: var(--dark4); }
+  .testimonial::before {
+    content: '\201C';
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 6rem; line-height: 1;
+    color: rgba(201,168,76,0.12);
+    position: absolute; top: 16px; left: 28px;
+    pointer-events: none;
+  }
+  .testimonial-text {
+    font-size: 0.9rem; line-height: 1.9;
+    font-style: italic;
+    color: var(--cream-dim);
+    margin-bottom: 32px;
+    position: relative; z-index: 1;
+  }
+  .testimonial-author {
+    display: flex; align-items: center; gap: 14px;
+  }
+  .author-avatar {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--gold-dim);
+    border: 1px solid rgba(201,168,76,0.3);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; color: var(--gold);
+  }
+  .author-name {
+    font-size: 0.85rem; color: var(--cream);
+    font-weight: 500; letter-spacing: 0.05em;
+  }
+  .author-biz { font-size: 0.75rem; color: var(--gold); margin-top: 2px; }
+
+  /* STARS */
+  .stars { color: var(--gold); font-size: 0.75rem; letter-spacing: 2px; margin-bottom: 20px; }
+
+  /* FAQ */
+  .faq-section { padding: 80px 60px; background: var(--dark2); }
+  .faq-inner { max-width: 800px; margin: 0 auto; }
+  .faq-header { text-align: center; margin-bottom: 60px; }
+  .faq-header .section-label { justify-content: center; }
+  .faq-header .section-label::before { display: none; }
+
+  .faq-item {
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+    padding: 28px 0;
+  }
+  .faq-q {
+    display: flex; justify-content: space-between; align-items: center;
+    cursor: none;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem; font-weight: 600;
+    color: var(--cream);
+    transition: color 0.3s;
+  }
+  .faq-q:hover { color: var(--gold); }
+  .faq-icon {
+    width: 28px; height: 28px;
+    border: 1px solid rgba(201,168,76,0.3); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold); font-size: 1rem; flex-shrink: 0;
+    transition: transform 0.3s, background 0.3s;
+  }
+  .faq-item.open .faq-icon { transform: rotate(45deg); background: var(--gold-dim); }
+  .faq-a {
+    font-size: 0.88rem; line-height: 1.9;
+    color: var(--text);
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s;
+  }
+  .faq-item.open .faq-a { max-height: 200px; padding-top: 20px; }
+
+  /* CTA FOOTER */
+  .cta-section {
+    padding: 140px 60px;
+    text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .cta-bg {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(201,168,76,0.07) 0%, transparent 70%);
+  }
+  .cta-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 300; color: var(--cream);
+    line-height: 1.1; margin-bottom: 24px;
+    position: relative;
+  }
+  .cta-sub {
+    font-size: 0.95rem; color: var(--text);
+    margin-bottom: 52px; position: relative;
+  }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid rgba(201,168,76,0.1);
+    padding: 40px 60px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .footer-copy { font-size: 0.78rem; color: rgba(200,192,176,0.4); }
+  .footer-links { display: flex; gap: 32px; }
+  .footer-links a {
+    font-size: 0.75rem; color: rgba(200,192,176,0.4);
+    text-decoration: none; letter-spacing: 0.1em;
+    transition: color 0.3s;
+  }
+  .footer-links a:hover { color: var(--gold); }
+
+  /* SCROLL REVEAL */
+  .reveal {
+    opacity: 0; transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.visible { opacity: 1; transform: none; }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* FORM */
+  .contact-section {
+    padding: 120px 60px;
+    background: var(--dark2);
+  }
+  .contact-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.2fr; gap: 100px; align-items: start; }
+  .form-group { margin-bottom: 20px; }
+  .form-label {
+    display: block;
+    font-size: 0.72rem; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 10px;
+  }
+  .form-input, .form-select, .form-textarea {
+    width: 100%;
+    background: var(--dark3);
+    border: 1px solid rgba(201,168,76,0.15);
+    color: var(--cream);
+    padding: 14px 18px;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.3s;
+    cursor: none;
+    appearance: none;
+  }
+  .form-input:focus, .form-select:focus, .form-textarea:focus {
+    border-color: var(--gold);
+  }
+  .form-textarea { min-height: 120px; resize: vertical; }
+  .form-select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23C9A84C' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; }
+  .form-select option { background: var(--dark3); }
+
+  .form-submit {
+    width: 100%; padding: 18px;
+    background: var(--gold); color: var(--dark);
+    border: none;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.8rem; letter-spacing: 0.2em;
+    text-transform: uppercase; font-weight: 500;
+    cursor: none; position: relative; overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.3s;
+    margin-top: 8px;
+  }
+  .form-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 50px rgba(201,168,76,0.25);
+  }
+
+  @media (max-width: 900px) {
+    nav { padding: 20px 24px; }
+    .nav-links { display: none; }
+    .what-section, .contact-inner { grid-template-columns: 1fr; gap: 60px; }
+    .biz-grid { grid-template-columns: repeat(2, 1fr); }
+    .process-steps { grid-template-columns: repeat(2, 1fr); gap: 48px; }
+    .process-steps::before { display: none; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .pricing-perks { grid-template-columns: 1fr; }
+    .pricing-card { padding: 48px 28px; }
+    section, .what-section, .process-section, .testimonials-section, .faq-inner { padding-left: 24px; padding-right: 24px; }
+    .biz-section { padding: 80px 24px; }
+    .pricing-section { padding: 80px 24px; }
+    .contact-section { padding: 80px 24px; }
+    .cta-section { padding: 80px 24px; }
+    footer { flex-direction: column; gap: 20px; text-align: center; padding: 32px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">Web<span>Craft</span></a>
+  <ul class="nav-links">
+    <li><a href="#features">Features</a></li>
+    <li><a href="#businesses">Industries</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+  </ul>
+  <button class="nav-cta" onclick="scrollTo({top: document.getElementById('contact').offsetTop, behavior:'smooth'})">Get Started</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="hero-grid"></div>
+
+  <div class="hero-badge">✦ Professional Local Business Websites</div>
+
+  <h1 class="hero-title">
+    Your Business Deserves<br>
+    <em>An Exceptional Website</em>
+  </h1>
+
+  <div class="hero-price-block">
+    <div class="hero-price">$500</div>
+    <div class="hero-price-divider"></div>
+    <div class="hero-price-sub">
+      Complete Website<br>
+      No Hidden Fees
+    </div>
+  </div>
+
+  <p class="hero-desc">
+    We craft beautiful, fast, and conversion-focused websites for local businesses. Everything you need to attract customers — designed, built, and launched in days.
+  </p>
+
+  <div class="hero-actions">
+    <button class="btn-primary" onclick="scrollTo({top: document.getElementById('contact').offsetTop, behavior:'smooth'})">Claim Your Website</button>
+    <button class="btn-secondary" onclick="scrollTo({top: document.getElementById('process').offsetTop, behavior:'smooth'})">
+      See How It Works <span class="arrow">→</span>
+    </button>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-strip">
+  <div class="marquee-track" id="marqueeTrack">
+    <span class="marquee-item">Custom Design <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Mobile Responsive <span class="marquee-dot"></span></span>
+    <span class="marquee-item">SEO Ready <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Fast Delivery <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Contact Forms <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Google Maps Integration <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Social Media Links <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Online Booking <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Custom Design <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Mobile Responsive <span class="marquee-dot"></span></span>
+    <span class="marquee-item">SEO Ready <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Fast Delivery <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Contact Forms <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Google Maps Integration <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Social Media Links <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Online Booking <span class="marquee-dot"></span></span>
+  </div>
+</div>
+
+<!-- WHAT YOU GET -->
+<div class="what-section" id="features">
+  <div class="what-left reveal">
+    <div class="section-label">What's Included</div>
+    <h2 class="section-title">Everything Your Business <strong>Needs to Shine</strong></h2>
+    <p class="what-desc">
+      Every website we build is crafted from scratch — no cheap templates, no cookie-cutter layouts. We design around your brand identity, your customers, and your goals.
+    </p>
+    <div style="margin-top:36px; display:flex; gap:40px;">
+      <div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:2.8rem; color:var(--gold); line-height:1;">48<span style="font-size:1rem;color:var(--text)">hrs</span></div>
+        <div style="font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; margin-top:4px;">First Draft</div>
+      </div>
+      <div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:2.8rem; color:var(--gold); line-height:1;">100<span style="font-size:1rem;color:var(--text)">%</span></div>
+        <div style="font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; margin-top:4px;">Satisfaction</div>
+      </div>
+    </div>
+  </div>
+  <div class="what-right reveal reveal-delay-2">
+    <div class="feature-card">
+      <div class="feature-num">01</div>
+      <div class="feature-title">Custom Design</div>
+      <div class="feature-desc">Tailored visuals that reflect your unique brand — not a template anyone else is using.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-num">02</div>
+      <div class="feature-title">Mobile-First</div>
+      <div class="feature-desc">Pixel-perfect on every screen size, from phones to widescreen displays.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-num">03</div>
+      <div class="feature-title">SEO Optimized</div>
+      <div class="feature-desc">Structured for Google with proper meta tags, fast load times, and local SEO basics.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-num">04</div>
+      <div class="feature-title">Contact & Booking</div>
+      <div class="feature-desc">Forms, call buttons, maps, and scheduling integrations — built right in.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-num">05</div>
+      <div class="feature-title">Fast Loading</div>
+      <div class="feature-desc">Optimized code and images for lightning-fast performance scores.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-num">06</div>
+      <div class="feature-title">You Own It</div>
+      <div class="feature-desc">Full ownership of your website files. No subscriptions, no lock-in, ever.</div>
+    </div>
+  </div>
+</div>
+
+<!-- BUSINESS TYPES -->
+<section class="biz-section" id="businesses">
+  <div class="biz-inner">
+    <div class="biz-header reveal">
+      <div class="section-label">Industries We Serve</div>
+      <h2 class="section-title">Built for Every Kind of <strong>Local Business</strong></h2>
+    </div>
+    <div class="biz-grid">
+      <div class="biz-card reveal">
+        <span class="biz-icon">🍽️</span>
+        <div class="biz-name">Restaurants</div>
+        <div class="biz-desc">Menus, reservations, and gallery pages that make mouths water.</div>
+      </div>
+      <div class="biz-card reveal reveal-delay-1">
+        <span class="biz-icon">💇</span>
+        <div class="biz-name">Salons & Spas</div>
+        <div class="biz-desc">Booking systems, service lists, and a look as refined as your craft.</div>
+      </div>
+      <div class="biz-card reveal reveal-delay-2">
+        <span class="biz-icon">🔧</span>
+        <div class="biz-name">Contractors</div>
+        <div class="biz-desc">Showcase your portfolio, collect leads, and build trust instantly.</div>
+      </div>
+      <div class="biz-card reveal reveal-delay-3">
+        <span class="biz-icon">🏥</span>
+        <div class="biz-name">Medical & Dental</div>
+        <div class="biz-desc">Patient-friendly design with appointments and HIPAA-aware forms.</div>
+      </div>
+      <div class="biz-card reveal">
+        <span class="biz-icon">🏋️</span>
+        <div class="biz-name">Fitness & Yoga</div>
+        <div class="biz-desc">Class schedules, memberships, and instructor profiles.</div>
+      </div>
+      <div class="biz-card reveal reveal-delay-1">
+        <span class="biz-icon">⚖️</span>
+        <div class="biz-name">Legal & Finance</div>
+        <div class="biz-desc">Professional, authoritative design that builds credibility.</div>
+      </div>
+      <div class="biz-card reveal reveal-delay-2">
+        <span class="biz-icon">🐾</span>
+        <div class="biz-name">Pet Services</div>
+        <div class="biz-desc">Grooming, boarding, and vet sites with warmth and personality.</div>
+      </div>
+      <div class="biz-card reveal reveal-delay-3">
+        <span class="biz-icon">🏠</span>
+        <div class="biz-name">Real Estate</div>
+        <div class="biz-desc">Property listings, agent bios, and lead capture forms.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process-section" id="process">
+  <div class="process-header reveal">
+    <div class="section-label">How It Works</div>
+    <h2 class="section-title">Live in Days, Not <strong>Months</strong></h2>
+  </div>
+  <div class="process-steps">
+    <div class="process-step reveal">
+      <div class="step-num">1</div>
+      <div class="step-title">Discovery Call</div>
+      <div class="step-desc">We learn about your business, goals, and vision in a quick 30-minute conversation.</div>
+    </div>
+    <div class="process-step reveal reveal-delay-1">
+      <div class="step-num">2</div>
+      <div class="step-title">Design & Build</div>
+      <div class="step-desc">We craft your custom website and send you the first draft within 48 hours.</div>
+    </div>
+    <div class="process-step reveal reveal-delay-2">
+      <div class="step-num">3</div>
+      <div class="step-title">Review & Refine</div>
+      <div class="step-desc">You give us feedback, we make unlimited revisions until it's perfect.</div>
+    </div>
+    <div class="process-step reveal reveal-delay-3">
+      <div class="step-num">4</div>
+      <div class="step-title">Launch 🚀</div>
+      <div class="step-desc">We publish your site, submit it to Google, and hand you the keys.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section" id="pricing">
+  <div class="pricing-inner">
+    <div class="pricing-header reveal">
+      <div class="section-label">Transparent Pricing</div>
+      <h2 class="section-title">One Price. <strong>Everything Included.</strong></h2>
+    </div>
+    <div class="pricing-card reveal">
+      <div class="pricing-eyebrow">Complete Local Business Website Package</div>
+      <div class="pricing-amount"><sup>$</sup>500</div>
+      <div class="pricing-subtitle">One-time flat fee — no surprises, no subscriptions</div>
+      <div class="pricing-divider"></div>
+      <div class="pricing-perks">
+        <div class="perk"><div class="perk-check">✓</div><div class="perk-text">Custom design tailored to your brand</div></div>
+        <div class="perk"><div class="perk-check">✓</div><div class="perk-text">Mobile & tablet responsive layout</div></div>
+        <div class="perk"><div class="perk-check">✓</div><div class="perk-text">Up to 5 pages included</div></div>
+        <div class="perk"><div class="perk-check">✓</div><div class="perk-text">Contact form & Google Maps</div></div>
+        <div class="perk"><div class="perk-check">✓</div><div class="perk-text">SEO basics & Google submission</div></div>
+        <div class="perk"><div class="perk-check">✓</div><div class="perk-text">Unlimited revisions before launch</div></div>
+        <div class="perk"><div class="perk-check">✓</div><div class="perk-text">Social media link integration</div></div>
+        <div class="perk"><div class="perk-check">✓</div><div class="perk-text">Fast-loading optimized code</div></div>
+        <div class="perk"><div class="perk-check">✓</div><div class="perk-text">Full file ownership — yours forever</div></div>
+      </div>
+      <button class="pricing-cta" onclick="scrollTo({top: document.getElementById('contact').offsetTop, behavior:'smooth'})">
+        Start Your Project →
+      </button>
+      <div style="margin-top:24px; font-size:0.78rem; color:rgba(200,192,176,0.4); letter-spacing:0.05em;">
+        🔒 50% upfront · 50% on delivery · 100% satisfaction guaranteed
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section">
+  <div class="testimonials-header reveal">
+    <div class="section-label">Client Stories</div>
+    <h2 class="section-title">What Local Business Owners <strong>Are Saying</strong></h2>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial reveal">
+      <div class="stars">★★★★★</div>
+      <div class="testimonial-text">We went from zero online presence to getting 15+ new customer inquiries a week. The site looks incredible and our customers constantly compliment it.</div>
+      <div class="testimonial-author">
+        <div class="author-avatar">M</div>
+        <div>
+          <div class="author-name">Maria Santos</div>
+          <div class="author-biz">Bloom Floral Studio, Austin TX</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial reveal reveal-delay-1">
+      <div class="stars">★★★★★</div>
+      <div class="testimonial-text">I was skeptical about getting a quality site at this price, but the result blew me away. Professional, fast, and exactly what my restaurant needed.</div>
+      <div class="testimonial-author">
+        <div class="author-avatar">J</div>
+        <div>
+          <div class="author-name">James Okafor</div>
+          <div class="author-biz">The Copper Pot, Chicago IL</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial reveal reveal-delay-2">
+      <div class="stars">★★★★★</div>
+      <div class="testimonial-text">They delivered the first draft in 36 hours and nailed the vibe immediately. I barely needed any changes. Worth every penny and then some.</div>
+      <div class="testimonial-author">
+        <div class="author-avatar">S</div>
+        <div>
+          <div class="author-name">Sarah Kim</div>
+          <div class="author-biz">Serene Touch Spa, Portland OR</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="faq-inner">
+    <div class="faq-header reveal">
+      <div class="section-label">FAQ</div>
+      <h2 class="section-title">Common <strong>Questions</strong></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Do you handle hosting and domain setup?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">We can absolutely guide you through choosing a hosting provider and connecting your domain — we just don't include those subscription costs in our flat fee, as they're billed directly to you. Most clients spend $10–15/month on hosting.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          How many revisions are included?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">Unlimited rounds of revisions before launch. We don't count — we just keep going until you're completely happy with your website. Our goal is that you love it.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          What if I need more than 5 pages?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">Additional pages are available for $50 each. Many businesses find 5 pages covers everything — Home, About, Services, Gallery, and Contact — but we're happy to scale as needed.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          How long does the whole process take?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">From kickoff call to launch is typically 5–7 business days. We deliver a first draft within 48 hours, then iterate based on your feedback before going live.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Will I be able to update the website myself?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">Yes! We build on platforms you can manage yourself, and we provide a short walkthrough so you can update text, images, and basic content on your own any time.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section class="contact-section" id="contact">
+  <div class="contact-inner">
+    <div class="reveal">
+      <div class="section-label">Get Started</div>
+      <h2 class="section-title">Let's Build Your<br><strong>Website Together</strong></h2>
+      <p style="margin-top:24px; line-height:1.9; font-size:0.92rem;">
+        Fill in the form and we'll reach out within 24 hours to schedule your free discovery call. No commitment required.
+      </p>
+      <div style="margin-top:48px; display:flex; flex-direction:column; gap:20px;">
+        <div style="display:flex; gap:14px; align-items:center;">
+          <div style="width:40px; height:40px; border:1px solid var(--gold-dim); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--gold); font-size:0.9rem;">✉</div>
+          <div>
+            <div style="font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); margin-bottom:2px;">Email</div>
+            <div style="font-size:0.9rem;">hello@webcraft.studio</div>
+          </div>
+        </div>
+        <div style="display:flex; gap:14px; align-items:center;">
+          <div style="width:40px; height:40px; border:1px solid var(--gold-dim); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--gold); font-size:0.9rem;">📞</div>
+          <div>
+            <div style="font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); margin-bottom:2px;">Phone</div>
+            <div style="font-size:0.9rem;">(555) 012-3456</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal reveal-delay-2">
+      <div class="form-group">
+        <label class="form-label">Your Name</label>
+        <input type="text" class="form-input" placeholder="Jane Smith">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Business Name</label>
+        <input type="text" class="form-input" placeholder="Smith's Bakery">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email Address</label>
+        <input type="email" class="form-input" placeholder="jane@smithsbakery.com">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Business Type</label>
+        <select class="form-select">
+          <option value="" disabled selected>Select your industry…</option>
+          <option>Restaurant / Café</option>
+          <option>Salon / Spa</option>
+          <option>Contractor / Trades</option>
+          <option>Medical / Dental</option>
+          <option>Fitness / Wellness</option>
+          <option>Legal / Finance</option>
+          <option>Pet Services</option>
+          <option>Real Estate</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Tell Us About Your Business</label>
+        <textarea class="form-textarea" placeholder="What do you do, who are your customers, and what do you need from your website?"></textarea>
+      </div>
+      <button class="form-submit" onclick="handleSubmit(this)">Send My Request →</button>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-section">
+  <div class="cta-bg"></div>
+  <h2 class="cta-title reveal">
+    Your Competitors<br>Already Have a Website.<br>
+    <em style="font-family:'Cormorant Garamond',serif; font-style:italic; background:linear-gradient(135deg,var(--gold),var(--gold-light),var(--gold)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">Do You?</em>
+  </h2>
+  <p class="cta-sub reveal">$500. One time. No ongoing fees. Just a website that works hard for your business.</p>
+  <button class="btn-primary reveal" onclick="scrollTo({top: document.getElementById('contact').offsetTop, behavior:'smooth'})">
+    Get My Website for $500
+  </button>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-copy">© 2025 WebCraft Studio. All rights reserved.</div>
+  <div class="footer-links">
+    <a href="#">Privacy</a>
+    <a href="#">Terms</a>
+    <a href="#">Portfolio</a>
+    <a href="#">Instagram</a>
+  </div>
+</footer>
+
+<script>
+  // Custom cursor
+  const cursor = document.getElementById('cursor');
+  const ring = document.getElementById('cursorRing');
+  let mx = 0, my = 0, rx = 0, ry = 0;
+
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    cursor.style.transform = `translate(${mx - 5}px, ${my - 5}px)`;
+  });
+
+  function animateRing() {
+    rx += (mx - rx) * 0.12;
+    ry += (my - ry) * 0.12;
+    ring.style.transform = `translate(${rx - 18}px, ${ry - 18}px)`;
+    requestAnimationFrame(animateRing);
+  }
+  animateRing();
+
+  document.querySelectorAll('button, a, .biz-card, .feature-card, .testimonial, .faq-q').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      ring.style.width = '56px'; ring.style.height = '56px';
+      ring.style.borderColor = 'var(--gold)';
+    });
+    el.addEventListener('mouseleave', () => {
+      ring.style.width = '36px'; ring.style.height = '36px';
+    });
+  });
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.1 });
+  revealEls.forEach(el => observer.observe(el));
+
+  // FAQ toggle
+  function toggleFaq(el) {
+    const item = el.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  // Form submit
+  function handleSubmit(btn) {
+    const orig = btn.textContent;
+    btn.textContent = 'Sending…';
+    btn.style.opacity = '0.7';
+    setTimeout(() => {
+      btn.textContent = '✓ Request Sent! We\'ll be in touch soon.';
+      btn.style.background = '#2A6E47';
+      btn.style.color = '#fff';
+    }, 1400);
+  }
+
+  // Parallax on hero orbs
+  document.addEventListener('mousemove', e => {
+    const x = (e.clientX / window.innerWidth - 0.5) * 30;
+    const y = (e.clientY / window.innerHeight - 0.5) * 20;
+    document.querySelector('.orb-1').style.transform = `translate(${x}px, ${y}px)`;
+    document.querySelector('.orb-2').style.transform = `translate(${-x}px, ${-y}px)`;
+  });
+
+  // Number counter animation
+  function animateCount(el, target, suffix='') {
+    let start = 0;
+    const dur = 1500;
+    const step = timestamp => {
+      if (!start) start = timestamp;
+      const prog = Math.min((timestamp - start) / dur, 1);
+      const ease = 1 - Math.pow(1 - prog, 3);
+      el.textContent = Math.floor(ease * target) + suffix;
+      if (prog < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+</script>
+</body>
+</html>
