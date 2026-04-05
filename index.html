@@ -665,16 +665,12 @@
   }
   .footer-links a:hover { color: var(--gold); }
 
-  /* SCROLL REVEAL */
-  .reveal {
-    opacity: 0; transform: translateY(40px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-  }
-  .reveal.visible { opacity: 1; transform: none; }
-  .reveal-delay-1 { transition-delay: 0.1s; }
-  .reveal-delay-2 { transition-delay: 0.2s; }
-  .reveal-delay-3 { transition-delay: 0.3s; }
-  .reveal-delay-4 { transition-delay: 0.4s; }
+  /* SCROLL REVEAL - CSS only, no JS dependency */
+  .reveal { opacity: 1; transform: none; }
+  .reveal-delay-1 { }
+  .reveal-delay-2 { }
+  .reveal-delay-3 { }
+  .reveal-delay-4 { }
 
   /* FORM */
   .contact-section {
@@ -753,12 +749,12 @@
 <nav>
   <a href="#" class="logo">Web<span>Craft</span></a>
   <ul class="nav-links">
-    <li><a href="#features">Features</a></li>
-    <li><a href="#businesses">Industries</a></li>
-    <li><a href="#process">Process</a></li>
-    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#features" onclick="event.preventDefault();document.getElementById('features').scrollIntoView({behavior:'smooth'})">Features</a></li>
+    <li><a href="#businesses" onclick="event.preventDefault();document.getElementById('businesses').scrollIntoView({behavior:'smooth'})">Industries</a></li>
+    <li><a href="#process" onclick="event.preventDefault();document.getElementById('process').scrollIntoView({behavior:'smooth'})">Process</a></li>
+    <li><a href="#pricing" onclick="event.preventDefault();document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">Pricing</a></li>
   </ul>
-  <button class="nav-cta" onclick="scrollTo({top: document.getElementById('contact').offsetTop, behavior:'smooth'})">Get Started</button>
+  <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started</button>
 </nav>
 
 <!-- HERO -->
@@ -788,8 +784,8 @@
   </p>
 
   <div class="hero-actions">
-    <button class="btn-primary" onclick="scrollTo({top: document.getElementById('contact').offsetTop, behavior:'smooth'})">Claim Your Website</button>
-    <button class="btn-secondary" onclick="scrollTo({top: document.getElementById('process').offsetTop, behavior:'smooth'})">
+    <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Claim Your Website</button>
+    <button class="btn-secondary" onclick="document.getElementById('process').scrollIntoView({behavior:'smooth'})">
       See How It Works <span class="arrow">→</span>
     </button>
   </div>
@@ -975,7 +971,7 @@
         <div class="perk"><div class="perk-check">✓</div><div class="perk-text">Fast-loading optimized code</div></div>
         <div class="perk"><div class="perk-check">✓</div><div class="perk-text">Full file ownership — yours forever</div></div>
       </div>
-      <button class="pricing-cta" onclick="scrollTo({top: document.getElementById('contact').offsetTop, behavior:'smooth'})">
+      <button class="pricing-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
         Start Your Project →
       </button>
       <div style="margin-top:24px; font-size:0.78rem; color:rgba(200,192,176,0.4); letter-spacing:0.05em;">
@@ -1089,7 +1085,7 @@
           <div style="width:40px; height:40px; border:1px solid var(--gold-dim); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--gold); font-size:0.9rem;">✉</div>
           <div>
             <div style="font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); margin-bottom:2px;">Email</div>
-            <div style="font-size:0.9rem;">thelocalpixel@gmail.com</div>
+            <div style="font-size:0.9rem;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="54203c31383b373538243d2c3138143339353d387a373b39">[email&#160;protected]</a></div>
           </div>
         </div>
         <div style="display:flex; gap:14px; align-items:center;">
@@ -1155,7 +1151,7 @@
     <em style="font-family:'Cormorant Garamond',serif; font-style:italic; background:linear-gradient(135deg,var(--gold),var(--gold-light),var(--gold)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">Do You?</em>
   </h2>
   <p class="cta-sub reveal">$500. One time. No ongoing fees. Just a website that works hard for your business.</p>
-  <button class="btn-primary reveal" onclick="scrollTo({top: document.getElementById('contact').offsetTop, behavior:'smooth'})">
+  <button class="btn-primary reveal" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
     Get My Website for $500
   </button>
 </section>
@@ -1171,7 +1167,7 @@
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // Custom cursor
   const cursor = document.getElementById('cursor');
   const ring = document.getElementById('cursorRing');
@@ -1200,12 +1196,7 @@
     });
   });
 
-  // Scroll reveal
-  const revealEls = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); } });
-  }, { threshold: 0.1 });
-  revealEls.forEach(el => observer.observe(el));
+  // Scroll reveal handled by CSS
 
   // FAQ toggle
   function toggleFaq(el) {
