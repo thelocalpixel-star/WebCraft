@@ -1171,7 +1171,7 @@
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   // Custom cursor
   const cursor = document.getElementById('cursor');
   const ring = document.getElementById('cursorRing');
@@ -1241,4 +1241,13 @@
     const dur = 1500;
     const step = timestamp => {
       if (!start) start = timestamp;
-      const prog = Math.min((timestamp - start) / d
+      const prog = Math.min((timestamp - start) / dur, 1);
+      const ease = 1 - Math.pow(1 - prog, 3);
+      el.textContent = Math.floor(ease * target) + suffix;
+      if (prog < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+</script>
+</body>
+</html>
