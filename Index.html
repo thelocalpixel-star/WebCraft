@@ -1041,7 +1041,7 @@
           Do you handle hosting and domain setup?
           <span class="faq-icon">+</span>
         </div>
-        <div class="faq-a">We can absolutely guide you through choosing a hosting provider and connecting your domain — we just don't include those subscription costs in our flat fee, as they're billed directly to you. Most clients spend $10–15/month on hosting.</div>
+        <div class="faq-a">Yes! We can handle everything — hosting, domain registration, and ongoing maintenance — for a simple $20/month flat fee. No dealing with third-party providers, no technical headaches. Just one bill, and your site stays fast, secure, and online. Cancel anytime.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">
@@ -1089,51 +1089,60 @@
           <div style="width:40px; height:40px; border:1px solid var(--gold-dim); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--gold); font-size:0.9rem;">✉</div>
           <div>
             <div style="font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); margin-bottom:2px;">Email</div>
-            <div style="font-size:0.9rem;">hello@webcraft.studio</div>
+            <div style="font-size:0.9rem;">thelocalpixel@gmail.com</div>
           </div>
         </div>
         <div style="display:flex; gap:14px; align-items:center;">
           <div style="width:40px; height:40px; border:1px solid var(--gold-dim); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--gold); font-size:0.9rem;">📞</div>
           <div>
             <div style="font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); margin-bottom:2px;">Phone</div>
-            <div style="font-size:0.9rem;">(555) 012-3456</div>
+            <div style="font-size:0.9rem;">423-401-8663</div>
           </div>
         </div>
       </div>
     </div>
     <div class="reveal reveal-delay-2">
-      <div class="form-group">
-        <label class="form-label">Your Name</label>
-        <input type="text" class="form-input" placeholder="Jane Smith">
-      </div>
-      <div class="form-group">
-        <label class="form-label">Business Name</label>
-        <input type="text" class="form-input" placeholder="Smith's Bakery">
-      </div>
-      <div class="form-group">
-        <label class="form-label">Email Address</label>
-        <input type="email" class="form-input" placeholder="jane@smithsbakery.com">
-      </div>
-      <div class="form-group">
-        <label class="form-label">Business Type</label>
-        <select class="form-select">
-          <option value="" disabled selected>Select your industry…</option>
-          <option>Restaurant / Café</option>
-          <option>Salon / Spa</option>
-          <option>Contractor / Trades</option>
-          <option>Medical / Dental</option>
-          <option>Fitness / Wellness</option>
-          <option>Legal / Finance</option>
-          <option>Pet Services</option>
-          <option>Real Estate</option>
-          <option>Other</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label class="form-label">Tell Us About Your Business</label>
-        <textarea class="form-textarea" placeholder="What do you do, who are your customers, and what do you need from your website?"></textarea>
-      </div>
-      <button class="form-submit" onclick="handleSubmit(this)">Send My Request →</button>
+      <form action="https://formsubmit.co/thelocalpixel@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New Website Request — The Local Pixel">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <div class="form-group">
+          <label class="form-label">Your Name</label>
+          <input type="text" name="name" class="form-input" placeholder="Jane Smith" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Business Name</label>
+          <input type="text" name="business_name" class="form-input" placeholder="Smith's Bakery" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email Address</label>
+          <input type="email" name="email" class="form-input" placeholder="jane@smithsbakery.com" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Phone Number</label>
+          <input type="tel" name="phone" class="form-input" placeholder="(555) 000-0000">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Business Type</label>
+          <select name="business_type" class="form-select" required>
+            <option value="" disabled selected>Select your industry…</option>
+            <option>Restaurant / Café</option>
+            <option>Salon / Spa</option>
+            <option>Contractor / Trades</option>
+            <option>Medical / Dental</option>
+            <option>Fitness / Wellness</option>
+            <option>Legal / Finance</option>
+            <option>Pet Services</option>
+            <option>Real Estate</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Tell Us About Your Business</label>
+          <textarea name="message" class="form-textarea" placeholder="What do you do, who are your customers, and what do you need from your website?" required></textarea>
+        </div>
+        <button type="submit" class="form-submit">Send My Request →</button>
+      </form>
     </div>
   </div>
 </section>
@@ -1162,7 +1171,7 @@
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // Custom cursor
   const cursor = document.getElementById('cursor');
   const ring = document.getElementById('cursorRing');
@@ -1232,13 +1241,4 @@
     const dur = 1500;
     const step = timestamp => {
       if (!start) start = timestamp;
-      const prog = Math.min((timestamp - start) / dur, 1);
-      const ease = 1 - Math.pow(1 - prog, 3);
-      el.textContent = Math.floor(ease * target) + suffix;
-      if (prog < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }
-</script>
-</body>
-</html>
+      const prog = Math.min((timestamp - start) / d
