@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>$500 Website for Your Business — WebCraft</title>
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230D0D0D'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia%2C serif' font-size='40' font-weight='bold' fill='%23C9A84C'%3EW%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #C9A84C;
+      --gold-light: #E8C96A;
+      --gold-dim: rgba(201,168,76,0.15);
+      --gold-border: rgba(201,168,76,0.3);
+      --cream: #F5EFE0;
+      --dark: #0D0D0D;
+      --dark2: #141414;
+      --dark3: #1C1C1C;
+      --dark4: #252525;
+      --text: #C8C0B0;
+      --text-dim: rgba(200,192,176,0.6);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--dark);
+      color: var(--text);
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      letter-spacing: 0.02em;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    /* NOISE */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.35;
+    }
+
+    /* ─── LOGO BAR ─── */
+    .topbar {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 48px;
+      border-bottom: 1px solid var(--gold-border);
+      background: rgba(13,13,13,0.92);
+      backdrop-filter: blur(8px);
+    }
+
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.55rem;
+      font-weight: 600;
+      color: var(--cream);
+      letter-spacing: 0.08em;
+      text-decoration: none;
+    }
+    .logo span { color: var(--gold); }
+
+    .trust-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--gold-border);
+      padding: 7px 16px;
+      border-radius: 2px;
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      min-height: calc(100vh - 73px);
+    }
+
+    /* Left panel */
+    .hero-left {
+      padding: 72px 60px 60px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+    }
+    .orb-1 {
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(201,168,76,0.1) 0%, transparent 70%);
+      top: -120px; left: -150px;
+      animation: drift1 14s ease-in-out infinite;
+    }
+    .orb-2 {
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 70%);
+      bottom: 40px; right: -60px;
+      animation: drift2 18s ease-in-out infinite;
+    }
+    @keyframes drift1 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(40px,30px)} }
+    @keyframes drift2 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-30px,-20px)} }
+
+    .eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      animation: fadeUp 0.9s ease 0.1s both;
+    }
+    .eyebrow::before {
+      content: '';
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 4vw, 4.4rem);
+      font-weight: 600;
+      color: var(--cream);
+      line-height: 1.12;
+      letter-spacing: 0.01em;
+      margin-bottom: 32px;
+      animation: fadeUp 0.9s ease 0.2s both;
+    }
+    .hero-title em {
+      font-style: italic;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: 1rem;
+      line-height: 1.9;
+      color: var(--text);
+      max-width: 480px;
+      margin-bottom: 48px;
+      animation: fadeUp 0.9s ease 0.3s both;
+    }
+
+    /* Proof pills */
+    .proof-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 48px;
+      animation: fadeUp 0.9s ease 0.4s both;
+    }
+    .pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--gold-border);
+      padding: 9px 16px;
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+      color: var(--text);
+    }
+    .pill-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    /* Testimonial */
+    .hero-testimonial {
+      border-left: 2px solid var(--gold-border);
+      padding-left: 24px;
+      animation: fadeUp 0.9s ease 0.5s both;
+    }
+    .testimonial-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--cream);
+      line-height: 1.7;
+      margin-bottom: 10px;
+    }
+    .testimonial-author {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    /* Right panel — form */
+    .hero-right {
+      background: var(--dark2);
+      border-left: 1px solid var(--gold-border);
+      padding: 60px 56px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      animation: fadeIn 0.9s ease 0.3s both;
+    }
+    .hero-right::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .form-header {
+      margin-bottom: 36px;
+    }
+    .form-label-top {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .form-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.9rem;
+      font-weight: 600;
+      color: var(--cream);
+      line-height: 1.25;
+    }
+    .form-subtitle {
+      margin-top: 10px;
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      line-height: 1.7;
+    }
+
+    /* Form elements */
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .f-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .f-input, .f-select {
+      background: var(--dark3);
+      border: 1px solid var(--gold-border);
+      color: var(--cream);
+      font-family: 'Jost', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 300;
+      padding: 13px 16px;
+      outline: none;
+      transition: border-color 0.25s, background 0.25s;
+      width: 100%;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+    .f-input::placeholder { color: rgba(200,192,176,0.35); }
+    .f-input:focus, .f-select:focus {
+      border-color: var(--gold);
+      background: var(--dark4);
+    }
+    .f-select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23C9A84C' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      cursor: pointer;
+    }
+    .f-select option { background: var(--dark3); color: var(--cream); }
+
+    .form-submit {
+      width: 100%;
+      padding: 17px;
+      background: var(--gold);
+      color: var(--dark);
+      font-family: 'Jost', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+      margin-top: 8px;
+      position: relative;
+      overflow: hidden;
+    }
+    .form-submit:hover { background: var(--gold-light); transform: translateY(-1px); }
+    .form-submit:active { transform: translateY(0); }
+    .form-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+    .form-trust {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 14px;
+      font-size: 0.72rem;
+      color: var(--text-dim);
+      letter-spacing: 0.05em;
+    }
+    .form-trust svg { color: var(--gold); }
+
+    /* ─── SUCCESS STATE ─── */
+    .success-screen {
+      display: none;
+      text-align: center;
+      padding: 20px;
+    }
+    .success-screen.active { display: block; }
+    .success-icon {
+      width: 70px;
+      height: 70px;
+      border: 2px solid var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 28px;
+      font-size: 1.6rem;
+      color: var(--gold);
+      animation: popIn 0.5s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    @keyframes popIn { from{transform:scale(0.4);opacity:0} to{transform:scale(1);opacity:1} }
+    .success-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      color: var(--cream);
+      margin-bottom: 14px;
+    }
+    .success-sub { font-size: 0.9rem; line-height: 1.8; color: var(--text); }
+
+    /* ─── BOTTOM STRIP ─── */
+    .bottom-strip {
+      position: relative;
+      z-index: 1;
+      background: var(--dark3);
+      border-top: 1px solid var(--gold-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 60px;
+      padding: 28px 48px;
+    }
+    .strip-stat {
+      text-align: center;
+    }
+    .strip-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .strip-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-top: 5px;
+    }
+    .strip-divider {
+      width: 1px;
+      height: 36px;
+      background: var(--gold-border);
+    }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: none; }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* ─── URGENCY BANNER ─── */
+    .urgency-bar {
+      position: relative;
+      z-index: 10;
+      background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+      border-bottom: 1px solid var(--gold-border);
+      text-align: center;
+      padding: 11px 20px;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+    }
+    .urgency-bar strong { font-weight: 600; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .topbar { padding: 20px 24px; }
+      .trust-badge { display: none; }
+      .hero { grid-template-columns: 1fr; min-height: unset; }
+      .hero-left { padding: 52px 28px 40px; }
+      .hero-right { border-left: none; border-top: 1px solid var(--gold-border); padding: 44px 28px 52px; }
+      .form-row { grid-template-columns: 1fr; }
+      .bottom-strip { flex-wrap: wrap; gap: 28px; padding: 24px; }
+      .strip-divider { display: none; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-title { font-size: 2.4rem; }
+      .proof-pills .pill:nth-child(3), .proof-pills .pill:nth-child(4) { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- URGENCY BAR -->
+  <div class="urgency-bar">
+    🔥 <strong>Limited availability</strong> — We only take on 4 new clients per month to ensure quality. Spots fill fast.
+  </div>
+
+  <!-- TOP BAR -->
+  <header class="topbar">
+    <a class="logo" href="#">Web<span>Craft</span></a>
+    <div class="trust-badge">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Satisfaction Guaranteed
+    </div>
+  </header>
+
+  <!-- HERO SPLIT -->
+  <main class="hero">
+    <!-- LEFT: Copy -->
+    <div class="hero-left">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+
+      <div class="eyebrow">Local Business Websites</div>
+
+      <h1 class="hero-title">
+        Get a Professional<br>Website for Your<br>Business — <em>$500 Flat.</em>
+      </h1>
+
+      <p class="hero-sub">
+        No monthly fees. No templates. No fluff. We build you a custom, fast, mobile-ready website
+        — done in under a week — so your business looks as good online as it does in person.
+      </p>
+
+      <div class="proof-pills">
+        <div class="pill"><div class="pill-dot"></div>Live in 5–7 Days</div>
+        <div class="pill"><div class="pill-dot"></div>Custom Design</div>
+        <div class="pill"><div class="pill-dot"></div>Mobile-First</div>
+        <div class="pill"><div class="pill-dot"></div>Free Revisions</div>
+      </div>
+
+      <div class="hero-testimonial">
+        <div class="testimonial-text">
+          "We got more calls in the first two weeks after launch than we had in the entire previous month. Worth every penny."
+        </div>
+        <div class="testimonial-author">— Derek M., GradeWorks Excavation</div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Form -->
+    <div class="hero-right">
+      <!-- Form -->
+      <div id="formContainer">
+        <div class="form-header">
+          <div class="form-label-top">Free Consultation</div>
+          <div class="form-title">Claim Your Spot<br>Today</div>
+          <div class="form-subtitle">Fill this out and we'll reach out within 24 hours — no pressure, no commitment.</div>
+        </div>
+
+        <!--
+          ════════════════════════════════════════════════
+          WEB3FORMS — FREE FORM SOLUTION
+          ════════════════════════════════════════════════
+          1. Go to https://web3forms.com
+          2. Enter your email → click "Create Access Key"
+          3. Copy your access key
+          4. Paste it below where it says YOUR_ACCESS_KEY_HERE
+          ════════════════════════════════════════════════
+        -->
+        <form id="leadForm" action="https://api.web3forms.com/submit" method="POST">
+
+          <!-- Required Web3Forms config -->
+          <input type="hidden" name="access_key" value="8409ce1e-87e4-4a93-a6ea-44d0b772eab1">
+          <input type="hidden" name="subject" value="New Lead — WebCraft Facebook Ad">
+          <input type="hidden" name="from_name" value="WebCraft Lead Form">
+          <input type="hidden" name="redirect" value="false">
+          <!-- Spam honeypot -->
+          <input type="checkbox" name="botcheck" style="display:none">
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="f-label">First Name</label>
+              <input type="text" name="first_name" class="f-input" placeholder="Jane" required>
+            </div>
+            <div class="form-group">
+              <label class="f-label">Last Name</label>
+              <input type="text" name="last_name" class="f-input" placeholder="Smith" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="f-label">Phone Number</label>
+            <input type="tel" name="phone" class="f-input" placeholder="(555) 000-0000" required>
+          </div>
+
+          <div class="form-group">
+            <label class="f-label">Email Address</label>
+            <input type="email" name="email" class="f-input" placeholder="jane@yourbusiness.com" required>
+          </div>
+
+          <div class="form-group">
+            <label class="f-label">Business Type</label>
+            <select name="business_type" class="f-input f-select" required>
+              <option value="" disabled selected>Select your industry…</option>
+              <option>Restaurant / Café</option>
+              <option>Salon / Spa</option>
+              <option>Contractor / Trades</option>
+              <option>Landscaping / Lawn Care</option>
+              <option>Medical / Dental</option>
+              <option>Fitness / Wellness</option>
+              <option>Auto / Mechanic</option>
+              <option>Pet Services</option>
+              <option>Real Estate</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="f-label">Do You Currently Have a Website?</label>
+            <select name="has_website" class="f-input f-select" required>
+              <option value="" disabled selected>Select…</option>
+              <option>No — I need one built from scratch</option>
+              <option>Yes — but I need it redesigned</option>
+              <option>Not sure / It's outdated</option>
+            </select>
+          </div>
+
+          <button type="submit" class="form-submit" id="submitBtn">
+            Claim My Free Consultation →
+          </button>
+
+          <div class="form-trust">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            No spam. No commitment. We'll call or text you.
+          </div>
+        </form>
+      </div>
+
+      <!-- Success state -->
+      <div class="success-screen" id="successScreen">
+        <div class="success-icon">✓</div>
+        <div class="success-title">You're on the list.</div>
+        <div class="success-sub">
+          We'll reach out within 24 hours to schedule your free call.<br><br>
+          In the meantime, check out some of our recent work at the link below.
+        </div>
+        <div style="margin-top:32px;text-align:left;">
+          <div style="font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;text-align:center;">Recent Work</div>
+
+          <a href="https://thelocalpixel-star.github.io/GradeWorks-Excavation/" target="_blank"
+            style="display:flex;align-items:center;gap:14px;padding:14px 16px;border:1px solid var(--gold-border);text-decoration:none;margin-bottom:10px;transition:background 0.25s;background:transparent;"
+            onmouseover="this.style.background='var(--gold-dim)'" onmouseout="this.style.background='transparent'">
+            <div style="width:38px;height:38px;border:1px solid var(--gold-border);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;">🏗️</div>
+            <div>
+              <div style="font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--cream);margin-bottom:2px;">GradeWorks Excavation</div>
+              <div style="font-size:0.72rem;color:var(--text-dim);">Excavation & Hardscapes · Alabama</div>
+            </div>
+            <div style="margin-left:auto;color:var(--gold);font-size:0.8rem;">↗</div>
+          </a>
+
+          <a href="https://thelocalpixel-star.github.io/mckeelexteriors/" target="_blank"
+            style="display:flex;align-items:center;gap:14px;padding:14px 16px;border:1px solid var(--gold-border);text-decoration:none;margin-bottom:10px;transition:background 0.25s;background:transparent;"
+            onmouseover="this.style.background='var(--gold-dim)'" onmouseout="this.style.background='transparent'">
+            <div style="width:38px;height:38px;border:1px solid var(--gold-border);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;">🏠</div>
+            <div>
+              <div style="font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--cream);margin-bottom:2px;">McKeel Exteriors</div>
+              <div style="font-size:0.72rem;color:var(--text-dim);">Roofing & Home Services · Rossville, GA</div>
+            </div>
+            <div style="margin-left:auto;color:var(--gold);font-size:0.8rem;">↗</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- BOTTOM TRUST STRIP -->
+  <div class="bottom-strip">
+    <div class="strip-stat">
+      <div class="strip-num">$500</div>
+      <div class="strip-label">One-Time Flat Fee</div>
+    </div>
+    <div class="strip-divider"></div>
+    <div class="strip-stat">
+      <div class="strip-num">5–7</div>
+      <div class="strip-label">Days to Launch</div>
+    </div>
+    <div class="strip-divider"></div>
+    <div class="strip-stat">
+      <div class="strip-num">∞</div>
+      <div class="strip-label">Free Revisions</div>
+    </div>
+    <div class="strip-divider"></div>
+    <div class="strip-stat">
+      <div class="strip-num">100%</div>
+      <div class="strip-label">Custom Built</div>
+    </div>
+    <div class="strip-divider"></div>
+    <div class="strip-stat">
+      <div class="strip-num">$0</div>
+      <div class="strip-label">Monthly Fees</div>
+    </div>
+  </div>
+
+  <script>
+    // Web3Forms AJAX submit — no page redirect needed
+    document.getElementById('leadForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = document.getElementById('submitBtn');
+      btn.disabled = true;
+      btn.textContent = 'Submitting…';
+
+      const formData = new FormData(this);
+      const obj = Object.fromEntries(formData);
+
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(obj)
+        });
+        const data = await res.json();
+
+        if (data.success) {
+          document.getElementById('formContainer').style.display = 'none';
+          document.getElementById('successScreen').classList.add('active');
+        } else {
+          btn.disabled = false;
+          btn.textContent = '⚠ Something went wrong — try again';
+          btn.style.background = '#8B3A3A';
+        }
+      } catch (err) {
+        btn.disabled = false;
+        btn.textContent = '⚠ Network error — try again';
+        btn.style.background = '#8B3A3A';
+      }
+    });
+  </script>
+</body>
+</html>
