@@ -1,10 +1,31 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://localwebcraft.com/</loc></url>
-  <url><loc>https://localwebcraft.com/webcraft-ad.html</loc></url>
-  <url><loc>https://localwebcraft.com/website-cost-east-tennessee.html</loc></url>
-  <url><loc>https://localwebcraft.com/local-business-website-checklist.html</loc></url>
-  <url><loc>https://localwebcraft.com/contractor-website-checklist.html</loc></url>
-  <url><loc>https://localwebcraft.com/website-domain-hosting-ownership.html</loc></url>
-  <url><loc>https://localwebcraft.com/prepare-content-for-business-website.html</loc></url>
+  <url>
+    <loc>https://localwebcraft.com/</loc>
+    <lastmod>2026-11-03</lastmod>
+  </url>
+  <url>
+    <loc>https://localwebcraft.com/webcraft-ad.html</loc>
+    <lastmod>2026-11-03</lastmod>
+  </url>
+  <url>
+    <loc>https://localwebcraft.com/website-cost-east-tennessee.html</loc>
+    <lastmod>2026-11-03</lastmod>
+  </url>
+  <url>
+    <loc>https://localwebcraft.com/local-business-website-checklist.html</loc>
+    <lastmod>2026-11-03</lastmod>
+  </url>
+  <url>
+    <loc>https://localwebcraft.com/contractor-website-checklist.html</loc>
+    <lastmod>2026-11-03</lastmod>
+  </url>
+  <url>
+    <loc>https://localwebcraft.com/website-domain-hosting-ownership.html</loc>
+    <lastmod>2026-11-03</lastmod>
+  </url>
+  <url>
+    <loc>https://localwebcraft.com/prepare-content-for-business-website.html</loc>
+    <lastmod>2026-11-03</lastmod>
+  </url>
 </urlset>
