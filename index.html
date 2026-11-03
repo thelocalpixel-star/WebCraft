@@ -1,1919 +1,343 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WebCraft — $500 Local Business Websites</title>
-  <link rel="icon" type="image/svg+xml"
-    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230D0D0D'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia%2C serif' font-size='40' font-weight='bold' fill='%23C9A84C'%3EW%3C/text%3E%3C/svg%3E">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Custom $500 small business websites for Cleveland, Chattanooga, Athens and Knoxville, TN. Mobile-friendly design, contact forms and full ownership.">
+  <link rel="canonical" href="https://localwebcraft.com/">
+  <meta property="og:title" content="Web Design for East Tennessee Businesses | WebCraft">
+  <meta property="og:description" content="Custom, mobile-friendly websites for local businesses in Cleveland, Chattanooga, Athens and Knoxville, Tennessee.">
+  <meta property="og:url" content="https://localwebcraft.com/">
+  <meta property="og:type" content="website">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"ProfessionalService","name":"WebCraft","url":"https://localwebcraft.com/","telephone":"+1-423-401-8663","email":"Hello@localwebcraft.com","description":"Custom website design for small businesses in East Tennessee.","areaServed":[{"@type":"City","name":"Cleveland, Tennessee"},{"@type":"City","name":"Chattanooga, Tennessee"},{"@type":"City","name":"Athens, Tennessee"},{"@type":"City","name":"Knoxville, Tennessee"}]}
+  </script>
+  <meta name="theme-color" content="#f8f9f6">
+  <title>Web Design in Cleveland & Chattanooga, TN | WebCraft</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23183e36'/%3E%3Cpath d='m12 22 8 23 12-23 12 23 8-23' fill='none' stroke='%23ddefd9' stroke-width='5' stroke-linejoin='round'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap"
-    rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    :root {
-      --gold: #C9A84C;
-      --gold-light: #E8C96A;
-      --gold-dim: rgba(201, 168, 76, 0.15);
-      --cream: #F5EFE0;
-      --cream-dim: rgba(245, 239, 224, 0.65);
-      --dark: #0D0D0D;
-      --dark2: #141414;
-      --dark3: #1C1C1C;
-      --dark4: #252525;
-      --text: #C8C0B0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background: var(--dark);
-      color: var(--text);
-      font-family: 'Jost', sans-serif;
-      font-weight: 300;
-      letter-spacing: 0.02em;
-      overflow-x: hidden;
-      cursor: none;
-    }
-
-    /* CURSOR */
-    .cursor {
-      width: 10px;
-      height: 10px;
-      background: var(--gold);
-      border-radius: 50%;
-      position: fixed;
-      top: 0;
-      left: 0;
-      pointer-events: none;
-      z-index: 9999;
-      transition: transform 0.15s ease;
-      mix-blend-mode: difference;
-    }
-
-    .cursor-ring {
-      width: 36px;
-      height: 36px;
-      border: 1px solid rgba(201, 168, 76, 0.5);
-      border-radius: 50%;
-      position: fixed;
-      top: 0;
-      left: 0;
-      pointer-events: none;
-      z-index: 9998;
-      transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), width 0.3s, height 0.3s, border-color 0.3s;
-    }
-
-    body:hover .cursor-ring {
-      border-color: var(--gold);
-    }
-
-    /* NOISE OVERLAY */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 0;
-      opacity: 0.35;
-    }
-
-    /* NAV */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 28px 60px;
-      background: linear-gradient(to bottom, rgba(13, 13, 13, 0.95) 0%, transparent 100%);
-      animation: fadeDown 1s ease 0.2s both;
-    }
-
-    @keyframes fadeDown {
-      from {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-
-      to {
-        opacity: 1;
-        transform: none;
-      }
-    }
-
-    .logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.6rem;
-      font-weight: 600;
-      color: var(--cream);
-      letter-spacing: 0.08em;
-      text-decoration: none;
-    }
-
-    .logo span {
-      color: var(--gold);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 40px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: var(--text);
-      text-decoration: none;
-      font-size: 0.78rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      transition: color 0.3s;
-      position: relative;
-    }
-
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: var(--gold);
-      transform: scaleX(0);
-      transition: transform 0.3s;
-    }
-
-    .nav-links a:hover {
-      color: var(--gold);
-    }
-
-    .nav-links a:hover::after {
-      transform: scaleX(1);
-    }
-
-    .nav-cta {
-      background: transparent;
-      border: 1px solid var(--gold);
-      color: var(--gold);
-      padding: 10px 26px;
-      font-family: 'Jost', sans-serif;
-      font-size: 0.78rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      cursor: none;
-      transition: background 0.3s, color 0.3s;
-    }
-
-    .nav-cta:hover {
-      background: var(--gold);
-      color: var(--dark);
-    }
-
-    /* HERO */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 120px 40px 80px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* Animated gradient orbs */
-    .orb {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(80px);
-      pointer-events: none;
-    }
-
-    .orb-1 {
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(201, 168, 76, 0.12) 0%, transparent 70%);
-      top: -100px;
-      left: -150px;
-      animation: drift1 12s ease-in-out infinite;
-    }
-
-    .orb-2 {
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, rgba(201, 168, 76, 0.08) 0%, transparent 70%);
-      bottom: 0;
-      right: -100px;
-      animation: drift2 15s ease-in-out infinite;
-    }
-
-    @keyframes drift1 {
-
-      0%,
-      100% {
-        transform: translate(0, 0) scale(1);
-      }
-
-      50% {
-        transform: translate(60px, 40px) scale(1.1);
-      }
-    }
-
-    @keyframes drift2 {
-
-      0%,
-      100% {
-        transform: translate(0, 0) scale(1);
-      }
-
-      50% {
-        transform: translate(-40px, -60px) scale(1.15);
-      }
-    }
-
-    /* Grid lines decoration */
-    .hero-grid {
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(201, 168, 76, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(201, 168, 76, 0.04) 1px, transparent 1px);
-      background-size: 80px 80px;
-      mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 0%, transparent 100%);
-    }
-
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      border: 1px solid rgba(201, 168, 76, 0.3);
-      padding: 8px 20px;
-      border-radius: 100px;
-      font-size: 0.72rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 36px;
-      animation: fadeUp 1s ease 0.4s both;
-    }
-
-    .hero-badge::before {
-      content: '';
-      width: 6px;
-      height: 6px;
-      background: var(--gold);
-      border-radius: 50%;
-      animation: pulse 2s ease infinite;
-    }
-
-    @keyframes pulse {
-
-      0%,
-      100% {
-        opacity: 1;
-      }
-
-      50% {
-        opacity: 0.3;
-      }
-    }
-
-    .hero-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(3.5rem, 9vw, 8rem);
-      font-weight: 300;
-      color: var(--cream);
-      line-height: 0.95;
-      letter-spacing: -0.02em;
-      margin-bottom: 32px;
-      animation: fadeUp 1s ease 0.6s both;
-    }
-
-    .hero-title em {
-      font-style: italic;
-      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      background-size: 200% auto;
-      animation: shimmer 4s linear infinite;
-    }
-
-    @keyframes shimmer {
-      to {
-        background-position: 200% center;
-      }
-    }
-
-    .hero-price-block {
-      display: inline-flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 40px;
-      animation: fadeUp 1s ease 0.8s both;
-    }
-
-    .hero-price {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      font-weight: 600;
-      color: var(--gold);
-      letter-spacing: -0.02em;
-    }
-
-    .hero-price-divider {
-      width: 1px;
-      height: 48px;
-      background: rgba(201, 168, 76, 0.3);
-    }
-
-    .hero-price-sub {
-      text-align: left;
-      font-size: 0.78rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      line-height: 1.6;
-      color: var(--cream-dim);
-    }
-
-    .hero-desc {
-      max-width: 520px;
-      font-size: 1rem;
-      line-height: 1.8;
-      color: var(--text);
-      margin-bottom: 52px;
-      animation: fadeUp 1s ease 1s both;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      justify-content: center;
-      animation: fadeUp 1s ease 1.1s both;
-    }
-
-    .btn-primary {
-      background: var(--gold);
-      color: var(--dark);
-      border: none;
-      padding: 16px 44px;
-      font-family: 'Jost', sans-serif;
-      font-size: 0.8rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      font-weight: 500;
-      cursor: none;
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.2s;
-    }
-
-    .btn-primary::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, transparent 100%);
-      transform: translateX(-100%) skew(-15deg);
-      transition: transform 0.5s ease;
-    }
-
-    .btn-primary:hover::after {
-      transform: translateX(120%) skew(-15deg);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: var(--cream);
-      border: 1px solid rgba(245, 239, 224, 0.2);
-      padding: 16px 44px;
-      font-family: 'Jost', sans-serif;
-      font-size: 0.8rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      font-weight: 400;
-      cursor: none;
-      transition: border-color 0.3s, color 0.3s;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .btn-secondary:hover {
-      border-color: var(--gold);
-      color: var(--gold);
-    }
-
-    .btn-secondary .arrow {
-      transition: transform 0.3s;
-    }
-
-    .btn-secondary:hover .arrow {
-      transform: translateX(6px);
-    }
-
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-
-      to {
-        opacity: 1;
-        transform: none;
-      }
-    }
-
-    /* MARQUEE STRIP */
-    .marquee-strip {
-      padding: 18px 0;
-      background: var(--gold);
-      overflow: hidden;
-      position: relative;
-    }
-
-    .marquee-track {
-      display: flex;
-      gap: 60px;
-      animation: marquee 20s linear infinite;
-      width: max-content;
-    }
-
-    @keyframes marquee {
-      from {
-        transform: translateX(0);
-      }
-
-      to {
-        transform: translateX(-50%);
-      }
-    }
-
-    .marquee-item {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      font-size: 0.72rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--dark);
-      font-weight: 500;
-      white-space: nowrap;
-    }
-
-    .marquee-dot {
-      width: 4px;
-      height: 4px;
-      background: var(--dark);
-      border-radius: 50%;
-      opacity: 0.4;
-    }
-
-    /* SECTION COMMONS */
-    section {
-      position: relative;
-      z-index: 1;
-    }
-
-    .section-label {
-      font-size: 0.7rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 16px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .section-label::before {
-      content: '';
-      display: block;
-      width: 30px;
-      height: 1px;
-      background: var(--gold);
-    }
-
-    .section-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.2rem, 4vw, 3.8rem);
-      font-weight: 300;
-      color: var(--cream);
-      line-height: 1.1;
-    }
-
-    .section-title strong {
-      font-weight: 600;
-      font-style: italic;
-    }
-
-    /* WHAT YOU GET */
-    .what-section {
-      padding: 120px 60px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 100px;
-      align-items: center;
-      max-width: 1300px;
-      margin: 0 auto;
-    }
-
-    .what-left {}
-
-    .what-desc {
-      margin-top: 24px;
-      line-height: 1.9;
-      font-size: 0.95rem;
-    }
-
-    .what-right {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2px;
-    }
-
-    .feature-card {
-      background: var(--dark3);
-      padding: 36px 28px;
-      position: relative;
-      overflow: hidden;
-      transition: background 0.3s;
-    }
-
-    .feature-card::before {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: var(--gold);
-      transform: scaleX(0);
-      transition: transform 0.4s ease;
-      transform-origin: left;
-    }
-
-    .feature-card:hover {
-      background: var(--dark4);
-    }
-
-    .feature-card:hover::before {
-      transform: scaleX(1);
-    }
-
-    .feature-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.5rem;
-      font-weight: 300;
-      color: rgba(201, 168, 76, 0.2);
-      line-height: 1;
-      margin-bottom: 16px;
-    }
-
-    .feature-title {
-      font-size: 0.88rem;
-      font-weight: 500;
-      color: var(--cream);
-      letter-spacing: 0.05em;
-      margin-bottom: 10px;
-    }
-
-    .feature-desc {
-      font-size: 0.8rem;
-      line-height: 1.7;
-    }
-
-    /* BUSINESS TYPES */
-    .biz-section {
-      padding: 80px 60px;
-      background: var(--dark2);
-    }
-
-    .biz-inner {
-      max-width: 1300px;
-      margin: 0 auto;
-    }
-
-    .biz-header {
-      text-align: center;
-      margin-bottom: 64px;
-    }
-
-    .biz-header .section-label {
-      justify-content: center;
-    }
-
-    .biz-header .section-label::before {
-      display: none;
-    }
-
-    .biz-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 2px;
-    }
-
-    .biz-card {
-      background: var(--dark3);
-      padding: 48px 32px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.3s, background 0.3s;
-      cursor: none;
-    }
-
-    .biz-card:hover {
-      background: var(--dark4);
-      transform: translateY(-4px);
-    }
-
-    .biz-icon {
-      font-size: 2.4rem;
-      margin-bottom: 20px;
-      display: block;
-      transition: transform 0.3s;
-    }
-
-    .biz-card:hover .biz-icon {
-      transform: scale(1.15);
-    }
-
-    .biz-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem;
-      font-weight: 600;
-      color: var(--cream);
-      margin-bottom: 10px;
-    }
-
-    .biz-desc {
-      font-size: 0.78rem;
-      line-height: 1.7;
-    }
-
-    .biz-card::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--gold), transparent);
-      transform: scaleX(0);
-      transition: transform 0.5s ease;
-    }
-
-    .biz-card:hover::after {
-      transform: scaleX(1);
-    }
-
-    /* PROCESS */
-    .process-section {
-      padding: 120px 60px;
-      max-width: 1300px;
-      margin: 0 auto;
-    }
-
-    .process-header {
-      margin-bottom: 80px;
-    }
-
-    .process-steps {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      position: relative;
-    }
-
-    .process-steps::before {
-      content: '';
-      position: absolute;
-      top: 28px;
-      left: 10%;
-      right: 10%;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--gold-dim), var(--gold-dim), transparent);
-    }
-
-    .process-step {
-      padding: 0 20px;
-      text-align: center;
-    }
-
-    .step-num {
-      width: 56px;
-      height: 56px;
-      border: 1px solid rgba(201, 168, 76, 0.3);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 28px;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.2rem;
-      color: var(--gold);
-      background: var(--dark);
-      position: relative;
-      z-index: 1;
-      transition: background 0.3s, border-color 0.3s;
-    }
-
-    .process-step:hover .step-num {
-      background: var(--gold-dim);
-      border-color: var(--gold);
-    }
-
-    .step-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem;
-      font-weight: 600;
-      color: var(--cream);
-      margin-bottom: 12px;
-    }
-
-    .step-desc {
-      font-size: 0.82rem;
-      line-height: 1.8;
-    }
-
-    /* PRICING */
-    .pricing-section {
-      padding: 120px 60px;
-      background: var(--dark2);
-      text-align: center;
-    }
-
-    .pricing-inner {
-      max-width: 960px;
-      margin: 0 auto;
-    }
-
-    .pricing-header .section-label {
-      justify-content: center;
-    }
-
-    .pricing-header .section-label::before {
-      display: none;
-    }
-
-    .pricing-card {
-      margin-top: 64px;
-      border: 1px solid rgba(201, 168, 76, 0.2);
-      background: linear-gradient(135deg, var(--dark3) 0%, var(--dark4) 100%);
-      padding: 72px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .pricing-card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(201, 168, 76, 0.06) 0%, transparent 70%);
-    }
-
-    .pricing-eyebrow {
-      font-size: 0.72rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 24px;
-    }
-
-    .pricing-amount {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(4rem, 10vw, 9rem);
-      font-weight: 300;
-      color: var(--cream);
-      line-height: 1;
-      letter-spacing: -0.04em;
-      margin-bottom: 8px;
-    }
-
-    .pricing-amount sup {
-      font-size: 0.35em;
-      vertical-align: super;
-      color: var(--gold);
-    }
-
-    .pricing-subtitle {
-      font-size: 0.88rem;
-      color: var(--text);
-      margin-bottom: 48px;
-      letter-spacing: 0.05em;
-    }
-
-    .pricing-divider {
-      width: 80px;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--gold), transparent);
-      margin: 0 auto 48px;
-    }
-
-    .pricing-perks {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
-      text-align: left;
-      margin-bottom: 60px;
-    }
-
-    .perk {
-      display: flex;
-      gap: 14px;
-      align-items: flex-start;
-    }
-
-    .perk-check {
-      width: 20px;
-      height: 20px;
-      flex-shrink: 0;
-      border: 1px solid var(--gold);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--gold);
-      font-size: 0.65rem;
-      margin-top: 2px;
-    }
-
-    .perk-text {
-      font-size: 0.85rem;
-      line-height: 1.6;
-    }
-
-    .pricing-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 16px;
-      background: var(--gold);
-      color: var(--dark);
-      padding: 20px 60px;
-      font-family: 'Jost', sans-serif;
-      font-size: 0.85rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      font-weight: 500;
-      cursor: none;
-      border: none;
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.2s, box-shadow 0.3s;
-    }
-
-    .pricing-cta:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 20px 60px rgba(201, 168, 76, 0.3);
-    }
-
-    .pricing-cta::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, transparent 50%);
-      transform: translateX(-100%) skew(-15deg);
-      transition: transform 0.6s ease;
-    }
-
-    .pricing-cta:hover::after {
-      transform: translateX(150%) skew(-15deg);
-    }
-
-    /* TESTIMONIALS */
-    .testimonials-section {
-      padding: 120px 60px;
-      max-width: 1300px;
-      margin: 0 auto;
-    }
-
-    .testimonials-header {
-      margin-bottom: 64px;
-    }
-
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
-    }
-
-    .testimonial {
-      background: var(--dark3);
-      padding: 48px 36px;
-      position: relative;
-      transition: background 0.3s;
-    }
-
-    .testimonial:hover {
-      background: var(--dark4);
-    }
-
-    .testimonial::before {
-      content: '\201C';
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 6rem;
-      line-height: 1;
-      color: rgba(201, 168, 76, 0.12);
-      position: absolute;
-      top: 16px;
-      left: 28px;
-      pointer-events: none;
-    }
-
-    .testimonial-text {
-      font-size: 0.9rem;
-      line-height: 1.9;
-      font-style: italic;
-      color: var(--cream-dim);
-      margin-bottom: 32px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .testimonial-author {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .author-avatar {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: var(--gold-dim);
-      border: 1px solid rgba(201, 168, 76, 0.3);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem;
-      color: var(--gold);
-    }
-
-    .author-name {
-      font-size: 0.85rem;
-      color: var(--cream);
-      font-weight: 500;
-      letter-spacing: 0.05em;
-    }
-
-    .author-biz {
-      font-size: 0.75rem;
-      color: var(--gold);
-      margin-top: 2px;
-    }
-
-    /* STARS */
-    .stars {
-      color: var(--gold);
-      font-size: 0.75rem;
-      letter-spacing: 2px;
-      margin-bottom: 20px;
-    }
-
-    /* FAQ */
-    .faq-section {
-      padding: 80px 60px;
-      background: var(--dark2);
-    }
-
-    .faq-inner {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .faq-header {
-      text-align: center;
-      margin-bottom: 60px;
-    }
-
-    .faq-header .section-label {
-      justify-content: center;
-    }
-
-    .faq-header .section-label::before {
-      display: none;
-    }
-
-    .faq-item {
-      border-bottom: 1px solid rgba(201, 168, 76, 0.1);
-      padding: 28px 0;
-    }
-
-    .faq-q {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      cursor: none;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.15rem;
-      font-weight: 600;
-      color: var(--cream);
-      transition: color 0.3s;
-    }
-
-    .faq-q:hover {
-      color: var(--gold);
-    }
-
-    .faq-icon {
-      width: 28px;
-      height: 28px;
-      border: 1px solid rgba(201, 168, 76, 0.3);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--gold);
-      font-size: 1rem;
-      flex-shrink: 0;
-      transition: transform 0.3s, background 0.3s;
-    }
-
-    .faq-item.open .faq-icon {
-      transform: rotate(45deg);
-      background: var(--gold-dim);
-    }
-
-    .faq-a {
-      font-size: 0.88rem;
-      line-height: 1.9;
-      color: var(--text);
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease, padding 0.3s;
-    }
-
-    .faq-item.open .faq-a {
-      max-height: 200px;
-      padding-top: 20px;
-    }
-
-    /* CTA FOOTER */
-    .cta-section {
-      padding: 140px 60px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .cta-bg {
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(201, 168, 76, 0.07) 0%, transparent 70%);
-    }
-
-    .cta-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.5rem, 6vw, 5rem);
-      font-weight: 300;
-      color: var(--cream);
-      line-height: 1.1;
-      margin-bottom: 24px;
-      position: relative;
-    }
-
-    .cta-sub {
-      font-size: 0.95rem;
-      color: var(--text);
-      margin-bottom: 52px;
-      position: relative;
-    }
-
-    /* FOOTER */
-    footer {
-      border-top: 1px solid rgba(201, 168, 76, 0.1);
-      padding: 40px 60px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .footer-copy {
-      font-size: 0.78rem;
-      color: rgba(200, 192, 176, 0.4);
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 32px;
-    }
-
-    .footer-links a {
-      font-size: 0.75rem;
-      color: rgba(200, 192, 176, 0.4);
-      text-decoration: none;
-      letter-spacing: 0.1em;
-      transition: color 0.3s;
-    }
-
-    .footer-links a:hover {
-      color: var(--gold);
-    }
-
-    /* SCROLL REVEAL - CSS only, no JS dependency */
-    .reveal {
-      opacity: 1;
-      transform: none;
-    }
-
-    .reveal-delay-1 {}
-
-    .reveal-delay-2 {}
-
-    .reveal-delay-3 {}
-
-    .reveal-delay-4 {}
-
-    /* FORM */
-    .contact-section {
-      padding: 120px 60px;
-      background: var(--dark2);
-    }
-
-    .contact-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 100px;
-      align-items: start;
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    .form-label {
-      display: block;
-      font-size: 0.72rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 10px;
-    }
-
-    .form-input,
-    .form-select,
-    .form-textarea {
-      width: 100%;
-      background: var(--dark3);
-      border: 1px solid rgba(201, 168, 76, 0.15);
-      color: var(--cream);
-      padding: 14px 18px;
-      font-family: 'Jost', sans-serif;
-      font-size: 0.9rem;
-      outline: none;
-      transition: border-color 0.3s;
-      cursor: none;
-      appearance: none;
-    }
-
-    .form-input:focus,
-    .form-select:focus,
-    .form-textarea:focus {
-      border-color: var(--gold);
-    }
-
-    .form-textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-
-    .form-select {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23C9A84C' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 16px center;
-    }
-
-    .form-select option {
-      background: var(--dark3);
-    }
-
-    .form-submit {
-      width: 100%;
-      padding: 18px;
-      background: var(--gold);
-      color: var(--dark);
-      border: none;
-      font-family: 'Jost', sans-serif;
-      font-size: 0.8rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      font-weight: 500;
-      cursor: none;
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.2s, box-shadow 0.3s;
-      margin-top: 8px;
-    }
-
-    .form-submit:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 16px 50px rgba(201, 168, 76, 0.25);
-    }
-
-    @media (max-width: 900px) {
-      nav {
-        padding: 20px 24px;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      .what-section,
-      .contact-inner {
-        grid-template-columns: 1fr;
-        gap: 60px;
-      }
-
-      .biz-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .process-steps {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 48px;
-      }
-
-      .process-steps::before {
-        display: none;
-      }
-
-      .testimonials-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .pricing-perks {
-        grid-template-columns: 1fr;
-      }
-
-      .pricing-card {
-        padding: 48px 28px;
-      }
-
-      section,
-      .what-section,
-      .process-section,
-      .testimonials-section,
-      .faq-inner {
-        padding-left: 24px;
-        padding-right: 24px;
-      }
-
-      .biz-section {
-        padding: 80px 24px;
-      }
-
-      .pricing-section {
-        padding: 80px 24px;
-      }
-
-      .contact-section {
-        padding: 80px 24px;
-      }
-
-      .cta-section {
-        padding: 80px 24px;
-      }
-
-      footer {
-        flex-direction: column;
-        gap: 20px;
-        text-align: center;
-        padding: 32px 24px;
-      }
+    :root { --paper:#fafbf8; --ink:#172e29; --muted:#596861; --green:#173f35; --mint:#eaf0e8; --lime:#e0f0d8; --line:#dce4da; --yellow:#f3d582; --white:#fff; --radius:18px; }
+    *,*::before,*::after { box-sizing:border-box; }
+    html { scroll-behavior:smooth; scroll-padding-top:30px; }
+    body { margin:0; background:var(--paper); color:var(--ink); font-family:'Inter',sans-serif; font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased; }
+    a { color:inherit; text-decoration:none; }
+    button,input,textarea { font:inherit; }
+    a,button,summary { -webkit-tap-highlight-color:transparent; }
+    button,summary { cursor:pointer; }
+    img { display:block; width:100%; object-fit:cover; }
+    h1,h2,h3,p { margin:0; }
+    h1,h2,h3,.brand { font-family:'Inter',sans-serif; }
+    :focus-visible { outline:3px solid #648254; outline-offset:5px; }
+    ::selection { background:var(--lime); color:var(--green); }
+    .wrap { width:min(1180px,calc(100% - 96px)); margin-inline:auto; }
+    .skip-link { position:absolute; top:-80px; left:20px; z-index:10; background:var(--green); color:white; padding:12px 20px; }
+    .skip-link:focus { top:10px; }
+    .site-header { height:106px; display:flex; align-items:center; justify-content:space-between; gap:30px; }
+    .brand { display:inline-flex; align-items:center; gap:10px; font-size:24px; letter-spacing:-1.1px; font-weight:700; }
+    .brand-mark { width:30px; height:30px; }
+    .brand-dot { color:#83966d; }
+    .nav-links { display:flex; align-items:center; gap:32px; font-size:13px; font-weight:550; }
+    .nav-links>a:not(.button):hover { text-decoration:underline; text-underline-offset:6px; }
+    .button { display:inline-flex; gap:28px; align-items:center; justify-content:center; padding:15px 23px; border:1px solid transparent; border-radius:9px; background:var(--green); color:white; font-size:14px; font-weight:600; line-height:1.5; transition:background .2s,transform .2s; }
+    .button:hover { background:#2d5648; transform:translateY(-2px); }
+    .button .arrow { font-size:20px; line-height:1; font-weight:400; }
+    .button-outline { background:transparent; border-color:#b6c2b6; color:var(--ink); padding:11px 18px; gap:22px; }
+    .button-outline:hover { color:white; }
+    .eyebrow { display:flex; align-items:center; gap:9px; font-size:11px; font-weight:650; letter-spacing:1.5px; text-transform:uppercase; }
+    .eyebrow-dot { height:6px; width:6px; border-radius:50%; background:#738d5b; }
+    .hero { display:grid; grid-template-columns:1.04fr 1fr; gap:28px; align-items:center; padding:61px 0 82px; }
+    .hero-copy { padding-bottom:12px; }
+    .hero h1 { font-size:clamp(54px,5.5vw,76px); font-weight:700; letter-spacing:-4.2px; line-height:1.06; margin:25px 0 26px; }
+    .hero h1 .soft-word { color:#7b8e69; position:relative; display:inline-block; }
+    .soft-word::after { content:''; position:absolute; height:8px; border-top:2px solid #96a880; border-radius:50%; left:0; right:0; bottom:-8px; transform:rotate(-3deg); }
+    .hero-description { color:var(--muted); font-size:16px; max-width:360px; line-height:1.8; }
+    .hero-actions { display:flex; align-items:center; gap:25px; margin-top:31px; }
+    .text-link { font-size:13px; font-weight:600; display:inline-flex; align-items:center; gap:10px; }
+    .text-link:hover { text-decoration:underline; text-underline-offset:5px; }
+    .hero-note { display:flex; align-items:center; gap:8px; color:var(--muted); font-size:11px; margin-top:19px; }
+    .hero-note svg { width:14px; height:14px; }
+    .showcase { height:490px; position:relative; isolation:isolate; }
+    .showcase-backdrop { position:absolute; inset:5px -8px 28px 20px; background:#e8ede4; border-radius:48% 48% 24px 24px; transform:rotate(-3deg); z-index:-1; }
+    .showcase-grid { position:absolute; inset:5px -8px 28px 20px; background-image:radial-gradient(#9faa963d .8px,transparent .8px); background-size:15px 15px; border-radius:48% 48% 24px 24px; z-index:-1; }
+    .browser { overflow:hidden; background:#f9f6ef; border:1px solid #fff; border-radius:9px; box-shadow:0 16px 38px #263a2e19,0 3px 9px #263a2e0b; }
+    .browser-bar { height:26px; padding:0 10px; display:flex; align-items:center; gap:4px; background:#fff; border-bottom:1px solid #eaeae6; }
+    .browser-bar i { width:4px; height:4px; background:#d4d8d0; border-radius:50%; }
+    .browser-url { margin:auto; padding-right:18px; color:#899086; font:7px 'Inter',sans-serif; }
+    .cafe-site { position:absolute; width:87%; left:0; top:42px; transform:rotate(-5deg); }
+    .mini-nav { padding:16px 22px; display:flex; justify-content:space-between; align-items:center; font-size:7px; }
+    .mini-brand { font-family:Georgia,serif; font-size:17px; letter-spacing:-.8px; }
+    .mini-menu { display:flex; gap:14px; font-size:6px; }
+    .cafe-content { display:grid; grid-template-columns:1.1fr 1fr; min-height:248px; }
+    .cafe-copy { padding:23px 8px 25px 24px; }
+    .mini-eyebrow { font-size:5px; letter-spacing:1.3px; font-weight:600; }
+    .cafe-copy h3 { font:39px/.98 Georgia,serif; letter-spacing:-1.7px; margin:16px 0 12px; color:#473d2f; }
+    .cafe-copy h3 em { font-weight:400; }
+    .cafe-copy p { font-size:6px; line-height:1.6; color:#7c7468; max-width:120px; }
+    .mini-cta { display:inline-block; background:#665c43; color:white; padding:7px 11px; font-size:5px; margin-top:16px; border-radius:2px; }
+    .cafe-image { object-position:48% center; height:248px; border-radius:80px 0 0 0; }
+    .cafe-bottom { display:flex; justify-content:space-between; padding:13px 24px; font-size:5px; letter-spacing:.8px; color:#8b806c; }
+    .mobile-site { position:absolute; width:157px; height:280px; right:-1px; top:199px; transform:rotate(8deg); border:5px solid white; border-radius:23px; background:#e1e5d9; box-shadow:0 12px 35px #223c2e26; overflow:hidden; }
+    .mobile-top { padding:12px 12px 7px; display:flex; justify-content:space-between; font-size:8px; }
+    .mobile-notch { position:absolute; width:40px; height:8px; left:calc(50% - 20px); top:0; border-radius:0 0 6px 6px; background:white; }
+    .mobile-brand { font-family:Georgia,serif; }
+    .mobile-site img { height:111px; object-position:center 48%; }
+    .mobile-copy { padding:14px 12px; }
+    .mobile-copy h3 { font:23px/.98 Georgia,serif; letter-spacing:-.8px; }
+    .mobile-copy p { font-size:5px; margin-top:9px; }
+    .mobile-copy .mini-cta { background:#294f37; margin-top:10px; }
+    .price-sticker { position:absolute; width:106px; height:106px; background:var(--yellow); right:-4px; top:0; border-radius:50%; transform:rotate(11deg); display:flex; flex-direction:column; align-items:center; justify-content:center; box-shadow:0 4px 0 #cbb15d14; }
+    .price-sticker span { font-size:8px; font-weight:600; }
+    .price-sticker strong { font-family:'Inter',sans-serif; font-size:32px; font-weight:500; letter-spacing:-2px; line-height:1.25; }
+    .hand-note { position:absolute; bottom:5px; left:45px; font:italic 17px Georgia,serif; color:#6e7d61; transform:rotate(-6deg); }
+    .hand-note svg { position:absolute; width:57px; height:49px; top:-40px; left:-24px; }
+    .benefits { display:grid; grid-template-columns:repeat(3,1fr); gap:34px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:26px 0; }
+    .benefit { display:flex; gap:14px; align-items:center; }
+    .icon-box { width:39px; height:39px; display:grid; place-items:center; border:1px solid var(--line); border-radius:10px; flex-shrink:0; }
+    .icon-box svg { width:19px; height:19px; fill:none; stroke:currentColor; stroke-width:1.4; }
+    .benefit h3 { font-family:'Inter',sans-serif; font-size:13px; font-weight:650; }
+    .benefit p { font-size:12px; color:var(--muted); margin-top:2px; }
+    .section { padding:92px 0; }
+    .section-heading { display:flex; align-items:end; justify-content:space-between; gap:30px; margin-bottom:32px; }
+    h2 { font-size:40px; font-weight:700; line-height:1.17; letter-spacing:-1.8px; }
+    .section-heading h2 { margin-top:12px; }
+    .section-heading>p { color:var(--muted); font-size:14px; max-width:290px; }
+    .work-grid { display:grid; grid-template-columns:1fr 1fr; gap:25px; }
+    .work-art { height:296px; padding:30px 34px 0; border-radius:12px; overflow:hidden; position:relative; }
+    .work-art-cafe { background:#eee8dd; }
+    .work-art-plants { background:#e1e9df; }
+    .work-browser { width:100%; border-radius:7px 7px 0 0; transition:transform .35s; }
+    .work-card:hover .work-browser { transform:translateY(-5px); }
+    .work-browser .cafe-content { min-height:224px; }
+    .work-browser .cafe-image { height:224px; }
+    .work-browser .cafe-copy { padding-top:20px; }
+    .work-browser .cafe-copy h3 { font-size:37px; }
+    .work-caption { display:flex; align-items:center; justify-content:space-between; padding-top:17px; }
+    .work-caption h3 { font-family:'Inter',sans-serif; font-size:14px; font-weight:600; }
+    .work-caption p { color:var(--muted); font-size:11px; }
+    .concept-tag { font-size:9px; color:#64705f; padding:4px 9px; border:1px solid var(--line); border-radius:20px; }
+    .plant-browser { background:#f3f4eb; }
+    .plant-nav { padding:15px 22px; }
+    .plant-content { display:grid; grid-template-columns:1fr 1fr; }
+    .plant-copy { padding:20px 5px 20px 22px; }
+    .plant-copy h3 { font:37px/1 Georgia,serif; letter-spacing:-1.5px; margin:15px 0 12px; }
+    .plant-copy p { font-size:6px; max-width:120px; color:#66725e; }
+    .plant-copy .mini-cta { background:#344c35; }
+    .plant-content img { height:235px; border-radius:100px 100px 0 0; padding-right:17px; }
+    .process-section { background:var(--mint); }
+    .process-layout { display:grid; grid-template-columns:1.05fr 1fr; gap:100px; align-items:center; }
+    .process-intro h2 { margin:14px 0 18px; }
+    .process-intro>p { font-size:14px; color:var(--muted); max-width:330px; }
+    .steps { list-style:none; margin:31px 0 0; padding:0; }
+    .steps li { display:flex; gap:16px; padding:18px 0; border-top:1px solid #ccd6c8; }
+    .step-number { font-size:10px; width:27px; height:27px; display:grid; place-items:center; border:1px solid #b6c5af; border-radius:50%; flex-shrink:0; }
+    .steps h3 { font-family:'Inter',sans-serif; font-size:14px; font-weight:650; }
+    .steps p { font-size:13px; color:var(--muted); margin-top:4px; max-width:350px; }
+    .pricing-card { background:var(--paper); border-radius:17px; padding:36px; position:relative; box-shadow:0 9px 22px #243e2b04; }
+    .pricing-label { display:flex; justify-content:space-between; align-items:center; font-size:12px; font-weight:550; }
+    .pricing-label span { border-radius:20px; background:var(--mint); padding:4px 10px; font-size:9px; }
+    .price { font-family:'Inter',sans-serif; font-size:78px; letter-spacing:-5px; font-weight:500; line-height:1.2; margin:18px 0 2px; }
+    .price small { font-family:'Inter',sans-serif; font-size:12px; letter-spacing:0; font-weight:400; color:var(--muted); }
+    .pricing-description { color:var(--muted); font-size:12px; }
+    .included { list-style:none; padding:22px 0; margin:22px 0 0; border-top:1px solid var(--line); display:grid; grid-template-columns:1fr 1fr; gap:13px 15px; font-size:13px; }
+    .included li { display:flex; align-items:baseline; gap:7px; }
+    .included li::before { content:'✓'; color:#6f895a; font-size:12px; }
+    .pricing-card .button { width:100%; }
+    .payment-note { font-size:10px; color:var(--muted); text-align:center; margin-top:13px; }
+    .faq-section { display:grid; grid-template-columns:1fr 1.4fr; gap:100px; }
+    .faq-intro h2 { margin-top:14px; }
+    .faq-intro p { margin-top:17px; font-size:13px; color:var(--muted); }
+    .faq-intro a { border-bottom:1px solid #abb7a4; }
+    details { border-bottom:1px solid var(--line); }
+    details:first-child { border-top:1px solid var(--line); }
+    summary { padding:20px 30px 20px 0; list-style:none; position:relative; font-size:14px; font-weight:600; }
+    summary::-webkit-details-marker { display:none; }
+    summary::after { content:'+'; position:absolute; right:0; font-size:21px; font-weight:400; top:13px; color:#7c8c70; }
+    details[open] summary::after { content:'−'; }
+    details p { font-size:13px; color:var(--muted); padding:0 24px 20px 0; line-height:1.8; }
+    .contact-section { border-radius:20px; background:var(--green); color:#f4f6ef; padding:53px; display:grid; grid-template-columns:1fr 1fr; gap:70px; margin-bottom:50px; }
+    .contact-copy .eyebrow { color:#b6c7a9; }
+    .contact-copy h2 { font-size:43px; margin-top:20px; }
+    .contact-copy>p { color:#b9c9be; font-size:13px; margin-top:20px; max-width:300px; }
+    .contact-email { display:inline-block; font-size:14px; margin-top:28px; border-bottom:1px solid #7c9984; }
+    .contact-phone { display:block; font-size:12px; color:#b9c9be; margin-top:8px; width:fit-content; }
+    .contact-form { display:grid; grid-template-columns:1fr 1fr; gap:18px 14px; }
+    .form-field { display:flex; flex-direction:column; gap:7px; }
+    .form-field.full { grid-column:1 / -1; }
+    label { font-size:12px; font-weight:500; color:#d9e4d9; }
+    input,textarea { background:#ffffff08; color:white; border:1px solid #ffffff30; border-radius:5px; padding:10px 12px; width:100%; min-width:0; font-size:14px; }
+    textarea { resize:vertical; min-height:81px; }
+    input::placeholder,textarea::placeholder { color:#b2c2b7; opacity:1; }
+    .contact-form .button { background:var(--lime); color:var(--green); grid-column:1 / -1; width:100%; padding:12px 18px; justify-content:space-between; }
+    .contact-form .button:hover { background:#c6e4bd; }
+    .form-note { grid-column:1 / -1; color:#c6d7ca; font-size:11px; margin-top:-8px; }
+    .honeypot { display:none; }
+    .site-footer { padding:0 0 30px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    .site-footer .brand { font-size:19px; }
+    .site-footer .brand-mark { width:24px; height:24px; }
+    .site-footer p,.back-top { font-size:10px; color:var(--muted); }
+    .back-top:hover { color:var(--green); }
+    @keyframes enter { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+    .hero-copy,.showcase { animation:enter .8s ease both; }
+    .showcase { animation-delay:.12s; }
+    @media (min-width:1400px) { .hero { padding-top:75px; padding-bottom:95px; } }
+    @media (max-width:1050px) {
+      .wrap { width:calc(100% - 64px); }
+      .hero { gap:22px; }
+      .hero h1 { font-size:59px; letter-spacing:-3.8px; }
+      .showcase { height:450px; }
+      .cafe-site { top:63px; width:91%; }
+      .cafe-content { min-height:220px; }
+      .cafe-image { height:220px; }
+      .cafe-copy h3 { font-size:32px; }
+      .cafe-copy { padding-left:18px; }
+      .mobile-site { width:137px; height:257px; top:195px; right:-10px; }
+      .mobile-site img { height:100px; }
+      .price-sticker { width:91px; height:91px; right:-3px; top:20px; }
+      .hero-actions { gap:18px; }
+      .process-layout,.faq-section { gap:50px; }
+      .work-art { padding:25px 23px 0; height:275px; }
+      .work-browser .cafe-copy h3,.plant-copy h3 { font-size:30px; }
+      .contact-section { gap:40px; padding:40px; }
+    }
+    @media (max-width:760px) {
+      .wrap { width:calc(100% - 40px); }
+      .site-header { height:85px; gap:14px; }
+      .brand { font-size:22px; }
+      .nav-links { gap:18px; font-size:12px; }
+      .nav-links .nav-work { display:none; }
+      .nav-links .button { padding:9px 12px; gap:12px; font-size:11px; }
+      .hero { grid-template-columns:1fr; padding:40px 0 40px; gap:25px; }
+      .hero h1 { font-size:clamp(42px,9vw,70px); letter-spacing:-2.5px; max-width:570px; margin:24px 0; }
+      .hero-description { max-width:400px; font-size:15px; }
+      .hero-actions { margin-top:25px; }
+      .showcase { width:min(460px,100% - 15px); margin:8px auto 0; height:440px; }
+      .cafe-site { top:35px; width:87%; }
+      .cafe-content { min-height:238px; }
+      .cafe-image { height:238px; }
+      .cafe-copy h3 { font-size:37px; }
+      .mobile-site { right:-5px; top:183px; width:147px; height:267px; }
+      .price-sticker { top:0; width:99px; height:99px; right:0; }
+      .hand-note { bottom:4px; left:22px; font-size:16px; }
+      .benefits { gap:17px; padding:24px 0; }
+      .benefit { flex-direction:column; gap:9px; text-align:center; align-items:center; }
+      .benefit h3 { font-size:11px; }
+      .benefit p { font-size:10px; line-height:1.5; }
+      .icon-box { width:33px; height:33px; }
+      .section { padding:64px 0; }
+      h2 { font-size:34px; letter-spacing:-1.5px; }
+      .section-heading { align-items:start; flex-direction:column; gap:14px; }
+      .section-heading>p { max-width:330px; font-size:12px; }
+      .work-grid { grid-template-columns:1fr; gap:28px; }
+      .work-art { height:290px; padding:30px 30px 0; }
+      .work-browser .cafe-copy h3,.plant-copy h3 { font-size:36px; }
+      .process-layout,.faq-section { grid-template-columns:1fr; gap:34px; }
+      .process-intro>p { max-width:400px; }
+      .steps { margin-top:24px; }
+      .pricing-card { padding:28px; }
+      .faq-intro p { margin-top:12px; }
+      .contact-section { grid-template-columns:1fr; gap:32px; padding:30px 25px; margin-bottom:29px; border-radius:14px; }
+      .contact-copy h2 { font-size:37px; }
+      .contact-copy>p { max-width:340px; }
+      .contact-email { margin-top:19px; }
+      .site-footer { flex-wrap:wrap; padding-bottom:25px; gap:12px; }
+      .site-footer p { order:3; width:100%; }
+    }
+    @media (max-width:380px) {
+      .nav-links { gap:13px; }
+      .nav-links .button { gap:7px; padding:9px; }
+      .brand { font-size:20px; gap:7px; }
+      .brand-mark { width:24px; }
+      .hero h1 { font-size:40px; letter-spacing:-2px; }
+      .showcase { height:402px; }
+      .cafe-copy h3 { font-size:30px; }
+      .cafe-image { height:207px; }
+      .cafe-content { min-height:207px; }
+      .mobile-site { width:126px; top:165px; height:243px; }
+      .mobile-site img { height:87px; }
+      .hand-note { font-size:14px; left:12px; }
+      .hero-actions { gap:16px; }
+      .hero-actions .button { padding:14px 16px; gap:18px; }
+      .work-art { padding:25px 20px 0; height:268px; }
+      .work-browser .cafe-copy h3,.plant-copy h3 { font-size:29px; }
+      .included { grid-template-columns:1fr; gap:10px; }
+      .contact-form { grid-template-columns:1fr; }
+    }
+    @media (prefers-reduced-motion:reduce) {
+      html { scroll-behavior:auto; }
+      *,*::before,*::after { animation:none!important; transition:none!important; }
     }
   </style>
 </head>
-
-<body>
-
-  <div class="cursor" id="cursor"></div>
-  <div class="cursor-ring" id="cursorRing"></div>
-
-  <!-- NAV -->
-  <nav>
-    <a href="#" class="logo">Web<span>Craft</span></a>
-    <ul class="nav-links">
-      <li><a href="#features"
-          onclick="event.preventDefault();document.getElementById('features').scrollIntoView({behavior:'smooth'})">Features</a>
-      </li>
-      <li><a href="#businesses"
-          onclick="event.preventDefault();document.getElementById('businesses').scrollIntoView({behavior:'smooth'})">Industries</a>
-      </li>
-      <li><a href="#process"
-          onclick="event.preventDefault();document.getElementById('process').scrollIntoView({behavior:'smooth'})">Process</a>
-      </li>
-      <li><a href="#pricing"
-          onclick="event.preventDefault();document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">Pricing</a>
-      </li>
-    </ul>
-    <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get
-      Started</button>
-  </nav>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="hero-grid"></div>
-
-    <div class="hero-badge">✦ Professional Local Business Websites</div>
-
-    <h1 class="hero-title">
-      Your Business Deserves<br>
-      <em>An Exceptional Website</em>
-    </h1>
-
-    <div class="hero-price-block">
-      <div class="hero-price">$500</div>
-      <div class="hero-price-divider"></div>
-      <div class="hero-price-sub">
-        Complete Website<br>
-        No Hidden Fees
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header wrap">
+    <a class="brand" href="#top" aria-label="WebCraft home">
+      <svg class="brand-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="m3 9 6 15 7-15 7 15 6-15" stroke="currentColor" stroke-width="2.7" stroke-linejoin="round" stroke-linecap="round"/></svg>
+      WebCraft<span class="brand-dot">.</span>
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a class="nav-work" href="#work">The possibilities</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact" class="button button-outline">Let’s talk <span class="arrow" aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> A little studio for local businesses</p>
+        <h1 id="hero-title">Small business.<br>Big heart.<br><span class="soft-word">Great website.</span></h1>
+        <p class="hero-description">Custom website design for local businesses in Cleveland, Chattanooga, Athens, and Knoxville, Tennessee. Thoughtfully designed, simply priced, and made for you.</p>
+        <div class="hero-actions">
+          <a class="button" href="#contact">Let’s build yours <span class="arrow" aria-hidden="true">↗</span></a>
+          <a class="text-link" href="#work">Take a look <span aria-hidden="true">↓</span></a>
+        </div>
+        <p class="hero-note"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m5 10 3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg> $500 flat. Yours to keep. No surprises.</p>
       </div>
+      <div class="showcase" role="img" aria-label="Illustrative website designs: a warm neighborhood café on desktop and a plant shop on mobile, custom websites for $500.">
+        <div class="showcase-backdrop"></div><div class="showcase-grid"></div>
+        <div class="browser cafe-site" aria-hidden="true">
+          <div class="browser-bar"><i></i><i></i><i></i><span class="browser-url">littlecorner.example</span></div>
+          <div class="mini-nav"><span class="mini-brand">little corner.</span><div class="mini-menu"><span>Our story</span><span>The menu</span><span>Come by ↗</span></div></div>
+          <div class="cafe-content"><div class="cafe-copy"><span class="mini-eyebrow">YOUR NEIGHBORHOOD COFFEE SPOT</span><h3>A good day<br>starts <em>here.</em></h3><p>Thoughtful coffee. Something freshly baked.<br>A little corner to call your own.</p><span class="mini-cta">Find your favorite ↗</span></div><img class="cafe-image" src="assets/coffee.jpg" alt="" fetchpriority="high" width="500" height="500"></div>
+          <div class="cafe-bottom"><span>GOOD COFFEE. GOOD COMPANY.</span><span>BREWED WITH A LITTLE LOVE ♡</span></div>
+        </div>
+        <div class="mobile-site" aria-hidden="true"><div class="mobile-notch"></div><div class="mobile-top"><span class="mobile-brand">fern & folk</span><span>☰</span></div><img src="assets/plants.jpg" alt="" width="400" height="300"><div class="mobile-copy"><h3>A little green.<br>A lot of good.</h3><p>Plants for your space. Advice for the growing.</p><span class="mini-cta">Find your green ↗</span></div></div>
+        <div class="price-sticker" aria-hidden="true"><span>YOUR WHOLE WEBSITE</span><strong>$500</strong><span>yep, really.</span></div>
+        <div class="hand-note" aria-hidden="true"><svg viewBox="0 0 70 60" fill="none"><path d="M60 53C20 57 7 32 18 6m-9 8 9-9 5 12" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>Made to feel like you.</div>
+      </div>
+    </section>
+    <div class="benefits wrap" aria-label="What you can expect">
+      <div class="benefit"><span class="icon-box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 3 6 6-11 11-7 1 1-7L15 3Z"/><path d="m12 6 6 6M4 15l5 5"/></svg></span><div><h3>Personality, built in.</h3><p>A custom design. A familiar feeling.</p></div></div>
+      <div class="benefit"><span class="icon-box"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2"/><path d="M10 18h4"/></svg></span><div><h3>Looks good everywhere.</h3><p>From a pocket screen to a big screen.</p></div></div>
+      <div class="benefit"><span class="icon-box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m13 2-9 12h7l-1 8 10-13h-8l1-7Z"/></svg></span><div><h3>Open for business, sooner.</h3><p>From first hello to live in 5–7 days.</p></div></div>
     </div>
-
-    <p class="hero-desc">
-      We craft beautiful, fast, and conversion-focused websites for local businesses. Everything you need to attract
-      customers — designed, built, and launched in days.
-    </p>
-
-    <div class="hero-actions">
-      <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Claim
-        Your Website</button>
-      <button class="btn-secondary" onclick="document.getElementById('process').scrollIntoView({behavior:'smooth'})">
-        See How It Works <span class="arrow">→</span>
-      </button>
-    </div>
-  </section>
-
-  <!-- MARQUEE -->
-  <div class="marquee-strip">
-    <div class="marquee-track" id="marqueeTrack">
-      <span class="marquee-item">Custom Design <span class="marquee-dot"></span></span>
-      <span class="marquee-item">Mobile Responsive <span class="marquee-dot"></span></span>
-      <span class="marquee-item">SEO Ready <span class="marquee-dot"></span></span>
-      <span class="marquee-item">Fast Delivery <span class="marquee-dot"></span></span>
-      <span class="marquee-item">Contact Forms <span class="marquee-dot"></span></span>
-      <span class="marquee-item">Google Maps Integration <span class="marquee-dot"></span></span>
-      <span class="marquee-item">Social Media Links <span class="marquee-dot"></span></span>
-      <span class="marquee-item">Online Booking <span class="marquee-dot"></span></span>
-      <span class="marquee-item">Custom Design <span class="marquee-dot"></span></span>
-      <span class="marquee-item">Mobile Responsive <span class="marquee-dot"></span></span>
-      <span class="marquee-item">SEO Ready <span class="marquee-dot"></span></span>
-      <span class="marquee-item">Fast Delivery <span class="marquee-dot"></span></span>
-      <span class="marquee-item">Contact Forms <span class="marquee-dot"></span></span>
-      <span class="marquee-item">Google Maps Integration <span class="marquee-dot"></span></span>
-      <span class="marquee-item">Social Media Links <span class="marquee-dot"></span></span>
-      <span class="marquee-item">Online Booking <span class="marquee-dot"></span></span>
-    </div>
-  </div>
-
-  <!-- WHAT YOU GET -->
-  <div class="what-section" id="features">
-    <div class="what-left reveal">
-      <div class="section-label">What's Included</div>
-      <h2 class="section-title">Everything Your Business <strong>Needs to Shine</strong></h2>
-      <p class="what-desc">
-        Every website we build is crafted from scratch — no cheap templates, no cookie-cutter layouts. We design around
-        your brand identity, your customers, and your goals.
-      </p>
-      <div style="margin-top:36px; display:flex; gap:40px;">
-        <div>
-          <div style="font-family:'Cormorant Garamond',serif; font-size:2.8rem; color:var(--gold); line-height:1;">
-            48<span style="font-size:1rem;color:var(--text)">hrs</span></div>
-          <div style="font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; margin-top:4px;">First Draft
-          </div>
-        </div>
-        <div>
-          <div style="font-family:'Cormorant Garamond',serif; font-size:2.8rem; color:var(--gold); line-height:1;">
-            100<span style="font-size:1rem;color:var(--text)">%</span></div>
-          <div style="font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; margin-top:4px;">Satisfaction
-          </div>
-        </div>
+    <section class="section wrap" id="work" aria-labelledby="work-title">
+      <div class="section-heading"><div><p class="eyebrow">A few possibilities</p><h2 id="work-title">Your kind of business.<br>Your kind of website.</h2></div><p>A cozy café. A neighborhood shop. Your next big thing. There’s room for your personality here.</p></div>
+      <div class="work-grid">
+        <article class="work-card"><div class="work-art work-art-cafe"><div class="browser work-browser" aria-hidden="true"><div class="browser-bar"><i></i><i></i><i></i><span class="browser-url">littlecorner.example</span></div><div class="mini-nav"><span class="mini-brand">little corner.</span><div class="mini-menu"><span>Our story</span><span>The menu</span><span>Come by ↗</span></div></div><div class="cafe-content"><div class="cafe-copy"><span class="mini-eyebrow">YOUR NEIGHBORHOOD COFFEE SPOT</span><h3>A good day<br>starts <em>here.</em></h3><p>Thoughtful coffee. Something freshly baked.<br>A little corner to call your own.</p><span class="mini-cta">Find your favorite ↗</span></div><img class="cafe-image" src="assets/coffee.jpg" alt="" width="500" height="500" loading="lazy"></div></div></div><div class="work-caption"><div><h3>Little Corner</h3><p>For coffee, conversation, and regulars.</p></div><span class="concept-tag">Café concept</span></div></article>
+        <article class="work-card"><div class="work-art work-art-plants"><div class="browser work-browser plant-browser" aria-hidden="true"><div class="browser-bar"><i></i><i></i><i></i><span class="browser-url">fernandfolk.example</span></div><div class="mini-nav plant-nav"><span class="mini-brand">fern & folk</span><div class="mini-menu"><span>Our plants</span><span>Our story</span><span>Visit us ↗</span></div></div><div class="plant-content"><div class="plant-copy"><span class="mini-eyebrow">ROOTED IN THE NEIGHBORHOOD</span><h3>A little green.<br>A lot of good.</h3><p>Meet your next leafy companion. Plants for your space, and advice for the growing.</p><span class="mini-cta">Find your green ↗</span></div><img src="assets/plants.jpg" alt="" width="400" height="400" loading="lazy"></div></div></div><div class="work-caption"><div><h3>Fern & Folk</h3><p>A fresh home for a growing business.</p></div><span class="concept-tag">Shop concept</span></div></article>
       </div>
-    </div>
-    <div class="what-right reveal reveal-delay-2">
-      <div class="feature-card">
-        <div class="feature-num">01</div>
-        <div class="feature-title">Custom Design</div>
-        <div class="feature-desc">Tailored visuals that reflect your unique brand — not a template anyone else is using.
-        </div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-num">02</div>
-        <div class="feature-title">Mobile-First</div>
-        <div class="feature-desc">Pixel-perfect on every screen size, from phones to widescreen displays.</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-num">03</div>
-        <div class="feature-title">SEO Optimized</div>
-        <div class="feature-desc">Structured for Google with proper meta tags, fast load times, and local SEO basics.
-        </div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-num">04</div>
-        <div class="feature-title">Contact & Booking</div>
-        <div class="feature-desc">Forms, call buttons, maps, and scheduling integrations — built right in.</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-num">05</div>
-        <div class="feature-title">Fast Loading</div>
-        <div class="feature-desc">Optimized code and images for lightning-fast performance scores.</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-num">06</div>
-        <div class="feature-title">You Own It</div>
-        <div class="feature-desc">Full ownership of your website files. No subscriptions, no lock-in, ever.</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- BUSINESS TYPES -->
-  <section class="biz-section" id="businesses">
-    <div class="biz-inner">
-      <div class="biz-header reveal">
-        <div class="section-label">Industries We Serve</div>
-        <h2 class="section-title">Built for Every Kind of <strong>Local Business</strong></h2>
-      </div>
-      <div class="biz-grid">
-        <div class="biz-card reveal">
-          <span class="biz-icon">🍽️</span>
-          <div class="biz-name">Restaurants</div>
-          <div class="biz-desc">Menus, reservations, and gallery pages that make mouths water.</div>
-        </div>
-        <div class="biz-card reveal reveal-delay-1">
-          <span class="biz-icon">💇</span>
-          <div class="biz-name">Salons & Spas</div>
-          <div class="biz-desc">Booking systems, service lists, and a look as refined as your craft.</div>
-        </div>
-        <div class="biz-card reveal reveal-delay-2">
-          <span class="biz-icon">🔧</span>
-          <div class="biz-name">Contractors</div>
-          <div class="biz-desc">Showcase your portfolio, collect leads, and build trust instantly.</div>
-        </div>
-        <div class="biz-card reveal reveal-delay-3">
-          <span class="biz-icon">🏥</span>
-          <div class="biz-name">Medical & Dental</div>
-          <div class="biz-desc">Patient-friendly design with appointments and HIPAA-aware forms.</div>
-        </div>
-        <div class="biz-card reveal">
-          <span class="biz-icon">🏋️</span>
-          <div class="biz-name">Fitness & Yoga</div>
-          <div class="biz-desc">Class schedules, memberships, and instructor profiles.</div>
-        </div>
-        <div class="biz-card reveal reveal-delay-1">
-          <span class="biz-icon">⚖️</span>
-          <div class="biz-name">Legal & Finance</div>
-          <div class="biz-desc">Professional, authoritative design that builds credibility.</div>
-        </div>
-        <div class="biz-card reveal reveal-delay-2">
-          <span class="biz-icon">🐾</span>
-          <div class="biz-name">Pet Services</div>
-          <div class="biz-desc">Grooming, boarding, and vet sites with warmth and personality.</div>
-        </div>
-        <div class="biz-card reveal reveal-delay-3">
-          <span class="biz-icon">🏠</span>
-          <div class="biz-name">Real Estate</div>
-          <div class="biz-desc">Property listings, agent bios, and lead capture forms.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROCESS -->
-  <section class="process-section" id="process">
-    <div class="process-header reveal">
-      <div class="section-label">How It Works</div>
-      <h2 class="section-title">Live in Days, Not <strong>Months</strong></h2>
-    </div>
-    <div class="process-steps">
-      <div class="process-step reveal">
-        <div class="step-num">1</div>
-        <div class="step-title">Discovery Call</div>
-        <div class="step-desc">We learn about your business, goals, and vision in a quick 30-minute conversation.</div>
-      </div>
-      <div class="process-step reveal reveal-delay-1">
-        <div class="step-num">2</div>
-        <div class="step-title">Design & Build</div>
-        <div class="step-desc">We craft your custom website and send you the first draft within 48 hours.</div>
-      </div>
-      <div class="process-step reveal reveal-delay-2">
-        <div class="step-num">3</div>
-        <div class="step-title">Review & Refine</div>
-        <div class="step-desc">You give us feedback, we make unlimited revisions until it's perfect.</div>
-      </div>
-      <div class="process-step reveal reveal-delay-3">
-        <div class="step-num">4</div>
-        <div class="step-title">Launch 🚀</div>
-        <div class="step-desc">We publish your site, submit it to Google, and hand you the keys.</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRICING -->
-  <section class="pricing-section" id="pricing">
-    <div class="pricing-inner">
-      <div class="pricing-header reveal">
-        <div class="section-label">Transparent Pricing</div>
-        <h2 class="section-title">One Price. <strong>Everything Included.</strong></h2>
-      </div>
-      <div class="pricing-card reveal">
-        <div class="pricing-eyebrow">Complete Local Business Website Package</div>
-        <div class="pricing-amount"><sup>$</sup>500</div>
-        <div class="pricing-subtitle">One-time flat fee — no surprises, no subscriptions</div>
-        <div class="pricing-divider"></div>
-        <div class="pricing-perks">
-          <div class="perk">
-            <div class="perk-check">✓</div>
-            <div class="perk-text">Custom design tailored to your brand</div>
-          </div>
-          <div class="perk">
-            <div class="perk-check">✓</div>
-            <div class="perk-text">Mobile & tablet responsive layout</div>
-          </div>
-          <div class="perk">
-            <div class="perk-check">✓</div>
-            <div class="perk-text">Up to 5 pages included</div>
-          </div>
-          <div class="perk">
-            <div class="perk-check">✓</div>
-            <div class="perk-text">Contact form & Google Maps</div>
-          </div>
-          <div class="perk">
-            <div class="perk-check">✓</div>
-            <div class="perk-text">SEO basics & Google submission</div>
-          </div>
-          <div class="perk">
-            <div class="perk-check">✓</div>
-            <div class="perk-text">Unlimited revisions before launch</div>
-          </div>
-          <div class="perk">
-            <div class="perk-check">✓</div>
-            <div class="perk-text">Social media link integration</div>
-          </div>
-          <div class="perk">
-            <div class="perk-check">✓</div>
-            <div class="perk-text">Fast-loading optimized code</div>
-          </div>
-          <div class="perk">
-            <div class="perk-check">✓</div>
-            <div class="perk-text">Full file ownership — yours forever</div>
-          </div>
-        </div>
-        <button class="pricing-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
-          Start Your Project →
-        </button>
-        <div style="margin-top:24px; font-size:0.78rem; color:rgba(200,192,176,0.4); letter-spacing:0.05em;">
-          🔒 50% upfront · 50% on delivery · 100% satisfaction guaranteed
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS -->
-  <section class="testimonials-section">
-    <div class="testimonials-header reveal">
-      <div class="section-label">Client Stories</div>
-      <h2 class="section-title">What Local Business Owners <strong>Are Saying</strong></h2>
-    </div>
-    <div class="testimonials-grid">
-      <div class="testimonial reveal">
-        <div class="stars">★★★★★</div>
-        <div class="testimonial-text">We went from zero online presence to getting 15+ new customer inquiries a week.
-          The site looks incredible and our customers constantly compliment it.</div>
-        <div class="testimonial-author">
-          <div class="author-avatar">M</div>
-          <div>
-            <div class="author-name">Maria Santos</div>
-            <div class="author-biz">Bloom Floral Studio, Austin TX</div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial reveal reveal-delay-1">
-        <div class="stars">★★★★★</div>
-        <div class="testimonial-text">I was skeptical about getting a quality site at this price, but the result blew me
-          away. Professional, fast, and exactly what my restaurant needed.</div>
-        <div class="testimonial-author">
-          <div class="author-avatar">J</div>
-          <div>
-            <div class="author-name">James Okafor</div>
-            <div class="author-biz">The Copper Pot, Chicago IL</div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial reveal reveal-delay-2">
-        <div class="stars">★★★★★</div>
-        <div class="testimonial-text">They delivered the first draft in 36 hours and nailed the vibe immediately. I
-          barely needed any changes. Worth every penny and then some.</div>
-        <div class="testimonial-author">
-          <div class="author-avatar">S</div>
-          <div>
-            <div class="author-name">Sarah Kim</div>
-            <div class="author-biz">Serene Touch Spa, Portland OR</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="faq-section">
-    <div class="faq-inner">
-      <div class="faq-header reveal">
-        <div class="section-label">FAQ</div>
-        <h2 class="section-title">Common <strong>Questions</strong></h2>
-      </div>
-      <div class="faq-list">
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)">
-            Do you handle hosting and domain setup?
-            <span class="faq-icon">+</span>
-          </div>
-          <div class="faq-a">Yes! We can handle everything — hosting, domain registration, and ongoing maintenance — for
-            a simple $20/month flat fee. No dealing with third-party providers, no technical headaches. Just one bill,
-            and your site stays fast, secure, and online. Cancel anytime.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)">
-            How many revisions are included?
-            <span class="faq-icon">+</span>
-          </div>
-          <div class="faq-a">Unlimited rounds of revisions before launch. We don't count — we just keep going until
-            you're completely happy with your website. Our goal is that you love it.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)">
-            What if I need more than 5 pages?
-            <span class="faq-icon">+</span>
-          </div>
-          <div class="faq-a">Additional pages are available for $50 each. Many businesses find 5 pages covers everything
-            — Home, About, Services, Gallery, and Contact — but we're happy to scale as needed.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)">
-            How long does the whole process take?
-            <span class="faq-icon">+</span>
-          </div>
-          <div class="faq-a">From kickoff call to launch is typically 5–7 business days. We deliver a first draft within
-            48 hours, then iterate based on your feedback before going live.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)">
-            Will I be able to update the website myself?
-            <span class="faq-icon">+</span>
-          </div>
-          <div class="faq-a">Yes! We build on platforms you can manage yourself, and we provide a short walkthrough so
-            you can update text, images, and basic content on your own any time.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT FORM -->
-  <section class="contact-section" id="contact">
-    <div class="contact-inner">
-      <div class="reveal">
-        <div class="section-label">Get Started</div>
-        <h2 class="section-title">Let's Build Your<br><strong>Website Together</strong></h2>
-        <p style="margin-top:24px; line-height:1.9; font-size:0.92rem;">
-          Fill in the form and we'll reach out within 24 hours to schedule your free discovery call. No commitment
-          required.
-        </p>
-        <div style="margin-top:48px; display:flex; flex-direction:column; gap:20px;">
-          <div style="display:flex; gap:14px; align-items:center;">
-            <div
-              style="width:40px; height:40px; border:1px solid var(--gold-dim); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--gold); font-size:0.9rem;">
-              ✉</div>
-            <div>
-              <div
-                style="font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); margin-bottom:2px;">
-                Email</div>
-              <div style="font-size:0.9rem;" id="contact-email"></div>
-              <script>document.getElementById("contact-email").textContent = "Hello" + "@" + "localwebcraft.com";</script>
-            </div>
-          </div>
-          <div style="display:flex; gap:14px; align-items:center;">
-            <div
-              style="width:40px; height:40px; border:1px solid var(--gold-dim); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--gold); font-size:0.9rem;">
-              📞</div>
-            <div>
-              <div
-                style="font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); margin-bottom:2px;">
-                Phone</div>
-              <div style="font-size:0.9rem;">423-401-8663</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="reveal reveal-delay-2">
-        <div id="mainFormWrap">
-          <form id="mainLeadForm" action="https://api.web3forms.com/submit" method="POST">
-            <input type="hidden" name="access_key" value="8409ce1e-87e4-4a93-a6ea-44d0b772eab1">
-            <input type="hidden" name="subject" value="New Website Request — WebCraft">
-            <input type="hidden" name="from_name" value="WebCraft Contact Form">
-            <input type="hidden" name="redirect" value="false">
-            <input type="checkbox" name="botcheck" style="display:none">
-            <div class="form-group">
-              <label class="form-label">Your Name</label>
-              <input type="text" name="name" class="form-input" placeholder="Jane Smith" required>
-            </div>
-            <div class="form-group">
-              <label class="form-label">Business Name</label>
-              <input type="text" name="business_name" class="form-input" placeholder="Smith's Bakery" required>
-            </div>
-            <div class="form-group">
-              <label class="form-label">Email Address</label>
-              <input type="email" name="email" class="form-input" placeholder="jane@smithsbakery.com" required>
-            </div>
-            <div class="form-group">
-              <label class="form-label">Phone Number</label>
-              <input type="tel" name="phone" class="form-input" placeholder="(555) 000-0000">
-            </div>
-            <div class="form-group">
-              <label class="form-label">Business Type</label>
-              <select name="business_type" class="form-select" required>
-                <option value="" disabled selected>Select your industry…</option>
-                <option>Restaurant / Café</option>
-                <option>Salon / Spa</option>
-                <option>Contractor / Trades</option>
-                <option>Medical / Dental</option>
-                <option>Fitness / Wellness</option>
-                <option>Legal / Finance</option>
-                <option>Pet Services</option>
-                <option>Real Estate</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label class="form-label">Tell Us About Your Business</label>
-              <textarea name="message" class="form-textarea"
-                placeholder="What do you do, who are your customers, and what do you need from your website?"
-                required></textarea>
-            </div>
-            <button type="submit" class="form-submit" id="mainSubmitBtn">Send My Request →</button>
-          </form>
-        </div>
-        <div id="mainSuccessMsg" style="display:none; text-align:center; padding:40px 20px;">
-          <div style="font-size:2.5rem; margin-bottom:16px;">✓</div>
-          <div style="font-family:'Cormorant Garamond',serif; font-size:1.8rem; color:var(--cream); margin-bottom:12px;">Request received.</div>
-          <div style="font-size:0.9rem; line-height:1.8; color:var(--text);">We'll be in touch within 24 hours to schedule your free discovery call.</div>
-        </div>
-        <script>
-          document.getElementById('mainLeadForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const btn = document.getElementById('mainSubmitBtn');
-            btn.disabled = true;
-            btn.textContent = 'Sending…';
-            const obj = Object.fromEntries(new FormData(this));
-            try {
-              const res = await fetch('https://api.web3forms.com/submit', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                body: JSON.stringify(obj)
-              });
-              const data = await res.json();
-              if (data.success) {
-                document.getElementById('mainFormWrap').style.display = 'none';
-                document.getElementById('mainSuccessMsg').style.display = 'block';
-              } else {
-                btn.disabled = false;
-                btn.textContent = '⚠ Something went wrong — try again';
-              }
-            } catch {
-              btn.disabled = false;
-              btn.textContent = '⚠ Network error — try again';
-            }
-          });
-        </script>
-      </div>
-    </div>
-  </section>
-
-  <!-- FINAL CTA -->
-  <section class="cta-section">
-    <div class="cta-bg"></div>
-    <h2 class="cta-title reveal">
-      Your Competitors<br>Already Have a Website.<br>
-      <em
-        style="font-family:'Cormorant Garamond',serif; font-style:italic; background:linear-gradient(135deg,var(--gold),var(--gold-light),var(--gold)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">Do
-        You?</em>
-    </h2>
-    <p class="cta-sub reveal">$500. One time. No ongoing fees. Just a website that works hard for your business.</p>
-    <button class="btn-primary reveal" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
-      Get My Website for $500
-    </button>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-copy">© 2025 WebCraft Studio. All rights reserved.</div>
-    <div class="footer-links">
-      <a href="#">Privacy</a>
-      <a href="#">Terms</a>
-      <a href="#">Portfolio</a>
-      <a href="#">Instagram</a>
-    </div>
-  </footer>
-
-  <script>
-    // Custom cursor
-    const cursor = document.getElementById('cursor');
-    const ring = document.getElementById('cursorRing');
-    let mx = 0, my = 0, rx = 0, ry = 0;
-
-    document.addEventListener('mousemove', e => {
-      mx = e.clientX; my = e.clientY;
-      cursor.style.transform = `translate(${mx - 5}px, ${my - 5}px)`;
-    });
-
-    function animateRing() {
-      rx += (mx - rx) * 0.12;
-      ry += (my - ry) * 0.12;
-      ring.style.transform = `translate(${rx - 18}px, ${ry - 18}px)`;
-      requestAnimationFrame(animateRing);
-    }
-    animateRing();
-
-    document.querySelectorAll('button, a, .biz-card, .feature-card, .testimonial, .faq-q').forEach(el => {
-      el.addEventListener('mouseenter', () => {
-        ring.style.width = '56px'; ring.style.height = '56px';
-        ring.style.borderColor = 'var(--gold)';
-      });
-      el.addEventListener('mouseleave', () => {
-        ring.style.width = '36px'; ring.style.height = '36px';
-      });
-    });
-
-    // Scroll reveal handled by CSS
-
-    // FAQ toggle
-    function toggleFaq(el) {
-      const item = el.closest('.faq-item');
-      const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-      if (!isOpen) item.classList.add('open');
-    }
-
-    // Form submit
-    function handleSubmit(btn) {
-      const orig = btn.textContent;
-      btn.textContent = 'Sending…';
-      btn.style.opacity = '0.7';
-      setTimeout(() => {
-        btn.textContent = '✓ Request Sent! We\'ll be in touch soon.';
-        btn.style.background = '#2A6E47';
-        btn.style.color = '#fff';
-      }, 1400);
-    }
-
-    // Parallax on hero orbs
-    document.addEventListener('mousemove', e => {
-      const x = (e.clientX / window.innerWidth - 0.5) * 30;
-      const y = (e.clientY / window.innerHeight - 0.5) * 20;
-      document.querySelector('.orb-1').style.transform = `translate(${x}px, ${y}px)`;
-      document.querySelector('.orb-2').style.transform = `translate(${-x}px, ${-y}px)`;
-    });
-
-    // Number counter animation
-    function animateCount(el, target, suffix = '') {
-      let start = 0;
-      const dur = 1500;
-      const step = timestamp => {
-        if (!start) start = timestamp;
-        const prog = Math.min((timestamp - start) / dur, 1);
-        const ease = 1 - Math.pow(1 - prog, 3);
-        el.textContent = Math.floor(ease * target) + suffix;
-        if (prog < 1) requestAnimationFrame(step);
-      };
-      requestAnimationFrame(step);
-    }
-  </script>
+    </section>
+    <section class="section process-section" id="pricing" aria-labelledby="process-title"><div class="wrap process-layout">
+      <div class="process-intro"><p class="eyebrow">Small process. Big difference.</p><h2 id="process-title">Less back-and-forth.<br>More getting it done.</h2><p>No long briefs or confusing tech talk. Just a conversation, a little collaboration, and a website you’re proud to share.</p><ol class="steps"><li><span class="step-number">1</span><div><h3>Tell us your story.</h3><p>A quick call to get to know your business, your customers, and what you have in mind.</p></div></li><li><span class="step-number">2</span><div><h3>We make it feel like you.</h3><p>See a first draft within 48 hours. Share your thoughts; we’ll work through the details together.</p></div></li><li><span class="step-number">3</span><div><h3>Hello, internet.</h3><p>Once you love it, we help you launch. You get all the files and full ownership.</p></div></li></ol></div>
+      <div class="pricing-card"><div class="pricing-label">The whole website.<span>One simple price</span></div><p class="price">$500 <small>/ one time</small></p><p class="pricing-description">A proper home for your business on the internet.</p><ul class="included"><li>Custom design</li><li>Up to 5 pages</li><li>Mobile-friendly layouts</li><li>Contact form & map</li><li>Search engine basics</li><li>Social media links</li><li>Pre-launch revisions</li><li>Full file ownership</li></ul><a class="button" href="#contact">Let’s make it happen <span class="arrow" aria-hidden="true">↗</span></a><p class="payment-note">50% to get started. 50% when it’s ready.<br>Optional hosting & care: $20/month.</p></div>
+    </div></section>
+    <section class="wrap" aria-label="Areas we serve" style="padding:48px 0 0;"><p class="eyebrow">Proudly serving East Tennessee</p><h2 style="margin-top:14px;">Websites for businesses in your neighborhood.</h2><p style="margin-top:15px;max-width:740px;color:var(--muted);font-size:15px;">From Cleveland and Chattanooga to Athens and Knoxville, we help local businesses build a clear, welcoming online home. Whether you run a café, a shop, or a service business, we’ll work with you to create a website your customers can use on any device.</p></section>
+    <section class="section faq-section wrap" aria-labelledby="faq-title"><div class="faq-intro"><p class="eyebrow">Good questions</p><h2 id="faq-title">A little clarity<br>before we start.</h2><p>Something else on your mind?<br><a href="mailto:Hello@localwebcraft.com">Just ask. We’re easy to talk to.</a></p></div><div class="faq-list"><details><summary>Is $500 really the full price?</summary><p>Yes. Your custom website, up to five pages, mobile layouts, and revisions before launch are included. Extra pages are $50 each. Hosting and care are optional at $20/month; we’ll agree on any extras before starting.</p></details><details><summary>How soon can my website go live?</summary><p>Typically 5–7 business days from our kickoff call. We aim to share a first draft within 48 hours. The final timing depends on how quickly we receive your content and feedback.</p></details><details><summary>What do I need to get started?</summary><p>Tell us about your business and what your website needs to do. Bring your logo, photos, and any text you already have. We’ll walk through what’s missing together.</p></details><details><summary>Can you help with my domain and hosting?</summary><p>Absolutely. We can help with your domain and offer hosting and ongoing care for $20/month. Prefer to host it yourself? You’ll own the files and can take them with you.</p></details><details><summary>What if I want to change the design?</summary><p>Revisions before launch are included. We’ll refine the design with you so the finished website feels right for your business.</p></details></div></section>
+    <section class="contact-section wrap" id="contact" aria-labelledby="contact-title"><div class="contact-copy"><p class="eyebrow">Your next chapter starts here</p><h2 id="contact-title">Let’s make<br>something good.</h2><p>Tell us a little about your business. We’ll get back to you within 24 hours for a free, friendly chat.</p><a class="contact-email" href="mailto:Hello@localwebcraft.com">Hello@localwebcraft.com ↗</a><a class="contact-phone" href="tel:+14234018663">423-401-8663</a></div>
+      <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="8409ce1e-87e4-4a93-a6ea-44d0b772eab1"><input type="hidden" name="subject" value="New Website Request — WebCraft"><input type="hidden" name="from_name" value="WebCraft Contact Form"><input type="checkbox" name="botcheck" class="honeypot" tabindex="-1" aria-hidden="true">
+        <div class="form-field"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" placeholder="Alex Smith" required></div>
+        <div class="form-field"><label for="business">Business name</label><input id="business" name="business_name" autocomplete="organization" placeholder="Your pride and joy" required></div>
+        <div class="form-field full"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@yourbusiness.com" required></div>
+        <div class="form-field full"><label for="message">What do you have in mind?</label><textarea id="message" name="message" placeholder="A little about your business and the website you’d love…" required></textarea></div>
+        <button class="button" type="submit">Start the conversation <span class="arrow" aria-hidden="true">↗</span></button><p class="form-note">No commitment. No sales pitch. Just a good place to start.</p>
+      </form>
+    </section>
+  </main>
+  <footer class="site-footer wrap"><a class="brand" href="#top" aria-label="WebCraft home"><svg class="brand-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="m3 9 6 15 7-15 7 15 6-15" stroke="currentColor" stroke-width="2.7" stroke-linejoin="round" stroke-linecap="round"/></svg>WebCraft<span class="brand-dot">.</span></a><p>© 2026 WebCraft. Made with care, for businesses with heart.</p><a class="back-top" href="webcraft-ad.html">Website offer</a><a class="back-top" href="#top">Back to top ↑</a></footer>
 </body>
-
 </html>
