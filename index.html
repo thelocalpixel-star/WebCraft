@@ -104,21 +104,26 @@
     h2 { font-size:40px; font-weight:700; line-height:1.17; letter-spacing:-1.8px; }
     .section-heading h2 { margin-top:12px; }
     .section-heading>p { color:var(--muted); font-size:14px; max-width:290px; }
-    .portfolio-section { padding-bottom:30px; }
-    .portfolio-card { min-width:0; }
-    .portfolio-image { display:block; overflow:hidden; border-radius:12px; background:#e6eae4; border:1px solid var(--line); }
+    .portfolio-section { padding-bottom:56px; }
+    .portfolio-card { min-width:0; background:#fff; border:1px solid var(--line); border-radius:16px; overflow:hidden; }
+    .portfolio-heading { padding:24px 25px 18px; display:flex; justify-content:space-between; align-items:center; gap:15px; }
+    .portfolio-category { color:#536b59; font-size:10px; font-weight:700; letter-spacing:1.2px; }
+    .portfolio-heading h3 { margin:5px 0 0; font-size:19px; letter-spacing:-.4px; }
+    .portfolio-image { display:block; overflow:hidden; margin:0 18px; border-radius:9px; background:#e6eae4; border:1px solid var(--line); }
     .portfolio-image img { width:100%; height:auto; aspect-ratio:16 / 9; object-fit:cover; transition:transform .35s ease; }
     .portfolio-image:hover img { transform:scale(1.025); }
-    .portfolio-details { display:flex; justify-content:space-between; gap:20px; padding:22px 2px 0; }
-    .portfolio-category { color:#6d8069; font-size:10px; font-weight:700; letter-spacing:1.2px; }
-    .portfolio-details h3 { margin:7px 0; font-size:19px; font-weight:700; letter-spacing:-.4px; }
-    .portfolio-details div>p:last-child { font-size:13px; line-height:1.7; color:var(--muted); max-width:370px; }
-    .portfolio-visit { flex-shrink:0; align-self:center; font-size:12px; font-weight:600; white-space:nowrap; }
-    .portfolio-visit:hover { text-decoration:underline; text-underline-offset:4px; }
-    .portfolio-link { display:flex; flex-direction:column; gap:8px; padding:24px; border:1px solid var(--line); border-radius:12px; background:#fff; transition:border-color .2s, transform .2s; }
-    .portfolio-link:hover { border-color:#789474; transform:translateY(-2px); }
-    .portfolio-link strong { font-size:15px; }
-    .portfolio-link span { color:var(--muted); font-size:13px; }
+    .portfolio-details { padding:20px 25px 24px; }
+    .portfolio-details p { font-size:13px; line-height:1.7; color:var(--muted); max-width:420px; }
+    .portfolio-visit { display:inline-flex; margin-top:16px; padding:9px 13px; border:1px solid #bdcbbd; border-radius:7px; font-size:12px; font-weight:600; }
+    .portfolio-visit:hover { background:var(--mint); }
+    .portfolio-badge { font-size:10px; color:#4c6956; background:#e9f0e7; border-radius:20px; padding:5px 10px; white-space:nowrap; }
+    .guides-section { background:#eef3eb; padding:62px 0; }
+    .guide-links { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:26px; }
+    .guide-link { background:white; padding:24px; border:1px solid var(--line); border-radius:12px; }
+    .guide-link h3 { font-size:18px; line-height:1.35; margin:8px 0; }
+    .guide-link p { color:var(--muted); font-size:13px; line-height:1.65; }
+    .guide-link span { display:inline-block; margin-top:15px; font-size:12px; font-weight:700; }
+    @media(max-width:760px) { .guide-links { grid-template-columns:1fr; } }
     .work-grid { display:grid; grid-template-columns:1fr 1fr; gap:25px; }
     .work-art { height:296px; padding:30px 34px 0; border-radius:12px; overflow:hidden; position:relative; }
     .work-art-cafe { background:#eee8dd; }
@@ -333,12 +338,14 @@
       <div class="section-heading"><div><p class="eyebrow">Real websites, ready to explore</p><h2 id="portfolio-title">See what a good website<br>can do for a local business.</h2></div><p>Take a look at these websites in our portfolio. Each has its own look, with a clear path for customers to get in touch.</p></div>
       <div class="work-grid">
         <article class="portfolio-card">
-          <a class="portfolio-image" href="https://thelocalpixel-star.github.io/GradeWorks-Excavation/" target="_blank" rel="noopener noreferrer" aria-label="Visit GradeWorks Excavation website"><img src="assets/gradeworks-preview.png" alt="Screenshot of the GradeWorks Excavation website" width="1280" height="720" loading="lazy"></a>
-          <div class="portfolio-details"><div><p class="portfolio-category">EXCAVATION &amp; HARDSCAPES</p><h3>GradeWorks Excavation</h3><p>A service-focused site with a project gallery, details about the team, and a quote request form.</p></div><a class="portfolio-visit" href="https://thelocalpixel-star.github.io/GradeWorks-Excavation/" target="_blank" rel="noopener noreferrer">View website <span aria-hidden="true">↗</span></a></div>
+          <div class="portfolio-heading"><div><p class="portfolio-category">EXCAVATION &amp; HARDSCAPES</p><h3>GradeWorks Excavation</h3></div><span class="portfolio-badge">Website example</span></div>
+          <a class="portfolio-image" href="https://thelocalpixel-star.github.io/GradeWorks-Excavation/" target="_blank" rel="noopener noreferrer" aria-label="Visit GradeWorks Excavation website"><img src="assets/gradeworks-preview.png" alt="GradeWorks Excavation website preview" width="1280" height="720" loading="lazy"></a>
+          <div class="portfolio-details"><p>Services, project photos, team details, and a quote request form for an excavation business.</p><a class="portfolio-visit" href="https://thelocalpixel-star.github.io/GradeWorks-Excavation/" target="_blank" rel="noopener noreferrer">Explore GradeWorks ↗</a></div>
         </article>
         <article class="portfolio-card">
-          <a class="portfolio-image" href="https://thelocalpixel-star.github.io/mckeelexteriors/" target="_blank" rel="noopener noreferrer" aria-label="Visit McKeel Exteriors website"><img src="assets/mckeel-preview.png" alt="Screenshot of the McKeel Exteriors website" width="1280" height="720" loading="lazy"></a>
-          <div class="portfolio-details"><div><p class="portfolio-category">HOME &amp; EXTERIOR SERVICES</p><h3>McKeel Exteriors</h3><p>A Tennessee Valley business site that makes its services, service area, and call-for-a-quote option easy to find.</p></div><a class="portfolio-visit" href="https://thelocalpixel-star.github.io/mckeelexteriors/" target="_blank" rel="noopener noreferrer">View website <span aria-hidden="true">↗</span></a></div>
+          <div class="portfolio-heading"><div><p class="portfolio-category">HOME &amp; EXTERIOR SERVICES</p><h3>McKeel Exteriors</h3></div><span class="portfolio-badge">Website example</span></div>
+          <a class="portfolio-image" href="https://thelocalpixel-star.github.io/mckeelexteriors/" target="_blank" rel="noopener noreferrer" aria-label="Visit McKeel Exteriors website"><img src="assets/mckeel-preview.png" alt="McKeel Exteriors website preview" width="1280" height="720" loading="lazy"></a>
+          <div class="portfolio-details"><p>Services, service area, and a direct call option for a Tennessee Valley home services business.</p><a class="portfolio-visit" href="https://thelocalpixel-star.github.io/mckeelexteriors/" target="_blank" rel="noopener noreferrer">Explore McKeel ↗</a></div>
         </article>
       </div>
     </section>
@@ -354,6 +361,7 @@
       <div class="pricing-card"><div class="pricing-label">The whole website.<span>One simple price</span></div><p class="price">$500 <small>/ one time</small></p><p class="pricing-description">A proper home for your business on the internet.</p><ul class="included"><li>Custom design</li><li>Up to 5 pages</li><li>Mobile-friendly layouts</li><li>Contact form & map</li><li>Search engine basics</li><li>Social media links</li><li>Pre-launch revisions</li><li>Full file ownership</li></ul><a class="button" href="#contact">Let’s make it happen <span class="arrow" aria-hidden="true">↗</span></a><p class="payment-note">50% to get started. 50% when it’s ready.<br>Optional hosting & care: $20/month.</p></div>
     </div></section>
     <section class="wrap" aria-label="Areas we serve" style="padding:48px 0 0;"><p class="eyebrow">Proudly serving East Tennessee</p><h2 style="margin-top:14px;">Websites for businesses in your neighborhood.</h2><p style="margin-top:15px;max-width:740px;color:var(--muted);font-size:15px;">From Cleveland and Chattanooga to Athens and Knoxville, we help local businesses build a clear, welcoming online home. Whether you run a café, a shop, or a service business, we’ll work with you to create a website your customers can use on any device.</p></section>
+    <section class="guides-section" aria-labelledby="guides-title"><div class="wrap"><p class="eyebrow">Helpful resources</p><h2 id="guides-title" style="margin-top:12px;">A little help for your next step.</h2><div class="guide-links"><a class="guide-link" href="website-cost-east-tennessee.html"><p class="eyebrow">Planning &amp; pricing</p><h3>What does a small business website cost in East Tennessee?</h3><p>Understand the work, ongoing costs, and questions to ask before choosing a website.</p><span>Read the cost guide ↗</span></a><a class="guide-link" href="local-business-website-checklist.html"><p class="eyebrow">Local search</p><h3>A local business website checklist</h3><p>Make it easier for customers to find your services, contact you, and trust what they see.</p><span>Read the checklist ↗</span></a></div></div></section>
     <section class="section faq-section wrap" aria-labelledby="faq-title"><div class="faq-intro"><p class="eyebrow">Good questions</p><h2 id="faq-title">A little clarity<br>before we start.</h2><p>Something else on your mind?<br><a href="mailto:Hello@localwebcraft.com">Just ask. We’re easy to talk to.</a></p></div><div class="faq-list"><details><summary>Is $500 really the full price?</summary><p>Yes. Your custom website, up to five pages, mobile layouts, and revisions before launch are included. Extra pages are $50 each. Hosting and care are optional at $20/month; we’ll agree on any extras before starting.</p></details><details><summary>How soon can my website go live?</summary><p>Typically 5–7 business days from our kickoff call. We aim to share a first draft within 48 hours. The final timing depends on how quickly we receive your content and feedback.</p></details><details><summary>What do I need to get started?</summary><p>Tell us about your business and what your website needs to do. Bring your logo, photos, and any text you already have. We’ll walk through what’s missing together.</p></details><details><summary>Can you help with my domain and hosting?</summary><p>Absolutely. We can help with your domain and offer hosting and ongoing care for $20/month. Prefer to host it yourself? You’ll own the files and can take them with you.</p></details><details><summary>What if I want to change the design?</summary><p>Revisions before launch are included. We’ll refine the design with you so the finished website feels right for your business.</p></details></div></section>
     <section class="contact-section wrap" id="contact" aria-labelledby="contact-title"><div class="contact-copy"><p class="eyebrow">Your next chapter starts here</p><h2 id="contact-title">Let’s make<br>something good.</h2><p>Tell us a little about your business. We’ll get back to you within 24 hours for a free, friendly chat.</p><a class="contact-email" href="mailto:Hello@localwebcraft.com">Hello@localwebcraft.com ↗</a><a class="contact-phone" href="tel:+14234018663">423-401-8663</a></div>
       <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
