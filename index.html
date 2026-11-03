@@ -104,6 +104,10 @@
     h2 { font-size:40px; font-weight:700; line-height:1.17; letter-spacing:-1.8px; }
     .section-heading h2 { margin-top:12px; }
     .section-heading>p { color:var(--muted); font-size:14px; max-width:290px; }
+    .portfolio-link { display:flex; flex-direction:column; gap:8px; padding:24px; border:1px solid var(--line); border-radius:12px; background:#fff; transition:border-color .2s, transform .2s; }
+    .portfolio-link:hover { border-color:#789474; transform:translateY(-2px); }
+    .portfolio-link strong { font-size:15px; }
+    .portfolio-link span { color:var(--muted); font-size:13px; }
     .work-grid { display:grid; grid-template-columns:1fr 1fr; gap:25px; }
     .work-art { height:296px; padding:30px 34px 0; border-radius:12px; overflow:hidden; position:relative; }
     .work-art-cafe { background:#eee8dd; }
@@ -321,6 +325,15 @@
         <article class="work-card"><div class="work-art work-art-plants"><div class="browser work-browser plant-browser" aria-hidden="true"><div class="browser-bar"><i></i><i></i><i></i><span class="browser-url">fernandfolk.example</span></div><div class="mini-nav plant-nav"><span class="mini-brand">fern & folk</span><div class="mini-menu"><span>Our plants</span><span>Our story</span><span>Visit us ↗</span></div></div><div class="plant-content"><div class="plant-copy"><span class="mini-eyebrow">ROOTED IN THE NEIGHBORHOOD</span><h3>A little green.<br>A lot of good.</h3><p>Meet your next leafy companion. Plants for your space, and advice for the growing.</p><span class="mini-cta">Find your green ↗</span></div><img src="assets/plants.jpg" alt="" width="400" height="400" loading="lazy"></div></div></div><div class="work-caption"><div><h3>Fern & Folk</h3><p>A fresh home for a growing business.</p></div><span class="concept-tag">Shop concept</span></div></article>
       </div>
     </section>
+    <section class="wrap" aria-labelledby="portfolio-title" style="padding:0 0 80px;">
+      <p class="eyebrow">See websites in action</p>
+      <h2 id="portfolio-title" style="margin:14px 0 12px;">Explore our portfolio.</h2>
+      <p style="color:var(--muted);max-width:650px;font-size:14px;">Take a closer look at two websites from the WebCraft portfolio.</p>
+      <div class="work-grid" style="margin-top:24px;">
+        <a class="portfolio-link" href="https://thelocalpixel-star.github.io/GradeWorks-Excavation/" target="_blank" rel="noopener noreferrer"><strong>GradeWorks Excavation</strong><span>Excavation and hardscapes · View website ↗</span></a>
+        <a class="portfolio-link" href="https://thelocalpixel-star.github.io/mckeelexteriors/" target="_blank" rel="noopener noreferrer"><strong>McKeel Exteriors</strong><span>Roofing and exterior services · View website ↗</span></a>
+      </div>
+    </section>
     <section class="section process-section" id="pricing" aria-labelledby="process-title"><div class="wrap process-layout">
       <div class="process-intro"><p class="eyebrow">Small process. Big difference.</p><h2 id="process-title">Less back-and-forth.<br>More getting it done.</h2><p>No long briefs or confusing tech talk. Just a conversation, a little collaboration, and a website you’re proud to share.</p><ol class="steps"><li><span class="step-number">1</span><div><h3>Tell us your story.</h3><p>A quick call to get to know your business, your customers, and what you have in mind.</p></div></li><li><span class="step-number">2</span><div><h3>We make it feel like you.</h3><p>See a first draft within 48 hours. Share your thoughts; we’ll work through the details together.</p></div></li><li><span class="step-number">3</span><div><h3>Hello, internet.</h3><p>Once you love it, we help you launch. You get all the files and full ownership.</p></div></li></ol></div>
       <div class="pricing-card"><div class="pricing-label">The whole website.<span>One simple price</span></div><p class="price">$500 <small>/ one time</small></p><p class="pricing-description">A proper home for your business on the internet.</p><ul class="included"><li>Custom design</li><li>Up to 5 pages</li><li>Mobile-friendly layouts</li><li>Contact form & map</li><li>Search engine basics</li><li>Social media links</li><li>Pre-launch revisions</li><li>Full file ownership</li></ul><a class="button" href="#contact">Let’s make it happen <span class="arrow" aria-hidden="true">↗</span></a><p class="payment-note">50% to get started. 50% when it’s ready.<br>Optional hosting & care: $20/month.</p></div>
@@ -333,6 +346,7 @@
         <div class="form-field"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" placeholder="Alex Smith" required></div>
         <div class="form-field"><label for="business">Business name</label><input id="business" name="business_name" autocomplete="organization" placeholder="Your pride and joy" required></div>
         <div class="form-field full"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@yourbusiness.com" required></div>
+        <div class="form-field full"><label for="city">Your city <span style="font-weight:400">(optional)</span></label><input id="city" name="city" autocomplete="address-level2" placeholder="For example, Cleveland, TN"></div>
         <div class="form-field full"><label for="message">What do you have in mind?</label><textarea id="message" name="message" placeholder="A little about your business and the website you’d love…" required></textarea></div>
         <button class="button" type="submit">Start the conversation <span class="arrow" aria-hidden="true">↗</span></button><p class="form-note">No commitment. No sales pitch. Just a good place to start.</p>
       </form>
