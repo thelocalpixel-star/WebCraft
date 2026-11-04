@@ -23,7 +23,10 @@ class Page(HTMLParser):
  def handle_data(self,data):
   if self.schema:self.json_text.append(data)
 pages={}
+# 404.html is GitHub Pages' error page: intentionally noindex and NOT in the sitemap.
 for f in ROOT.glob('*.html'):
+ if f.name == '404.html':
+  continue
  p=Page();s=f.read_text();p.feed(s);pages[f.name]=p
  assert p.h1==1,(f.name,'H1 count')
  assert len(p.canonical)==1,(f.name,'canonical count')
