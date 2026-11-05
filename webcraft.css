@@ -11,3 +11,78 @@ h1,h2,h3{overflow-wrap:anywhere}.btn{max-width:100%;white-space:normal;text-alig
 .studio-visual{margin:0;position:relative;overflow:hidden;isolation:isolate;border-radius:28px;min-width:0;box-shadow:0 22px 60px #263c6d12;background:#e8eaf2;aspect-ratio:1/1.08}.studio-visual>img{width:100%;height:100%;object-fit:cover;object-position:52% center}.studio-visual::after{content:'';position:absolute;inset:45% 0 0;background:linear-gradient(transparent,#182842b8);pointer-events:none}.studio-visual figcaption{position:absolute;bottom:30px;left:30px;right:25px;z-index:1;color:white}.studio-visual figcaption>span{font-size:8px;letter-spacing:1.8px;font-weight:600;display:block;margin-bottom:12px}.studio-visual figcaption strong{font-family:'Plus Jakarta Sans',Inter,sans-serif;font-size:clamp(21px,2vw,29px);line-height:1.3;letter-spacing:-.03em;font-weight:500}.reading-card{display:flex;align-items:center;justify-content:space-between;gap:35px;border:1px solid #dce2ed;background:white;padding:38px;border-radius:22px}.reading-card h2{font-size:30px;max-width:720px}.reading-card p{font-size:14px;margin-top:18px}.reading-card .btn{flex-shrink:0}.editor-note{background:#edf0fa;border-left:3px solid #3448ce;padding:22px 25px;margin:25px 0;border-radius:0 12px 12px 0}.editor-note strong{font-size:12px;text-transform:uppercase;letter-spacing:1px}.article .editor-note p{font-size:15px;margin:10px 0 0}.article li{margin-bottom:12px}@media(max-width:850px){.studio-visual{aspect-ratio:1.35}.reading-card{display:block;padding:28px}.reading-card .btn{margin-top:25px}.studio-visual figcaption strong{font-size:26px}}@media(max-width:560px){.studio-visual{aspect-ratio:1.05;border-radius:22px}.studio-visual figcaption{left:23px;bottom:23px}.studio-visual figcaption strong{font-size:24px}.reading-card h2{font-size:26px}.editor-note{padding:20px}.article .editor-note p{font-size:14px}}
 .hero-concept{margin:0;align-self:center;width:100%;box-shadow:0 20px 55px #463a2d0c}.hero-concept .concept-browser span{font-size:9px}.hero-concept .concept-nav b{font-size:23px}.hero-concept .cafe-content{height:345px;padding-top:15px}.hero-concept .cafe-content h3{font-size:34px;line-height:1.06}.hero-concept .concept-site p{font-size:8px;line-height:1.8}.hero-concept .mock-eyebrow{font-size:6px}.hero-concept .mock-button{font-size:7px;padding:11px 13px}.hero-concept .mock-foot{font-size:6px}@media(max-width:1000px) and (min-width:851px){.hero-concept .cafe-content h3{font-size:27px}.hero-concept .cafe-content{height:310px}.hero-concept .concept-site p{font-size:7px}}@media(max-width:850px){.hero-concept{max-width:650px}.hero-concept .cafe-content{height:350px}.hero-concept .cafe-content h3{font-size:38px}.hero-concept .concept-nav>span{display:block}}@media(max-width:560px){.hero-concept .cafe-content{height:295px}.hero-concept .cafe-content h3{font-size:28px}.hero-concept .concept-site p{font-size:7px}.hero-concept .concept-nav>span{display:none}.hero-concept .mock-button{font-size:6px;padding:9px 10px}.hero-concept .concept-browser span{font-size:8px}.hero-concept .mock-foot{font-size:5px}}@media(max-width:360px){.hero-concept .cafe-content h3{font-size:24px}.hero-concept .cafe-content{height:275px}.hero-concept .mock-eyebrow{font-size:5px}}
 .atelier-frame{background:#dbe4e3;padding:22px;border-radius:24px;min-width:0;width:100%;box-shadow:0 18px 50px #1833330a}.atelier-browser{background:#fff;border-radius:9px 9px 0 0;padding:12px 14px;display:flex;align-items:center;gap:18px;color:#bdc8ca}.atelier-browser>span{font-size:8px;letter-spacing:2px}.atelier-browser small{font:9px Inter,sans-serif;color:#7c8a89}.atelier-site{background:#f2f0e9;color:#283d36;overflow:hidden;border-radius:0 0 8px 8px}.atelier-nav{display:flex;align-items:center;justify-content:space-between;padding:23px 23px 26px;gap:10px}.atelier-nav strong{font:500 24px Georgia,serif;letter-spacing:4px}.atelier-nav strong>span{display:block;font:5px Inter,sans-serif;letter-spacing:2px;margin-top:6px}.atelier-nav>span{font:6px Inter,sans-serif}.atelier-nav i{font-style:normal;border-bottom:1px solid;margin-left:8px;padding-bottom:4px}.atelier-body{display:grid;grid-template-columns:1.05fr 1fr;gap:12px;padding:8px 23px 28px}.atelier-copy{padding-top:20px;min-width:0}.atelier-copy>p:first-child{font:6px Inter,sans-serif;letter-spacing:1.5px;color:#61736a;margin-bottom:25px}.atelier-copy h3{display:block;font:400 clamp(25px,2.7vw,38px)/1.08 Georgia,serif;letter-spacing:-1.2px;margin:0;color:#283d36}.atelier-copy h3 em{color:#8a6548;font-weight:400}.atelier-copy .atelier-description{font:7px/1.9 Inter,sans-serif;color:#627168;margin:22px 0}.atelier-action{display:inline-block;background:#2c493f;color:white;padding:11px 14px;font:6px Inter,sans-serif;border-radius:2px}.atelier-room{position:relative;height:325px;overflow:hidden;background:linear-gradient(115deg,#d1c4b1,#e9dfce 53%,#ccbaa4);border-radius:100px 100px 2px 2px;isolation:isolate}.room-floor{position:absolute;bottom:0;left:0;right:0;height:24%;background:linear-gradient(125deg,#b8a388,#d2baa0);border-top:1px solid #cab79e}.room-window{position:absolute;right:-20%;top:0;width:55%;height:85%;background:#fff8d65c;transform:skew(-20deg);box-shadow:-28px 0 30px #fff3ce40}.room-art{position:absolute;left:16%;top:17%;width:46%;height:35%;border:5px solid #71543a;background:#eae1cd;box-shadow:3px 5px 5px #63442d20}.room-art i{position:absolute;width:57%;height:80%;bottom:0;left:22%;border-radius:50% 50% 0 0;background:#a17a4f}.room-art i:after{content:'';position:absolute;width:55%;height:55%;bottom:0;right:-20%;border-radius:50% 50% 0 0;background:#4c6254}.room-chair-back{position:absolute;left:22%;bottom:25%;width:45%;height:28%;background:linear-gradient(100deg,#8a4c2e,#ad6d47);border-radius:55% 45% 20% 20%;transform:rotate(-8deg);box-shadow:5px 8px 10px #4c382a20}.room-chair-seat{position:absolute;left:24%;bottom:20%;width:48%;height:10%;border-radius:35%;background:linear-gradient(#b27650,#8d5235);transform:rotate(-5deg);box-shadow:0 10px 12px #664a3325}.room-chair-leg{position:absolute;bottom:9%;width:4%;height:17%;background:#5f442f;transform:rotate(9deg)}.room-chair-leg.left{left:29%}.room-chair-leg.right{left:63%;transform:rotate(-9deg)}.room-table{position:absolute;right:5%;bottom:18%;height:21%;width:19%;background:linear-gradient(90deg,#c3b397,#e4d6bc);border-radius:50% 50% 4% 4%;box-shadow:3px 6px 10px #523e2a20}.room-vase{position:absolute;right:10%;bottom:39%;height:15%;width:10%;border-radius:45% 45% 35% 35%;background:linear-gradient(90deg,#405548,#69785e)}.room-vase:before{content:'';position:absolute;height:22px;width:1px;background:#3a4d39;bottom:90%;left:40%;transform:rotate(-15deg)}.room-vase:after{content:'';position:absolute;height:8px;width:17px;border-radius:100% 0;background:#566c47;bottom:calc(90% + 10px);left:35%;transform:rotate(-30deg)}.room-caption{position:absolute;bottom:4%;left:9%;font:5px Inter,sans-serif;letter-spacing:.8px;color:#503d2c}.atelier-bottom{padding:15px 23px;border-top:1px solid #283d3617;display:flex;justify-content:space-between;gap:10px;font:5px Inter,sans-serif;letter-spacing:1px;color:#66786d}@media(max-width:1000px) and (min-width:851px){.atelier-frame{padding:16px}.atelier-nav{padding:20px 15px}.atelier-nav>span{display:none}.atelier-body{padding:8px 15px 20px}.atelier-copy h3{font-size:27px}.atelier-room{height:300px}}@media(max-width:850px){.atelier-frame{max-width:650px}.atelier-copy h3{font-size:38px}.atelier-room{height:350px}}@media(max-width:560px){.atelier-frame{padding:16px}.atelier-nav{padding:20px 16px}.atelier-nav strong{font-size:22px}.atelier-nav>span{display:none}.atelier-body{padding:8px 16px 22px;gap:8px}.atelier-copy h3{font-size:27px;letter-spacing:-.8px}.atelier-copy>p:first-child{font-size:5px;letter-spacing:1px;margin-bottom:20px}.atelier-copy .atelier-description{font-size:6px;line-height:1.9;margin:20px 0}.atelier-action{font-size:5px;padding:10px}.atelier-room{height:280px}.atelier-bottom{padding:13px 16px;font-size:4px;letter-spacing:.7px}}@media(max-width:360px){.atelier-copy h3{font-size:23px}.atelier-body{padding-inline:12px}.atelier-copy .atelier-description{font-size:5px}.atelier-room{height:250px}.atelier-nav{padding-inline:12px}}
+
+/* 2026-11-05 mobile polish: user phone screenshots showed large dead gaps
+   between sections, stretched service cards with a big void under the icon,
+   a wrapping ribbon, a cropped hero mockup, and oversized pill buttons.
+   All rules below are mobile-only overrides, appended last so they win. */
+@media (max-width:640px){
+  .section{padding-top:36px;padding-bottom:12px}
+  .sectionhead{margin-bottom:22px}
+  .sectionhead>p{margin-top:14px}
+  h2{font-size:30px;line-height:1.12}
+  .eyebrow{margin-bottom:14px}
+  .intro{margin:18px 0 22px;font-size:16px}
+  .hero{padding:28px 0 36px;gap:28px}
+  .hero h1{font-size:clamp(38px,10.5vw,52px)}
+  .btn{gap:8px;padding:14px 20px}
+  .actions{gap:14px}
+  /* Service cards: kill the flex stretch + margin-top:auto void. Compact block card. */
+  .servicegrid{display:grid;grid-template-columns:1fr;gap:12px}
+  .servicecard{display:block;padding:22px 22px 20px;margin-bottom:0}
+  .serviceicon{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:12px;background:#e9edf8;font-size:20px;line-height:1;margin-bottom:14px}
+  .servicecard h3{font-size:20px}
+  .servicecard p{font-size:14px;line-height:1.7;margin:10px 0 16px}
+  .more{margin-top:0}
+  /* Ribbon: one scrolling line, never a wrapped orphan word. */
+  .ribbon{padding:14px 0}
+  .ribbon .wrap{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;gap:18px;font-size:12px;white-space:nowrap;scrollbar-width:none}
+  .ribbon .wrap::-webkit-scrollbar{display:none}
+  .ribbon .wrap>*{flex-shrink:0}
+  /* Hero mockup: stack copy over the room so the chair is full-width, not squeezed. */
+  .atelier-frame{padding:14px;border-radius:20px}
+  .atelier-body{display:block;padding:8px 14px 18px}
+  .atelier-copy{padding-top:8px}
+  .atelier-copy h3{font-size:26px}
+  .atelier-copy .atelier-description{margin:14px 0}
+  .atelier-room{height:250px;margin-top:16px}
+  .atelier-nav{padding:16px 14px}
+  .atelier-bottom{padding:12px 14px}
+  .hero-concept .cafe-content{height:auto}
+  /* Work concepts: stack text and image instead of two squeezed columns. */
+  .workgrid{display:block}
+  .workcard{margin-bottom:24px}
+  .concept-frame{padding:14px}
+  .cafe-content,.plant-content{display:block;height:auto;padding:8px 14px 18px}
+  .cafe-content img,.plant-content img{height:180px;min-height:0;width:100%;border-radius:12px}
+  .concept-caption{padding-top:14px}
+  .concept-disclosure{margin-top:14px}
+  /* Reading card, offer, contact: tighter padding, smaller headings, full-width CTA. */
+  .reading-card{padding:22px}
+  .reading-card h2{font-size:24px}
+  .reading-card p{margin-top:12px}
+  .reading-card .btn{margin-top:18px;width:100%}
+  .offer{padding:24px;border-radius:20px;gap:24px}
+  .offer h2{font-size:30px;margin-bottom:16px}
+  .offer .btn{margin-top:20px}
+  .pricebox{margin-top:24px;padding-top:20px}
+  .pricebox strong{font-size:52px;line-height:1.1}
+  .pricebox ul{line-height:1.9}
+  .contact{padding-bottom:56px;gap:28px}
+  .contact form{margin-top:24px}
+  .contact h2{margin-bottom:18px}
+  .detailgrid{padding:12px 0 24px;gap:24px}
+  .checklist{margin-top:20px;padding:22px}
+  .local-plan{padding:22px}
+  .local-plan h2{font-size:28px}
+  .resourcegrid a{display:block;padding:20px;margin-bottom:12px}
+  .resourcegrid a span{display:inline-block;margin-top:14px}
+  .pagehero{padding:40px 0}
+  .article{padding-top:40px;padding-bottom:56px}
+  .article h1{font-size:36px}
+  .article h2{font-size:26px;margin:36px 0 14px}
+  .three article{margin-bottom:22px}
+  footer{padding:32px 0 40px!important}
+  .nav{padding:20px 0}
+}
+.serviceicon{line-height:1}
