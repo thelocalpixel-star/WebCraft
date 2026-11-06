@@ -35,3 +35,9 @@ Review Search Console queries and landing pages after recrawling, alongside qual
 Real case studies, project photos, team identity and customer feedback must come from the business. No invented portfolio items or statistics. A Google Business Profile should be used only if the business meets Google's in-person eligibility rules; an online-only service does not qualify merely because it serves a region.
 
 Sources consulted: Google Search Central spam policies, helpful-content guidance and Organization structured data documentation; Web3Forms API and AJAX documentation. OpenSEO project c93c45a5-3589-4dd4-b883-fdd824a2bbe1 retains the research baseline and business context.
+
+## Live verification
+
+GitHub Pages deployed commit e6be435 successfully. Eleven live priority pages were checked for updated content, canonicals and horizontal overflow. Web3Forms accepted one labeled technical test (WEBCRAFT-SEO-20261106), and GA4 Realtime showed exactly one webcraft_inquiry_received event. Inbox delivery was not inspected. GA4 has no custom event definitions or event modification rules; unknown external server integrations remain unverified. The new event remains distinct and is not an advertising conversion.
+
+A final live pass found 25 pages using an older script cache version. Their references were synchronized to the current confirmed-inquiry handler. Search Console continued to show the Cleveland URL as indexed, but a new recrawl request was not confirmed; no claim is made that Google has indexed the revised content.
