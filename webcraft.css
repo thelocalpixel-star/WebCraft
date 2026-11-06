@@ -86,3 +86,42 @@ h1,h2,h3{overflow-wrap:anywhere}.btn{max-width:100%;white-space:normal;text-alig
   .nav{padding:20px 0}
 }
 .serviceicon{line-height:1}
+
+/* 2026-11-06 mobile polish round 2: service-area lists were inline text that
+   wrapped mid-city-name and left the CTA button jammed under the last link;
+   resource cards still carried a 35px internal gap; section rhythm was still
+   loose. Chips + tighter rhythm, all sizes unless inside the mobile block. */
+.area-label{font-size:14px;color:var(--muted);margin:0 0 12px}
+.area-chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 24px}
+.area-chip{display:inline-flex;align-items:center;gap:6px;padding:9px 14px;background:#fff;border:1px solid #dde2eb;border-radius:999px;font-size:13px;font-weight:600;color:var(--ink);white-space:nowrap;text-decoration:none}
+.area-chip:hover{border-color:var(--blue);color:var(--blue)}
+@media (max-width:640px){
+  .section{padding-top:28px;padding-bottom:8px}
+  .eyebrow{margin-bottom:10px}
+  h2{font-size:28px}
+  .intro{margin:14px 0 16px}
+  .hero{padding:20px 0 28px}
+  .btn{padding:13px 18px}
+  .offer{padding:20px}
+  .pricebox{margin-top:16px;padding-top:16px}
+  .pricebox strong{font-size:46px;line-height:1.1}
+  .contact{padding-bottom:40px}
+  .detailgrid{padding:8px 0 16px}
+  .local-plan{padding:18px}
+  .reading-card{padding:18px}
+  .servicecard{padding:18px 18px 16px}
+  .resourcegrid{display:grid;grid-template-columns:1fr;gap:12px}
+  .resourcegrid a{display:flex;flex-direction:column;justify-content:flex-start;gap:10px;padding:16px 18px;margin-bottom:0}
+  .resourcegrid h3{font-size:17px;line-height:1.35}
+  .resourcegrid span{font-size:12px}
+  .area-label{margin-bottom:10px}
+  .area-chips{gap:8px;margin-bottom:22px}
+  .area-chip{padding:8px 12px;font-size:12px}
+  .area-grid{grid-template-columns:1fr 1fr;gap:8px}
+  .area-grid a{padding:12px;font-size:13px}
+  .checklist{padding:18px}
+  .pagehero{padding:28px 0}
+  .article{padding-top:32px;padding-bottom:48px}
+  .three article{margin-bottom:18px}
+  footer{padding:28px 0 36px!important}
+}
