@@ -132,7 +132,6 @@ h1,h2,h3{overflow-wrap:anywhere}.btn{max-width:100%;white-space:normal;text-alig
 .seo-details{max-width:900px}.seo-details>p{max-width:72ch;line-height:1.8;margin:18px 0}.service-faq{border-bottom:1px solid #dde2eb;padding:18px 0}.service-faq summary{cursor:pointer;font-size:18px;font-weight:600}.service-faq p{line-height:1.8;margin:14px 0;max-width:72ch}.atelier-copy .atelier-heading{font-weight:400;margin:0}.contact button:disabled{opacity:.65;cursor:wait}.contact [role="status"]:focus{outline:2px solid var(--blue);outline-offset:5px}
 
 /* Location service navigation follows the homepage ribbon. */
-.service-ribbon a{display:inline-flex;align-items:center;min-height:32px;color:inherit;text-decoration:none;white-space:nowrap}
+.service-ribbon a{color:inherit;text-decoration:none;white-space:nowrap}
 .service-ribbon a:hover{text-decoration:underline;text-underline-offset:5px}
 .service-ribbon a:focus-visible{outline:2px solid #a7a2ff;outline-offset:5px;border-radius:2px}
-@media(max-width:640px){.service-ribbon .wrap{padding-block:5px}.service-ribbon a{min-height:34px}}
