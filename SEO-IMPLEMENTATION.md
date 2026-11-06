@@ -41,3 +41,11 @@ Sources consulted: Google Search Central spam policies, helpful-content guidance
 GitHub Pages deployed commit e6be435 successfully. Eleven live priority pages were checked for updated content, canonicals and horizontal overflow. Web3Forms accepted one labeled technical test (WEBCRAFT-SEO-20261106), and GA4 Realtime showed exactly one webcraft_inquiry_received event. Inbox delivery was not inspected. GA4 has no custom event definitions or event modification rules; unknown external server integrations remain unverified. The new event remains distinct and is not an advertising conversion.
 
 A final live pass found 25 pages using an older script cache version. Their references were synchronized to the current confirmed-inquiry handler. Search Console continued to show the Cleveland URL as indexed, but a new recrawl request was not confirmed; no claim is made that Google has indexed the revised content.
+
+## Priority keyword implementation — November 6, 2026
+
+Selected 16 of the 32 candidate keyword families for each of 24 communities (384 candidates). Selection is by business fit and hiring intent, not a measured volume percentile: most candidate volumes remain unknown. Web design, redesign, website designer, small-business and affordable design terms share the existing city URL. Hosting/maintenance, local SEO, paid search and analytics terms are supported by expanded service cards and contextual project planning. No new service-city URL grid was created.
+
+Each location now has service jump links, more explicit service headings, distinct planning context tied to its existing guide, and updated meta descriptions. Scope, remote-service disclosures, package price, canonicals, GA4 and successful inquiry tracking remain consistent. The selected terms and page destinations are recorded in SEO-IMPLEMENTED-PRIORITY-KEYWORDS.csv. Educational advice is not presented as local customer experience.
+
+Verification: existing checks cover all 80 pages, heading order, links/anchors, sitemap parity and JSON-LD. All eight contact tests pass. The new navigation and service cards were checked at 320px with no horizontal overflow. Publication and recrawl request outcomes must be recorded separately from indexing and ranking outcomes.
