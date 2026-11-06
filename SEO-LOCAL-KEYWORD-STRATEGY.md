@@ -1,3 +1,5 @@
+> November 6 expansion: the universe is now 1,152 candidates, 48 per location. Earlier counts below describe the original research snapshot. See SEO-RELATED-KEYWORDS-RELEASE.md for the added phrase families, published guide improvements and measurement limits.
+
 # WebCraft local keyword strategy — November 6, 2026
 
 ## Decision
