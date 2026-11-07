@@ -33,7 +33,8 @@ for f in ROOT.glob('*.html'):
  expected='https://localwebcraft.com/'+('' if f.name=='index.html' else f.name)
  assert p.canonical[0]==expected,(f.name,'wrong canonical')
  assert len(set(p.ids))==len(p.ids),(f.name,'duplicate IDs')
- assert 'G-4GJ9T13HPP' in s,(f.name,'GA4 missing')
+ assert '/webcraft-analytics.js?v=' in s,(f.name,'GA4 loader missing')
+ assert 'googletagmanager.com/gtag/js' not in s,(f.name,'unguarded GA4 script')
  for h in p.honeypots:assert 'hidden' in h and h.get('aria-hidden')=='true' and h.get('tabindex')=='-1',(f.name,'honeypot attributes')
  for schema in p.json_text:json.loads(schema)
 for name,p in pages.items():
