@@ -1,0 +1,22 @@
+{
+  "name": "WebCraft",
+  "short_name": "WebCraft",
+  "description": "Web design, hosting, local SEO, Google Ads and analytics from Cleveland, TN. $500 websites for small businesses.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f4f5f7",
+  "theme_color": "#f4f5f7",
+  "icons": [
+    {
+      "src": "/assets/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
