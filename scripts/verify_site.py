@@ -44,6 +44,20 @@ for f in ROOT.glob('*.html'):
  assert len(re.findall(r'<script\b', s)) == len(re.findall(r'</script>', s)),(f.name,'unbalanced script tags')
  stripped = re.sub(r'<script[^>]*>.*?</script>', '', s, flags=re.S)
  assert '"@context"' not in stripped and '{"@type"' not in stripped,(f.name,'JSON-LD text outside script tag')
+ # 2026-11-18: the Nov 15 local-enrichment run mangled 20 city pages —
+ # 2 FAQs appended after </body></html> (with </html>'s '>' eaten), the FAQ
+ # section's opening tag destroyed, a stray </section> left behind — and this
+ # checker passed every run for 3 days because it never checked document
+ # structure. Catch that class of bug here.
+ assert len(re.findall(r'<head(\s|>)', s)) == 1,(f.name,'head count')
+ assert s.count('</head>') == 1,(f.name,'head close count')
+ assert s.count('</body>') == 1,(f.name,'body close count')
+ assert s.count('</html>') == 1,(f.name,'html close count')
+ _depth = 0
+ for _m in re.finditer(r'<section\b|</section>', s):
+  _depth += -1 if _m.group(0).startswith('</') else 1
+  assert _depth >= 0,(f.name,'section close before open')
+ assert _depth == 0,(f.name,'unbalanced sections')
 for name,p in pages.items():
  for link in p.links:
   u=urlsplit(link)
