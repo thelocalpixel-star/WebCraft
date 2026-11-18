@@ -190,3 +190,15 @@ h1,h2,h3{overflow-wrap:anywhere}.btn{max-width:100%;white-space:normal;text-alig
    1240px .wrap, so FAQ headings/dividers started ~195px right of every other
    section. Span the full wrap width so all sections share one left edge. */
 .faq{max-width:none}
+
+/* 2026-11-18 cost-section cleanup: competitor prices as a real table, not a
+   semicolon-stuffed list. The old "Prices below" note sat under the list it
+   described, so the attribution now lives in the table caption above it. */
+.price-table-wrap{overflow-x:auto;margin:8px 0 4px}
+table.price-table{width:100%;border-collapse:collapse;font-size:15px;line-height:1.55}
+.price-table caption{text-align:left;font-size:12px;line-height:1.6;color:#586479;padding:0 0 12px}
+.price-table th,.price-table td{padding:12px 12px 12px 0;text-align:left;vertical-align:top}
+.price-table thead th{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#586479;border-bottom:2px solid #111827;padding-bottom:8px}
+.price-table tbody th{font-weight:600}
+.price-table tbody td{border-bottom:1px solid var(--line)}
+.price-table tbody tr:last-child td,.price-table tbody tr:last-child th{border-bottom:0}
