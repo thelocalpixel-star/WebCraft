@@ -5,6 +5,7 @@ from urllib.parse import urlsplit
 from urllib.request import urlopen
 from concurrent.futures import ThreadPoolExecutor
 import json
+import re
 import xml.etree.ElementTree as ET
 ROOT=Path(__file__).resolve().parent.parent
 class Page(HTMLParser):
@@ -37,6 +38,12 @@ for f in ROOT.glob('*.html'):
  assert 'googletagmanager.com/gtag/js' not in s,(f.name,'unguarded GA4 script')
  for h in p.honeypots:assert 'hidden' in h and h.get('aria-hidden')=='true' and h.get('tabindex')=='-1',(f.name,'honeypot attributes')
  for schema in p.json_text:json.loads(schema)
+ # 2026-11-18: the Nov 17 position pass left the homepage WebSite JSON outside its
+ # <script> tag, rendering as visible text — and this checker never saw it, because
+ # it only parsed JSON inside ld+json blocks. Catch that class of bug here.
+ assert len(re.findall(r'<script\b', s)) == len(re.findall(r'</script>', s)),(f.name,'unbalanced script tags')
+ stripped = re.sub(r'<script[^>]*>.*?</script>', '', s, flags=re.S)
+ assert '"@context"' not in stripped and '{"@type"' not in stripped,(f.name,'JSON-LD text outside script tag')
 for name,p in pages.items():
  for link in p.links:
   u=urlsplit(link)
