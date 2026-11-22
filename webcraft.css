@@ -202,3 +202,7 @@ table.price-table{width:100%;border-collapse:collapse;font-size:15px;line-height
 .price-table tbody th{font-weight:600}
 .price-table tbody td{border-bottom:1px solid var(--line)}
 .price-table tbody tr:last-child td,.price-table tbody tr:last-child th{border-bottom:0}
+
+/* About page: founder portrait + contact button sizing. */
+.about-photo{border-radius:18px;width:100%;aspect-ratio:1/1;object-fit:cover}
+.about-contact .btn{width:auto}
