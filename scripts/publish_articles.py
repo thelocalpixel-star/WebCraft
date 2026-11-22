@@ -1,6 +1,6 @@
 """Build a Pages artifact containing only articles whose release time has arrived."""
 from argparse import ArgumentParser
-from collections import defaultdict
+from collections import Counter, defaultdict
 from dataclasses import dataclass
 from datetime import date, datetime, time, timedelta, timezone
 from html import escape
@@ -58,45 +58,57 @@ def load_articles(source):
     cities = json.loads((source / 'scripts/city-content-map.json').read_text(encoding='utf-8'))
     market_names = {Path(row['service']).stem: row['city'] for row in cities}
     market_names.update(EXTRA_MARKETS)
-    raw = (source / '_editorial/november-december-2026.txt').read_text(encoding='utf-8').strip()
-    records = re.split(r'^@@ ', raw, flags=re.M)[1:]
     articles = []
     used = set()
-    for index, record in enumerate(records):
-        lines = record.strip().splitlines()
-        slug, service, markets_raw = [value.strip() for value in lines[0].split('|')]
-        markets = tuple(value.strip() for value in markets_raw.split(','))
-        if not re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*', slug) or slug in used or (source / (slug+'.html')).exists():
-            raise ValueError(f'Invalid, existing, or duplicate article slug: {slug}')
-        if service not in SERVICES or not set(markets) <= market_names.keys():
-            raise ValueError(f'Unknown service or location for {slug}')
-        if len(lines) < 9 or not lines[1].startswith('# ') or lines[2].startswith(('#', '@')):
-            raise ValueError(f'Missing article title, lead, or sections: {slug}')
+    bodies = set()
+    for batch in sorted((source / '_editorial/daily').glob('*.txt')):
+        day = date.fromisoformat(batch.stem)
+        if not FIRST_DAY <= day < FIRST_DAY + timedelta(days=30):
+            raise ValueError(f'Batch outside the publication window: {batch.name}')
+        raw = batch.read_text(encoding='utf-8').strip()
+        records = re.split(r'^@@ ', raw, flags=re.M)[1:]
+        coverage = Counter()
+        for record in records:
+            lines = record.strip().splitlines()
+            slug, service, markets_raw = [value.strip() for value in lines[0].split('|')]
+            markets = tuple(value.strip() for value in markets_raw.split(','))
+            if not re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*', slug) or slug in used or (source / (slug+'.html')).exists():
+                raise ValueError(f'Invalid, existing, or duplicate article slug: {slug}')
+            if service not in SERVICES or len(markets) != 1 or markets[0] not in market_names:
+                raise ValueError(f'Unknown service or location for {slug}')
+            if len(lines) < 9 or not lines[1].startswith('# ') or lines[2].startswith(('#', '@')):
+                raise ValueError(f'Missing article title, lead, or sections: {slug}')
 
-        sections = []
-        references = []
-        body = lines[3:]
-        while body and body[0].startswith('## '):
-            if len(body) < 2 or body[1].startswith(('#', '@')):
-                raise ValueError(f'Empty article section: {slug}')
-            sections.append((body[0][3:], body[1]))
-            body = body[2:]
-        for reference in body:
-            if not reference.startswith('@ '):
-                raise ValueError(f'Unexpected article line: {slug}')
-            name, url = [value.strip() for value in reference[2:].split('|', 1)]
-            if not url.startswith('https://'):
-                raise ValueError(f'Unsafe reference URL: {slug}')
-            references.append((name, url))
-        if len(sections) < 3:
-            raise ValueError(f'Expected at least three sections: {slug}')
+            sections = []
+            references = []
+            body = lines[3:]
+            while body and body[0].startswith('## '):
+                if len(body) < 2 or body[1].startswith(('#', '@')):
+                    raise ValueError(f'Empty article section: {slug}')
+                sections.append((body[0][3:], body[1]))
+                body = body[2:]
+            for reference in body:
+                if not reference.startswith('@ '):
+                    raise ValueError(f'Unexpected article line: {slug}')
+                name, url = [value.strip() for value in reference[2:].split('|', 1)]
+                if not url.startswith('https://'):
+                    raise ValueError(f'Unsafe reference URL: {slug}')
+                references.append((name, url))
+            if len(sections) < 3:
+                raise ValueError(f'Expected at least three sections: {slug}')
 
-        publish_at = datetime.combine(FIRST_DAY + timedelta(days=index), RELEASE_TIME, EDITORIAL_TIME)
-        articles.append(Article(slug, service, markets, lines[1][2:], lines[2], tuple(sections), tuple(references), publish_at))
-        used.add(slug)
-    covered = {city for article in articles for city in article.markets}
-    if len(articles) != 30 or covered != market_names.keys() or {article.service for article in articles} != SERVICES.keys():
-        raise ValueError('Editorial schedule must cover 30 dates, all service areas, and all five services')
+            publish_at = datetime.combine(day, RELEASE_TIME, EDITORIAL_TIME)
+            articles.append(Article(slug, service, markets, lines[1][2:], lines[2], tuple(sections), tuple(references), publish_at))
+            used.add(slug)
+            coverage.update(markets)
+            signature = re.sub(r'[^a-z0-9]+', ' ', ' '.join(copy for _, copy in sections).casefold()).strip()
+            if signature in bodies:
+                raise ValueError(f'Duplicate article copy: {slug}')
+            bodies.add(signature)
+        if coverage != Counter(market_names.keys()):
+            raise ValueError(f'{batch.name} must contain one article per location')
+    if not articles:
+        raise ValueError('No article batches found')
     return articles, market_names
 
 

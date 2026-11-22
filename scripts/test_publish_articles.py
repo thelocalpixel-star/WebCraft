@@ -21,16 +21,17 @@ class PublishingTest(TestCase):
         self.output = Path(self.temp.name) / 'site-after'
         after = datetime.fromisoformat('2026-11-23T14:17:00+00:00')
         names = build(ROOT, self.output, after)
-        self.assertEqual(names, ['cleveland-website-redesign-url-inventory.html'])
+        self.assertEqual(len(names), 32)
+        self.assertIn('cleveland-website-redesign-url-inventory.html', names)
         for file in ['insights.html', 'sitemap.xml', 'web-design-cleveland-tn.html', 'web-design.html']:
             self.assertIn(names[0], (self.output / file).read_text())
-        self.assertFalse((self.output / 'chattanooga-scheduling-holiday-business-hours.html').exists())
+        self.assertTrue((self.output / 'chattanooga-scheduling-holiday-business-hours.html').exists())
 
-    def test_end_date_contains_thirty_new_canonical_urls_exactly_once(self):
+    def test_every_staged_article_has_one_canonical_url(self):
         end = datetime.fromisoformat('2026-12-22T14:17:00+00:00')
         names = build(ROOT, self.output, end)
-        self.assertEqual(len(names), 30)
-        self.assertEqual(len(set(names)), 30)
+        self.assertGreaterEqual(len(names), 32)
+        self.assertEqual(len(set(names)), len(names))
         urls = [x.text for x in ET.parse(self.output/'sitemap.xml').findall('{*}url/{*}loc')]
         self.assertEqual(len(urls), len(set(urls)))
         original = ET.parse(ROOT/'sitemap.xml').findall('{*}url/{*}loc')

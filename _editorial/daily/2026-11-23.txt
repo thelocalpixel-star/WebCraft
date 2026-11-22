@@ -152,8 +152,8 @@ Link the short version to a page with the terms in full. Assign someone to keep 
 ## Walk through a booking on a phone
 Find a date, read the rule and leave without paying. Check whether the same fee and deadline appear at each step. If you answer the same question by phone, add the answer near the booking button where people are making the decision.
 
-@@ hixson-soddy-daisy-phone-link-tracking | analytics | web-design-hixson-tn,web-design-soddy-daisy-tn
-# Measure phone link clicks for a Hixson or Soddy-Daisy service business
+@@ hixson-phone-link-tracking | analytics | web-design-hixson-tn
+# Measure phone link clicks for a Hixson service business
 A website can record a tap on a phone number. That count helps you see where people tried to call, while the phone log shows which calls the team answered.
 ## Record the place of the tap
 Use a phone_click event with a placement such as header, contact page or service page. Track that an action occurred without sending personal contact data. Test the main number and any alternate number with your team before reviewing live counts.
@@ -266,8 +266,8 @@ Tap a phone link, then send a successful test form. Check which events appear. T
 ## Build a report around one decision
 If people see a service page and tap its phone link but rarely reach anyone, review phone coverage. If a form gets started but few messages arrive, check form length and validation. Fix the step where visitors run into trouble.
 
-@@ johns-creek-milton-ads-location-targeting | google-ads | johns-creek-web-design,milton-web-design
-# Check Google Ads targeting for Johns Creek and Milton service calls
+@@ johns-creek-ads-location-targeting | google-ads | johns-creek-web-design
+# Check Google Ads targeting for Johns Creek service calls
 A service business needs inquiries from addresses it can reach. Start with its real dispatch area and check where leads come from after launch.
 ## Map coverage by service
 Write down the areas you serve for each job. An urgent repair might have a tighter service area than a planned installation. If coverage differs substantially, separate offers so the ad and landing page can set clear expectations.
@@ -307,3 +307,24 @@ Align the website and booking page on hours, appointment types and any important
 ## Assign someone to recheck it
 Test after switching providers, changing hours or adding a new booking type. Keep the date and the final link in your business profile checklist. The next person can then tell whether the current link was actually reviewed.
 @ Google Business Profile local business links | https://support.google.com/business/answer/6218037
+
+@@ soddy-daisy-after-hours-estimate-form | web-design | web-design-soddy-daisy-tn
+# An after-hours estimate form for a Soddy-Daisy service business
+A homeowner looking for a quote after closing should know what information to leave and when to expect a reply. Design the form around the next morning’s work.
+## Put only the essentials on the form
+Ask for the project type, job ZIP code, best contact method and a short description. Give people an optional place to mention timing. If photos make the estimate easier, explain how to send them after someone replies.
+## Set the reply expectation at the point of submission
+Use the actual hours your team checks messages. If the line is unstaffed on weekends, say when weekday follow-up starts. Give people a separate instruction only if you actually offer an urgent response.
+## Run a closing-time rehearsal
+Send a test inquiry after hours, then have the morning team locate it and draft a reply. Check that the message shows the ZIP code and service type without opening an attachment. Fix any step that needs the owner to forward messages by hand.
+
+@@ milton-website-redirect-handoff-sheet | web-hosting | milton-web-design
+# A redirect handoff sheet for a Milton website move
+Before moving a Milton business site to another host, make sure the old redirects are part of the handoff. They often live in the hosting dashboard and may be missed when someone only copies the website files.
+## Find where redirects are configured
+Ask the current host whether redirects are set in its dashboard, server configuration or a plugin. Record an old address that customers still use and which page it should open. Include common changes such as an old booking page or a retired service URL.
+## Check the result from outside your work account
+Give the new host the old-to-new URL sheet. After the move, test the old addresses in a regular browser session where you aren’t signed in. Confirm that each goes directly to the intended page and keeps any needed campaign tags.
+## Give the owner a way to maintain it
+Write down who can edit redirects and where the configuration lives. Save the test list with the website handoff, then repeat those checks when a frequently linked page changes.
+@ Google Search Central on site moves | https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes
