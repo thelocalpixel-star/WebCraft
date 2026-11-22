@@ -1,10 +1,11 @@
-from datetime import datetime
+from collections import Counter
+from datetime import datetime, timedelta
 from pathlib import Path
 from tempfile import TemporaryDirectory
 from unittest import TestCase, main
 import xml.etree.ElementTree as ET
 
-from publish_articles import build, ROOT
+from publish_articles import build, load_articles, FIRST_DAY, RELEASE_DAYS, ROOT
 
 
 class PublishingTest(TestCase):
@@ -27,10 +28,18 @@ class PublishingTest(TestCase):
             self.assertIn(names[0], (self.output / file).read_text())
         self.assertTrue((self.output / 'chattanooga-scheduling-holiday-business-hours.html').exists())
 
+    def test_all_thirty_days_have_the_full_location_roster(self):
+        articles, locations = load_articles(ROOT)
+        self.assertEqual(len(articles), 960)
+        self.assertEqual(len(locations), 32)
+        actual = Counter(article.publish_at.date() for article in articles)
+        expected = {FIRST_DAY + timedelta(days=offset): 32 for offset in range(RELEASE_DAYS)}
+        self.assertEqual(actual, expected)
+
     def test_every_staged_article_has_one_canonical_url(self):
         end = datetime.fromisoformat('2026-12-22T14:17:00+00:00')
         names = build(ROOT, self.output, end)
-        self.assertGreaterEqual(len(names), 32)
+        self.assertEqual(len(names), 960)
         self.assertEqual(len(set(names)), len(names))
         urls = [x.text for x in ET.parse(self.output/'sitemap.xml').findall('{*}url/{*}loc')]
         self.assertEqual(len(urls), len(set(urls)))

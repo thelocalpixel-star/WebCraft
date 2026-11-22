@@ -16,7 +16,7 @@ Open http://127.0.0.1:4173.
 
 In **Settings → Pages**, select **GitHub Actions** as the source. The Pages workflow runs on pushes to `main`, on demand, and at 9:17 a.m. Eastern each day from November 23 through December 22, 2026. It keeps the `localwebcraft.com` domain, verifies the generated site, and deploys it as a single artifact.
 
-Each dated batch in `_editorial/daily/` contains one article for each of the 32 service areas. Drafts are visible in this public GitHub repository. The daily writing job supplies subsequent batches. Pages deploys any complete, due batches in a push or scheduled run. Only due articles are copied to the website. The build adds each article’s links to Insights, its service and location pages, and the XML sitemap. If a scheduled run is missed, the next successful build picks up anything due.
+All 30 dated batches in `_editorial/daily/` are checked in, with one article per service area each day and 960 articles total. Drafts are visible in this public repository. The workflow runs on GitHub-hosted runners and copies only due articles to the website. The build links each article from Insights, its service and location pages, and the XML sitemap. If a scheduled run is missed, the next successful build picks up anything due.
 
 ```sh
 python3 scripts/publish_articles.py --calendar

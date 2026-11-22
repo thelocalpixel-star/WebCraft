@@ -15,6 +15,7 @@ ORIGIN = 'https://localwebcraft.com'
 EDITORIAL_TIME = ZoneInfo('America/New_York')
 FIRST_DAY = date(2026, 11, 23)
 RELEASE_TIME = time(9, 17)
+RELEASE_DAYS = 30
 SERVICES = {
     'web-design': 'Web design',
     'web-hosting': 'Website hosting',
@@ -61,10 +62,12 @@ def load_articles(source):
     articles = []
     used = set()
     bodies = set()
-    for batch in sorted((source / '_editorial/daily').glob('*.txt')):
+    batches = sorted((source / '_editorial/daily').glob('*.txt'))
+    expected = [(FIRST_DAY + timedelta(days=offset)).isoformat() for offset in range(RELEASE_DAYS)]
+    if [batch.stem for batch in batches] != expected:
+        raise ValueError('Expected a batch for every scheduled release date')
+    for batch in batches:
         day = date.fromisoformat(batch.stem)
-        if not FIRST_DAY <= day < FIRST_DAY + timedelta(days=30):
-            raise ValueError(f'Batch outside the publication window: {batch.name}')
         raw = batch.read_text(encoding='utf-8').strip()
         records = re.split(r'^@@ ', raw, flags=re.M)[1:]
         coverage = Counter()
@@ -107,8 +110,6 @@ def load_articles(source):
             bodies.add(signature)
         if coverage != Counter(market_names.keys()):
             raise ValueError(f'{batch.name} must contain one article per location')
-    if not articles:
-        raise ValueError('No article batches found')
     return articles, market_names
 
 
@@ -198,12 +199,17 @@ def update_indexes(output, articles, labels):
     updated = {}
     newest = list(reversed(articles))
     cards = ''.join(snippet(article, location(article)) for article in newest[:6])
-    older = ''.join(snippet(article, location(article)) for article in newest[6:])
-    disclosure = ''
-    if older:
-        disclosure = (f'<details class="library-topic" data-library-section data-topic="Daily guides">'
-                      f'<summary><span>Earlier daily guides</span><span class="library-count">{len(newest[6:])}</span></summary>'
-                      f'<ul class="library-cards">{older}</ul></details>')
+    archive = defaultdict(list)
+    for article in newest[6:]:
+        archive[article.publish_at.date()].append(article)
+    groups = []
+    for day, items in archive.items():
+        label = f'{day:%B} {day.day}, {day.year}'
+        links = ''.join(snippet(article, location(article)) for article in items)
+        groups.append(f'<details class="library-topic" data-library-section data-topic="Daily guides">'
+                      f'<summary><span>{label}</span><span class="library-count">{len(items)}</span></summary>'
+                      f'<ul class="library-cards">{links}</ul></details>')
+    disclosure = ''.join(groups)
     featured = (f'<section class="library-section" id="daily-guides" data-library-section data-topic="Daily guides">'
                 f'<header class="section-title"><h2>New from WebCraft</h2></header>'
                 f'<ul class="library-cards">{cards}</ul>{disclosure}</section>')
