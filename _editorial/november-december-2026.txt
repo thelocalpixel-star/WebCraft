@@ -1,0 +1,309 @@
+@@ cleveland-website-redesign-url-inventory | web-design | web-design-cleveland-tn
+# A URL checklist for a Cleveland website redesign
+Changing your page names can break old links even if the new website works perfectly. Before a Cleveland redesign, make a list of the addresses that customers, referrals and Google already use.
+## Make a before-and-after sheet
+Start with your sitemap, pages that receive search visits and links you’ve shared on invoices or business listings. Use four columns: old URL, new URL, reason for the move and who will test it. Keep an existing address when the replacement serves the same purpose and the current URL is still useful.
+## Give each moved page a destination
+If /deck-repair.html becomes /services/deck-repair.html, send visitors straight to that service page. Avoid sending every retired address to the homepage. When two pages genuinely cover the same work, choose the stronger replacement and update links inside the site too.
+## Test the links people actually use
+Open an old address from a phone, follow a link from a social profile and send a test inquiry. Record what you saw. Check the new sitemap and compare the old URL sheet against the live site before handing the redesign over.
+
+@@ chattanooga-scheduling-holiday-business-hours | local-seo | web-design-chattanooga-tn
+# Holiday hours checklist for Chattanooga businesses
+A customer checking holiday hours wants to know if they can visit or reach you today. Update the places they already check, then look at those places as a customer would.
+## Keep one schedule
+Make a shared table with the date, public hours, phone coverage and whoever approved the change. Note whether online orders or bookings stay open when your counter is closed. A restaurant can show a shorter dining room schedule and list its last seating next to it.
+## Update the site and your eligible Business Profile
+Put changes on the hours or contact page and near any booking button where the change matters. Use special hours in Google Business Profile when appropriate. If someone calls outside those hours, make sure the voicemail and booking options agree with the posted schedule.
+## Set an expiration date
+On the first normal business day, remove expired notices and check your listing, website and phone greeting again. A simple handoff record should name the person responsible and show when each public listing was checked.
+@ Google Business Profile editing and special hours | https://support.google.com/business/answer/3039617
+
+@@ knoxville-track-email-link-clicks | analytics | web-design-knoxville-tn
+# How to track email link clicks on a Knoxville business website
+A click on an email address means someone opened or tried to open a mail app. Keep it as a useful sign of intent. Your inbox remains the record of messages that actually arrived.
+## Pick one event name
+Use email_click for mail links on the site. Record the page category and where the link appeared, such as footer or contact page. Leave the visitor’s email address and message out of analytics. Avoid sending full link data if the address or a prefilled subject contains information you shouldn’t collect.
+## Run two browser checks
+Click a visible email link on desktop and on a phone and confirm that only one event appears for each click. Then select and copy the address without clicking it. That action should produce no click event.
+## Review results with inquiry history
+Look at click totals alongside the number of useful emails in your inbox. If clicks rise without more replies or quote requests, test whether the mail app opens as expected and offer a short contact form for people who prefer to stay on the site.
+
+@@ athens-domain-renewal-ownership | web-hosting | web-design-athens-tn
+# A domain renewal checklist for Athens business owners
+A web hosting renewal and a domain renewal can come from different providers. Make sure you can find both accounts before a website handoff or before the next bill arrives.
+## Identify the registrar
+Look up the account that controls the domain renewal and confirm the registered owner can sign in. Keep the registrar name, renewal month and account owner in a shared record. Store recovery codes and passwords separately in a password manager.
+## Check who gets notices
+Renewal and recovery emails should reach someone who is still involved with the Athens business. Use an account recovery address you can still access if the domain or company email stops working.
+## Rehearse the handoff
+Ask a second authorized person to find the provider and renewal date. Test access with the account owner present. Note where the website is hosted and who handles email so a hosting change doesn’t get mistaken for a domain transfer.
+
+@@ ooltewah-negative-keyword-review | google-ads | web-design-ooltewah-tn
+# Negative keyword review for Ooltewah contractor ads
+A search term can sound related to your trade while still making a poor lead. Review what people actually typed before adding exclusions to a contractor campaign.
+## Sort terms by the job requested
+For each search term you can see, mark it as a service you sell, a service you decline or a term that needs a closer look. For a company that installs fences, “fence installer” can fit, while “fence materials wholesale” may be a bad fit if you sell installation only.
+## Start with narrow exclusions
+When a term is clearly off target, choose an exclusion that stops the unwanted search while preserving relevant ones. Be careful with words such as repair. Blocking them broadly might remove good leads if some crews handle repairs.
+## Keep a short change log
+Record the term, why you excluded it and when you’ll review it. Compare leads by job fit and actual coverage, not only by the number of clicks you stopped paying for. The same log helps a new campaign manager understand your choices.
+@ Google Ads negative keywords | https://support.google.com/google-ads/answer/2453972
+
+@@ dayton-project-gallery-before-after | web-design | web-design-dayton-tn
+# How to build a useful before-and-after gallery in Dayton
+A good project gallery helps someone decide whether your Dayton business handles the work they need. Give each example a short explanation that answers that question.
+## Show a pair with context
+Use photos you have permission to publish. If possible, take before and after photos from the same position. Add a caption such as “Replaced damaged porch steps and added a handrail” so a visitor can tell what changed.
+## Make photos work on phones
+Crop photos without cutting out the work. Compress the images, and check that the first job still makes sense on a small screen. Use a short description for photos that carry information. Keep any important text in HTML rather than baking it into the image.
+## Put a next step beside the example
+Link the gallery to the matching service page or estimate form. Ask for a job location and a short description. If customers can send photos later by email, tell them that so uploading a file doesn’t get in the way of an inquiry.
+
+@@ asheville-google-ads-call-hours | google-ads | web-design-asheville-nc
+# When should an Asheville business run ads for phone calls?
+Start with the hours someone can return a new call. A click to call is more valuable when the business can answer or follow up while the customer is still looking.
+## Map coverage by day
+Write down who handles morning, afternoon and weekend calls. Include lunch breaks and seasonal changes. Check when your phone actually rang last week and compare those times with the coverage plan instead of assuming the storefront hours tell the whole story.
+## Give after-hours visitors a second route
+Keep a short inquiry form or booking option on the landing page if you can respond later. Put a realistic reply expectation near the form. If you use an ad call asset, schedule it for the hours the team can handle while deciding separately whether search ads should continue afterward.
+## Compare answered calls and qualified inquiries
+Review answered calls, missed calls with follow-up and forms separately. If you see many missed calls in one period, fix phone coverage or adjust timing before increasing the ad budget.
+
+@@ atlanta-form-success-tracking-ga4 | analytics | web-design-atlanta-ga
+# Track successful form submissions in GA4 for an Atlanta business
+The submit button can be pressed when an email address is invalid or the server is unavailable. Count a lead when the form has confirmed success.
+## Decide where success is confirmed
+Ask your developer what the form returns after it accepts a message. A dedicated thank-you page can be useful if visitors only reach it after sending. If the form stays on the same page, use the confirmed response to trigger the event.
+## Test the paths that fail too
+Send one valid test, try a missing required field, and simulate a server error in a test environment. Only the first should produce the lead event. Also refresh the thank-you page and double-click send to check that one inquiry isn’t counted twice.
+## Compare the report with the inbox
+Label your own test activity and compare accepted messages with the event count over the same dates. A visitor might block analytics, so the inbox stays your source for received inquiries. Keep names, emails and message text out of GA4.
+
+@@ blue-ridge-hosting-access-handoff | web-hosting | web-design-blue-ridge-ga
+# Website hosting handoff checklist for Blue Ridge businesses
+If a vendor changes or someone leaves the team, your Blue Ridge business should still be able to renew its domain, edit basic information and reach support.
+## Write down five places to find
+List the domain registrar, DNS provider, website host, email provider and form delivery service. Some may use the same login, but they have different responsibilities. Record who owns the account, who pays and where support tickets go.
+## Move access with roles
+Ask providers to invite another authorized person using their own login when possible. Confirm which role can change billing or reset access. Avoid sending the team’s shared password in an email thread.
+## Practice a small change
+Have the new owner locate a current backup and update a harmless piece of text in a test or draft environment. Confirm they can test the form and restore the previous version. A successful practice run gives you more assurance than a handoff list alone.
+
+@@ cartersville-business-profile-primary-category | local-seo | web-design-cartersville-ga
+# Choosing a primary Google Business Profile category in Cartersville
+For an eligible business, the main category should describe what the business is. Start with the core service customers actually buy and how you explain it on your website.
+## Match the category to your real work
+List the top services you deliver and choose the available category that best describes the main business. A company mainly doing residential plumbing should start with the category that describes plumbing, even if it sometimes helps a customer with a related job.
+## Check the site and phone script
+Use consistent language across the Google listing, your main service page and the person who answers calls. Drop wording you can’t support with actual services. Clear details help visitors recognize the same business wherever they first find you.
+## Document the decision
+Record the selected category, the reason and the date. If the business changes, review the category and corresponding website pages together. Avoid cycling categories week to week based on a short run of search impressions.
+@ Google’s guidance on choosing categories | https://support.google.com/business/answer/7249669
+
+@@ collegedale-mobile-menu-html | web-design | web-design-collegedale-tn
+# Turn a Collegedale restaurant PDF menu into a mobile page
+A guest checking the menu from a phone should be able to read dishes and prices without pinching or downloading a file. Put the information people use to decide on a regular web page.
+## Start with the sections customers expect
+Use headings such as lunch, sides and drinks. Give each item a name and price, and include details about availability where they affect ordering. Keep an optional printable PDF for people who need it.
+## Decide who updates prices
+Choose one person or role to own menu updates. When the kitchen changes a price, use a checklist to update the website and any printable version on the same day. Mark limited items with a clear note instead of adding a new page for each special.
+## Review the path from menu to visit
+Open the menu page on a small screen as a new customer. Check that hours, directions and the order link are easy to find. Read a few items with text zoom before publishing.
+
+@@ cookeville-search-ads-job-fit-review | google-ads | web-design-cookeville-tn
+# Review job fit before expanding a Cookeville Google Ads campaign
+A campaign can produce many contacts while sending work outside your crew’s coverage or skills. Check the fit of recent inquiries before spending more.
+## Make a scorecard
+For each inquiry, mark service fit, location fit and whether the business was able to reach the person. Keep the categories simple enough that the person taking the call can fill them in. Avoid putting customer details in the ad report.
+## Look for a pattern
+Compare strong and weak inquiries with their landing pages and visible search terms. If bathroom remodel leads are good but repair-only requests are not, clarify that distinction in the ad and page before ruling out the campaign.
+## Decide what you can afford to repeat
+Keep the settings that send work your team can quote and complete. Change one major variable at a time, then review another group of inquiries. The number of form fills matters less than how much of the work you can realistically take on.
+
+@@ crossville-website-cache-update | web-hosting | web-design-crossville-tn
+# Why a Crossville website can show an old update after launch
+You published new hours and one person still sees last week’s information. Start by finding the layer that’s showing an older copy.
+## Fetch the page a different way
+Check the public address in a private window and on a phone using another network. Watch for differences between the normal URL and a preview link. If the preview is current but the public version is old everywhere, confirm that the change was published to the live site.
+## Check what actually changed
+An HTML page can update while a PDF menu or stylesheet stays cached. Open the asset itself and check its content. If a file was replaced at the same URL, follow the host’s instructions to refresh the cached copy, or use a versioned filename for assets that need to update together.
+## Close the loop on public information
+For something like new hours, verify the page and any linked PDF after clearing or waiting for the cache. Record which URL changed and check the listing and phone greeting if those also carry the information.
+
+@@ dalton-search-console-brand-query-filter | local-seo | web-design-dalton-ga
+# Separate brand and service searches in Search Console for Dalton
+Searches for your company name and searches for a service answer different questions. Separate them before deciding that more impressions mean more people are discovering the business.
+## Write brand variants down first
+List the business name, usual abbreviations and obvious misspellings. In Search Console, use a query filter to review those variations together. Keep a note of the variant list so you can repeat the comparison later.
+## Review service searches by page
+Compare the same dates with a filter that excludes those brand terms. Look at queries that describe your work and the pages they land on. If a service page keeps appearing for a different job, check whether your title, heading and internal links explain the page’s real purpose.
+## Share a report people can use
+Show one view for brand searches and one for service searches. Add a note if the date range included a promotion or a business closure. Review received inquiries separately so a change in impressions stays in context.
+@ Search Console Performance report and query filters | https://support.google.com/webmasters/answer/7576553
+
+@@ gatlinburg-booking-policy-website | web-design | web-design-gatlinburg-tn
+# Where to put booking policies on a Gatlinburg business website
+People booking activities or lodging often need cancellation rules, arrival instructions and fees before choosing a date. Put the most important details near the booking decision.
+## Give the short version beside the button
+Summarize the deadline, first charge and any changes customers should expect in plain text. If policies differ by package, show the terms for the selected package instead of leaving visitors to infer them from a generic policy.
+## Use one complete policy page
+Link the short version to a page with the terms in full. Assign someone to keep the booking platform and website in sync. Add a “last reviewed” date only when someone actually checked the terms.
+## Walk through a booking on a phone
+Find a date, read the rule and leave without paying. Check whether the same fee and deadline appear at each step. If you answer the same question by phone, add the answer near the booking button where people are making the decision.
+
+@@ hixson-soddy-daisy-phone-link-tracking | analytics | web-design-hixson-tn,web-design-soddy-daisy-tn
+# Measure phone link clicks for a Hixson or Soddy-Daisy service business
+A website can record a tap on a phone number. That count helps you see where people tried to call, while the phone log shows which calls the team answered.
+## Record the place of the tap
+Use a phone_click event with a placement such as header, contact page or service page. Track that an action occurred without sending personal contact data. Test the main number and any alternate number with your team before reviewing live counts.
+## Compare calls over the same days
+Look at call attempts, answered calls and useful inquiries beside the website report. Keep in mind that visitors can also dial by hand and can arrive from a business listing without visiting your site.
+## Use the difference to decide what to fix
+If many website visitors tap the number but the line often goes unanswered, improve coverage or offer a form with a reply window. If hardly anyone taps the number, first check whether it is easy to find on a phone.
+
+@@ maryville-google-ads-budget-workload | google-ads | web-design-maryville-tn
+# Set a Google Ads budget around your Maryville team’s workload
+Base your first paid-search budget on how much work you can quote and schedule. If a crew only has a few days open next month, more calls aren’t always useful.
+## Start with available jobs
+Write down the types of work you can take, the available appointment slots and the area you can cover. Separate high-priority jobs from ones you can only fit around the schedule. Decide who can return inquiries within the stated reply time.
+## Agree on a spending limit
+Set a trial budget the business can fund even if the campaign produces no booked work. Keep the Google Ads spending separate from setup and management fees. Give one person permission to review changes when capacity moves.
+## Set a review rule before launch
+Choose a date to review inquiries, quotes and bookings. If you fill your calendar, narrow the offer to the next type of work you can take. If responses are slow, check the ad, page and inquiry process before increasing the budget.
+
+@@ murphy-https-domain-cutover | web-hosting | web-design-murphy-nc
+# Test HTTPS and redirects after a Murphy website move
+A site can load at its preferred address while older links fail. After a host change, test both the current and older ways a customer might reach the Murphy business.
+## Make a short address matrix
+Put the HTTP and HTTPS versions of the domain in a sheet, including the www variant if it was used. Add a few deep links from your current sitemap or printed materials. Record the expected final address for each.
+## Test the full request
+Open each from a clean browser. Check for a valid certificate, the correct final page and no unnecessary redirect loops. If the old address includes a path, confirm the visitor reaches that page or its intended replacement.
+## Check the inquiry flow
+Send one test form and try the relevant phone or booking link. Check that the message arrives and any thank-you page works. Keep a note of the move date and who to contact if the old host needs to be restored.
+@ Google Search Central on hosting changes | https://developers.google.com/search/docs/crawling-indexing/site-move-no-url-changes
+
+@@ nashville-qr-code-utm-tracking | analytics | web-design-nashville-tn
+# Track Nashville print campaigns with QR codes and UTMs
+A QR code on a trade-show handout can point to a tagged landing page. Use consistent tags so the traffic is recognizable in reports and easy to compare with other handouts.
+## Choose a naming pattern
+Use a descriptive source such as event_flyer, a medium such as qr and a campaign such as spring_trade_show. Keep the names lowercase and record them beside the printed asset. If two versions use different offers, distinguish them with a content tag.
+## Test the actual printed code
+Scan the code using two phones. Confirm the intended landing page loads and the tags survive any redirects. Check that the page and form work on mobile data, not just the office network.
+## Review the useful actions
+After the event, compare visits with accepted inquiries and bookings. A scan alone only tells you someone opened the page. Keep the printed materials and their codes on file so you can identify future visits to an older campaign.
+
+@@ pigeon-forge-duplicate-package-page-urls | local-seo | web-design-pigeon-forge-tn
+# Check for duplicate package URLs on a Pigeon Forge website
+Booking filters and campaign links can create several addresses for the same offer. Pick the address customers should share and check that the site points to it consistently.
+## List how people reach the offer
+Open the package from the main navigation, a promo email and the booking widget. Compare the content at each address. If a link only adds a tracking label and the offer stays the same, it usually doesn’t need its own page in the sitemap.
+## Tell search engines which page you prefer
+Use the preferred address in internal links and the sitemap. Add a canonical to duplicate versions when appropriate. Keep separate pages when packages have different terms or benefits that deserve their own description.
+## Check what Google chose
+Use URL Inspection to compare the canonical you gave Google with what Google selected. If they differ, see whether links and page content still point to different alternatives. Fix inconsistent signals before adding more packages.
+@ Google Search Central on canonical URLs | https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls
+
+@@ rome-mobile-price-comparison-tables | web-design | web-design-rome-ga
+# Make a service price table readable on phones in Rome
+A visitor comparing services should understand the difference between plans without zooming or losing the price column. Choose the layout that fits what the customer is deciding.
+## Keep the comparison short
+Start with the plan name, what’s included and what affects the final price. Move rare exceptions into a short note below. If every row is a standalone offering, use stacked sections rather than a wide table.
+## Keep headings where they belong
+For a true comparison, use a table with a caption and column or row headers. On a narrow screen, allow the table to scroll without pushing the entire page sideways. Keep the main next step visible outside the table.
+## Try a realistic comparison
+On a phone with text enlarged, find the difference between two plans and work out whether the listed price is one time or recurring. Ask someone unfamiliar with the site to repeat the comparison. Revise labels that cause them to hesitate.
+
+@@ sevierville-google-ads-availability | google-ads | web-design-sevierville-tn
+# Align Sevierville search ads with real availability
+Ads can drive visitors to a sold-out date or a service you can’t fit in. Check what’s bookable before paying for a campaign built around a specific offer.
+## Connect availability to the landing page
+Choose an offer your booking system can show accurately. Put availability near the main booking link. If the last appointment sells, offer a realistic alternative such as the next date or an inquiry option.
+## Decide when to narrow the campaign
+Set a check-in before known busy periods. If only weekday slots remain, make the ad and page clear about that. Give one person the responsibility to pause outdated ads if available dates change.
+## Track which inquiries can be served
+Review booked visits, sold-out inquiries and canceled bookings separately. If ads keep sending people for dates you can’t serve, tighten the offer or reduce spend until inventory opens again.
+
+@@ sweetwater-website-backup-restore-drill | web-hosting | web-design-sweetwater-tn
+# Run a website backup restore drill in Sweetwater
+A backup is useful when your team knows how to restore the website and how much work could be lost. Run a small drill away from the live site before an emergency.
+## Find the right backup
+Write down when website files and any database were backed up. Make sure the person doing the restore can access the copy. A static site may need only files, while a CMS can also need a database, uploaded media and configuration.
+## Restore somewhere safe
+Use a staging environment or another isolated location. Open a few important pages and check the photos, contact form setup and navigation. Send test submissions only to a test inbox.
+## Record the result
+Note how long it took, the age of the copy and which tasks were manual. Fix the steps that depend on a former vendor or an expired login. A short record also tells the owner when another drill would be useful.
+
+@@ cumming-business-profile-service-area | local-seo | cumming-web-design
+# Choose accurate Google Business Profile service areas in Cumming
+Make your service area describe where you can actually visit or deliver. A broad list is hard to maintain if your team turns down work outside its normal routes.
+## Define where you can accept appointments
+List the towns or ZIP codes your team already covers most often. Check whether travel fees or minimum job sizes change in outer areas. Use this list to make your website and estimate form clear about where requests are welcome.
+## Align your Google profile with the website
+For an eligible business, use Google’s service area settings to describe real coverage. If customers don’t visit your business address, follow Google’s rules on whether to show it. Avoid implying separate offices in nearby towns.
+## Check coverage against actual inquiries
+Review a sample of accepted and declined jobs. If lots of requests come from a place you don’t serve, correct the coverage wording where customers are seeing it and consider adding a job location field to your form.
+@ Google Business Profile service areas | https://support.google.com/business/answer/9157481
+
+@@ decatur-accessible-quote-form-labels | web-design | decatur-web-design
+# Make a Decatur business quote form easier to fill out
+A good quote form tells customers what to enter, what is required and how to recover from a mistake. Clear labels are especially useful on a phone.
+## Give each field a visible label
+Keep labels above or beside their fields. Use placeholders only for helpful examples since they disappear when someone types. Show which fields are required and ask for the minimum details your team needs to respond.
+## Explain errors at the field
+If an email address looks incomplete, explain what to correct next to the email input. Preserve the other answers so a visitor doesn’t have to enter them twice. After success, say what happened and what reply to expect.
+## Run a five-minute keyboard check
+Tab through the form without a mouse. Confirm that focus stays visible, moves in order and reaches the send button. Then test a missing field and a successful inquiry on a phone.
+@ W3C accessible form labels | https://www.w3.org/WAI/tutorials/forms/labels/
+
+@@ east-cobb-compare-contact-actions | analytics | east-cobb-web-design
+# Compare contact clicks and form leads for an East Cobb business
+A call tap, an email tap and an accepted form are useful signals, but they represent different actions. Give each a separate name and decide which are leads in your reports.
+## Make a small event inventory
+List what triggers each event, where it happens and which action you want to treat as a confirmed inquiry. For example, count form success after the server accepts a message. Keep call clicks separate unless you have a way to verify answered calls.
+## Test each action by itself
+Tap a phone link, then send a successful test form. Check which events appear. Try an incomplete form afterward so you can confirm that a validation message doesn’t create a lead.
+## Build a report around one decision
+If people see a service page and tap its phone link but rarely reach anyone, review phone coverage. If a form gets started but few messages arrive, check form length and validation. Fix the step where visitors run into trouble.
+
+@@ johns-creek-milton-ads-location-targeting | google-ads | johns-creek-web-design,milton-web-design
+# Check Google Ads targeting for Johns Creek and Milton service calls
+A service business needs inquiries from addresses it can reach. Start with its real dispatch area and check where leads come from after launch.
+## Map coverage by service
+Write down the areas you serve for each job. An urgent repair might have a tighter service area than a planned installation. If coverage differs substantially, separate offers so the ad and landing page can set clear expectations.
+## Review location options
+Check whether your campaign targets people based on their presence, their interest in a location, or both. Use the option that fits your offer and review how it works in your account. Add exclusions where needed and ask for a job location in the form.
+## Review actual service addresses
+Compare the areas shown in reports with the locations customers give when they inquire. If many leads are out of range, adjust targeting and page wording before increasing spend. Google’s location signals are approximate, so keep checking fit over time.
+@ Google Ads location targeting settings | https://support.google.com/google-ads/answer/1722038
+
+@@ lilburn-email-dns-hosting-handoff | web-hosting | lilburn-web-design
+# Keep Lilburn business email working during a hosting change
+Moving a website and moving email are separate jobs. Before changing DNS, note which records keep mail arriving and which records point to the website.
+## Export a copy of the records
+Save the current DNS zone or screenshots that show record names, types and values. Identify the mail provider and any services that send messages on behalf of the domain. Confirm who can update the records if a change needs to be reverted.
+## Agree on what the move includes
+If only website hosting is changing, confirm which website records need to change and leave the mail records with the existing provider. If the move changes nameservers, copy the working records into the new DNS zone before the switch.
+## Test both directions
+After the change, send a new email from an outside account and reply from the business mailbox. Submit the website form too. Check whether the messages arrive and whether replies go to the intended address.
+
+@@ marietta-traffic-quality-inquiry-report | analytics | marietta-web-design
+# A monthly inquiry report for a Marietta business website
+Review where good inquiries came from so you know whether to improve a website page, adjust a campaign or make it easier to respond.
+## Start with received inquiries
+Count accepted contacts for the month from your inbox or CRM. Mark each as a service fit, location fit or follow-up needed. Record the source only when you have evidence, and keep personal details out of any shared analytics export.
+## Compare with website data
+Review the same dates in GA4 and note the paths people commonly took. Look for pages that bring useful contacts and pages with visits but few next steps. Keep analytics totals separate from the inbox when consent or tracking gaps leave some visits unmeasured.
+## Pick one change for next month
+If qualified inquiries came from a single service, improve the matching page and test the contact link. If many leads ask for work you don’t provide, tighten the service description. Write down the change and review it in the next monthly report.
+
+@@ roswell-business-profile-appointment-link | local-seo | roswell-web-design
+# Check the appointment link on a Roswell Google Business Profile
+Someone who clicks an appointment link is ready to take a next step. Make sure it opens the right booking path and shows what the business can actually schedule.
+## Test the link as a first-time visitor
+Open your public profile in a regular browser and on a phone. Follow the booking link and check the service, business name and available times. If the link points to an old booking tool or the wrong location, update it where your profile allows.
+## Give customers enough information to book
+Align the website and booking page on hours, appointment types and any important requirements. Put a contact option beside scheduling for customers who need to ask a question first.
+## Assign someone to recheck it
+Test after switching providers, changing hours or adding a new booking type. Keep the date and the final link in your business profile checklist. The next person can then tell whether the current link was actually reviewed.
+@ Google Business Profile local business links | https://support.google.com/business/answer/6218037

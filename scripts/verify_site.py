@@ -1,4 +1,5 @@
 """Static and local HTTP checks: python3 scripts/verify_site.py."""
+from argparse import ArgumentParser
 from pathlib import Path
 from html.parser import HTMLParser
 from urllib.parse import urlsplit
@@ -7,7 +8,11 @@ from concurrent.futures import ThreadPoolExecutor
 import json
 import re
 import xml.etree.ElementTree as ET
-ROOT=Path(__file__).resolve().parent.parent
+parser = ArgumentParser(description=__doc__)
+parser.add_argument('--root', type=Path, default=Path(__file__).resolve().parent.parent)
+parser.add_argument('--url', default='http://127.0.0.1:4173')
+args = parser.parse_args()
+ROOT = args.root
 class Page(HTMLParser):
  def __init__(self):super().__init__();self.h1=0;self.canonical=[];self.ids=[];self.links=[];self.honeypots=[];self.json_text=[];self.schema=False
  def handle_starttag(self,tag,attrs):
@@ -68,6 +73,8 @@ for name,p in pages.items():
   if u.fragment and target in pages:assert u.fragment in pages[target].ids,(name,'missing anchor',link)
 urls=[n.text for n in ET.parse(ROOT/'sitemap.xml').findall('{*}url/{*}loc')]
 assert set(urls)=={p.canonical[0] for p in pages.values()},'Sitemap mismatch'
-def fetch(name):return urlopen('http://127.0.0.1:4173/'+name,timeout=10).status
+def fetch(name):
+ with urlopen(args.url.rstrip('/')+'/'+name,timeout=10) as response:
+  return response.status
 assert all(s==200 for s in ThreadPoolExecutor(max_workers=8).map(fetch,pages))
 print(f'PASS: {len(pages)} pages, HTTP 200, canonicals, headings, IDs, links/anchors, assets, JSON-LD, GA4, hidden-control attributes and sitemap coverage.')

@@ -1,6 +1,6 @@
 # WebCraft
 
-A simple, responsive website for WebCraft, built with plain HTML and CSS. No JavaScript, dependencies, or build step.
+A responsive static website for WebCraft. HTML, CSS, and small JavaScript files are served directly. A dependency-free Python build adds the scheduled articles that are ready to publish.
 
 ## Preview locally
 
@@ -14,7 +14,14 @@ Open http://127.0.0.1:4173.
 
 ## GitHub Pages
 
-Push the files to GitHub. In **Settings → Pages**, choose **Deploy from a branch**, select `main` and `/ (root)`, then save. The existing `CNAME` keeps the `localwebcraft.com` domain configuration.
+In **Settings → Pages**, select **GitHub Actions** as the source. The Pages workflow runs on pushes to `main`, on demand, and at 9:17 a.m. Eastern each day from November 23 through December 22, 2026. It keeps the `localwebcraft.com` domain, verifies the generated site, and deploys it as a single artifact.
+
+The 30 article drafts live in `_editorial/november-december-2026.txt`. They are visible in this public GitHub repository. Only due articles are copied to the website. The build adds each article’s links to Insights, its service and location pages, and the XML sitemap. If a scheduled run is missed, the next successful build picks up anything due.
+
+```sh
+python3 scripts/publish_articles.py --calendar
+python3 scripts/publish_articles.py --output /tmp/webcraft-dec-22 --at 2026-12-22T14:17:00+00:00
+```
 
 The contact form uses the repository’s existing Web3Forms endpoint. Its confirmation page is handled by Web3Forms. The displayed business designs are illustrative concepts, not client work.
 
