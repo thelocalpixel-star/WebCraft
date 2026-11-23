@@ -1,28 +1,75 @@
 # WebCraft
 
-> WebCraft builds $500 small-business websites and provides hosting, local SEO, Google Ads and analytics. Based near Cleveland, Tennessee; remote-first; serving businesses across an approximate 200-mile service area in Tennessee, Georgia and North Carolina. There are no physical offices in the cities served.
+> WebCraft builds custom websites for small businesses and offers optional hosting and maintenance, local SEO, Google Ads management, and Google Analytics 4 setup. WebCraft is based near Cleveland, Tennessee, and works remotely with businesses in Tennessee, Georgia, and North Carolina.
 
-## Services
+The standard website package costs $500 one time for up to five pages, including a custom design, mobile layouts, a contact form, and basic on-page SEO. The customer owns the website files. Payment is 50% to start and 50% on delivery. Extra pages are $50 each. Optional hosting and care for the standard website is $20 per month. Domain fees, third-party subscriptions, and marketing work are separate.
 
-- Web design: $500 one time for up to five pages, with a custom design, mobile layouts, a contact form and full file ownership. Extra pages are $50 each.
-- Web hosting and care: $20 a month, optional.
-- Local SEO: quoted around your market.
-- Google Ads: quoted around your market.
-- Analytics: quoted around your market.
+Local SEO, Google Ads, and analytics work are quoted after reviewing the scope. Google Ads spend is paid directly to Google. WebCraft works by phone, email, and online reviews. The location links describe service coverage.
 
-## Key pages
+## Services and pricing
 
-- https://localwebcraft.com/ (home)
-- https://localwebcraft.com/web-design.html
-- https://localwebcraft.com/web-hosting.html
-- https://localwebcraft.com/local-seo.html
-- https://localwebcraft.com/google-ads.html
-- https://localwebcraft.com/analytics.html
-- https://localwebcraft.com/free-website-snapshot.html (free by-hand visibility check)
-- https://localwebcraft.com/service-areas.html (24 cities served)
-- https://localwebcraft.com/insights.html (guides)
+- [Web design and redesign](https://localwebcraft.com/web-design.html): Standard website package, pricing, and what to send for a quote.
+- [Website hosting and maintenance](https://localwebcraft.com/web-hosting.html): Optional monthly care, agreed content updates, domain connections, and help assessing a hosting move.
+- [Local SEO](https://localwebcraft.com/local-seo.html): Local search audits, service page improvements, Business Profile guidance for eligible businesses, and reporting.
+- [Google Ads management](https://localwebcraft.com/google-ads.html): Paid search campaigns, account reviews, location targeting, tracking, and separate ad spend.
+- [GA4 and conversion tracking](https://localwebcraft.com/analytics.html): Google Analytics 4 and Search Console setup, form and contact tracking, testing, and reporting.
 
-## Contact
+## Contact and next steps
 
-- Email: Hello@localwebcraft.com
-- Phone: +1-423-401-8663
+- [Request a quote](https://localwebcraft.com/#contact): Share your business name, city, the service you need, and a brief description of the project.
+- [Request a free website snapshot](https://localwebcraft.com/free-website-snapshot.html): Ask for a brief review of your existing website and suggested fixes.
+- [About WebCraft](https://localwebcraft.com/about.html): Meet Mike Stephen, the web designer behind WebCraft.
+- [Email WebCraft](mailto:Hello@localwebcraft.com): Project and service inquiries.
+- [Call WebCraft](tel:+14234018663): (423) 401-8663.
+
+## Service areas
+
+- [Service area directory](https://localwebcraft.com/service-areas.html): All 32 listed communities and their location pages.
+
+## Tennessee location pages
+
+- [Athens, TN](https://localwebcraft.com/web-design-athens-tn.html)
+- [Chattanooga, TN](https://localwebcraft.com/web-design-chattanooga-tn.html)
+- [Cleveland, TN](https://localwebcraft.com/web-design-cleveland-tn.html)
+- [Collegedale, TN](https://localwebcraft.com/web-design-collegedale-tn.html)
+- [Cookeville, TN](https://localwebcraft.com/web-design-cookeville-tn.html)
+- [Crossville, TN](https://localwebcraft.com/web-design-crossville-tn.html)
+- [Dayton, TN](https://localwebcraft.com/web-design-dayton-tn.html)
+- [Gatlinburg, TN](https://localwebcraft.com/web-design-gatlinburg-tn.html)
+- [Hixson, TN](https://localwebcraft.com/web-design-hixson-tn.html)
+- [Knoxville, TN](https://localwebcraft.com/web-design-knoxville-tn.html)
+- [Maryville, TN](https://localwebcraft.com/web-design-maryville-tn.html)
+- [Nashville, TN](https://localwebcraft.com/web-design-nashville-tn.html)
+- [Ooltewah, TN](https://localwebcraft.com/web-design-ooltewah-tn.html)
+- [Pigeon Forge, TN](https://localwebcraft.com/web-design-pigeon-forge-tn.html)
+- [Sevierville, TN](https://localwebcraft.com/web-design-sevierville-tn.html)
+- [Soddy-Daisy, TN](https://localwebcraft.com/web-design-soddy-daisy-tn.html)
+- [Sweetwater, TN](https://localwebcraft.com/web-design-sweetwater-tn.html)
+
+## Georgia location pages
+
+- [Atlanta, GA](https://localwebcraft.com/web-design-atlanta-ga.html)
+- [Blue Ridge, GA](https://localwebcraft.com/web-design-blue-ridge-ga.html)
+- [Cartersville, GA](https://localwebcraft.com/web-design-cartersville-ga.html)
+- [Cumming, GA](https://localwebcraft.com/cumming-web-design.html)
+- [Dalton, GA](https://localwebcraft.com/web-design-dalton-ga.html)
+- [Decatur, GA](https://localwebcraft.com/decatur-web-design.html)
+- [East Cobb, GA](https://localwebcraft.com/east-cobb-web-design.html)
+- [Johns Creek, GA](https://localwebcraft.com/johns-creek-web-design.html)
+- [Lilburn, GA](https://localwebcraft.com/lilburn-web-design.html)
+- [Marietta, GA](https://localwebcraft.com/marietta-web-design.html)
+- [Milton, GA](https://localwebcraft.com/milton-web-design.html)
+- [Rome, GA](https://localwebcraft.com/web-design-rome-ga.html)
+- [Roswell, GA](https://localwebcraft.com/roswell-web-design.html)
+
+## North Carolina location pages
+
+- [Asheville, NC](https://localwebcraft.com/web-design-asheville-nc.html)
+- [Murphy, NC](https://localwebcraft.com/web-design-murphy-nc.html)
+
+## Optional
+
+- [Website examples](https://localwebcraft.com/#work): Screenshots of website examples and a labeled design concept.
+- [Website cost guide](https://localwebcraft.com/website-cost-east-tennessee.html): Compare scope, ownership, and recurring fees.
+- [Insights and guides](https://localwebcraft.com/insights.html): Browse guides by topic or search for a service or community.
+- [XML sitemap](https://localwebcraft.com/sitemap.xml): Site URLs, including articles after publication.
